@@ -257,7 +257,7 @@ class DefenseWeek(Defense):
         self._stats=None
         self._projs=None
         self._players=None
-        
+        print(self.gsis_name) 
         if not self.bye:
             self.game=nflgame.game.Game(self.game_eid)
         else:

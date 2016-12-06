@@ -122,36 +122,37 @@ def generate_week_players():
                 if not team_week:
                     plyr['team'][str(season)][str(i)]=plyr['team'][str(season)][str(i-1)]
             week_players[pid]=plyr
-
+        
         #Build Defenses.  Defenses will have constant team and position
         for did in nflgame.teams:
-            week_players[did[0]]={
-                      "first_name": did[1],
-                      "full_name": did[3],
-                      "gsis_id": did[0],
-                      "gsis_name": ' '.join([did[2],'D/ST']),
-                      "last_name": did[2],
-                      "position": "D/ST",
-                      "profile_url": "http://www.nfl.com/",
-                      "team": did[0],
-                      "schedule":{},
-                      "status":'ACT'}
+            if did[0] not in week_players:
+                week_players[did[0]]={
+                          "first_name": did[1],
+                          "full_name": did[3],
+                          "gsis_id": did[0],
+                          "gsis_name": ' '.join([did[2],'D/ST']),
+                          "last_name": did[2],
+                          "position": "D/ST",
+                          "profile_url": "http://www.nfl.com/",
+                          "team": did[0],
+                          "schedule":{},
+                          "status":'ACT'}
         
         length=len(week_players)
 
         #Build game_eid dictionary
         for i,(pid,plyr) in enumerate(week_players.iteritems()):
             if type(plyr['team'])==dict and str(season) not in plyr['team'].keys():
+                #skip players who weren't statistically active
                 continue
-            else:
-                week_players[pid]['schedule'][str(season)]={}
-                print(pid,plyr['full_name'],'{}%'.format(round((float(i)/length)*100,2)))
-                for week in range(1,18):
-                    if plyr.get('position')!='D/ST':
-                        team=week_players[pid]['team'][str(season)][str(week)]
-                    else:
-                        team=week_players[pid]['team']
-                    week_players[pid]['schedule'][str(season)][str(week)]=load_schedule_info(season,week,team)
+            week_players[pid]['schedule'][str(season)]={}
+            print(pid,plyr['full_name'],'{}%'.format(round((float(i)/length)*100,2)))
+            for week in range(1,18):
+                if plyr.get('position')!='D/ST':
+                    team=week_players[pid]['team'][str(season)][str(week)]
+                else:
+                    team=week_players[pid]['team']
+                week_players[pid]['schedule'][str(season)][str(week)]=load_schedule_info(season,week,team)
     
     save_json('nflleague/players.json',week_players)
 
