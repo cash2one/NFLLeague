@@ -1,0 +1,84 @@
+{
+    "2016": {
+        "11": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 15,
+            "receiving_lng": 31,
+            "receiving_rec": 6,
+            "receiving_twopta": 0,
+            "receiving_yds": 105,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 13
+        },
+        "10": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 1,
+            "receiving_lng": 39,
+            "receiving_rec": 4,
+            "receiving_twopta": 0,
+            "receiving_yds": 66,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 5
+        },
+        "13": {
+            "receiving_yac_yds": 14,
+            "defense_tkl": 1,
+            "receiving_rec": 3,
+            "receiving_twopta": 1,
+            "receiving_yds": 38,
+            "receiving_twoptm": 1,
+            "receiving_tar": 6,
+            "receiving_tds": 0,
+            "receiving_lng": 22,
+            "receiving_lngtd": 0
+        },
+        "12": {
+            "receiving_tds": 2,
+            "receiving_yac_yds": 14,
+            "receiving_lng": 26,
+            "receiving_rec": 8,
+            "receiving_twopta": 0,
+            "receiving_yds": 104,
+            "receiving_lngtd": 23,
+            "receiving_twoptm": 0,
+            "receiving_tar": 11
+        },
+        "7": {
+            "receiving_tds": 2,
+            "receiving_yac_yds": 15,
+            "receiving_lng": 31,
+            "receiving_rec": 8,
+            "receiving_twopta": 0,
+            "receiving_yds": 96,
+            "receiving_lngtd": 5,
+            "receiving_twoptm": 0,
+            "receiving_tar": 13
+        },
+        "9": {
+            "penalty_yds": 20,
+            "receiving_tds": 2,
+            "receiving_yac_yds": 47,
+            "receiving_lng": 28,
+            "penalty": 2,
+            "receiving_rec": 11,
+            "receiving_twopta": 0,
+            "receiving_yds": 150,
+            "receiving_lngtd": 24,
+            "receiving_twoptm": 0,
+            "receiving_tar": 17
+        },
+        "8": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 0,
+            "receiving_lng": 18,
+            "receiving_rec": 4,
+            "receiving_twopta": 1,
+            "receiving_yds": 50,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 1,
+            "receiving_tar": 11
+        }
+    }
+}

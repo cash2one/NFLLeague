@@ -1,0 +1,26 @@
+{
+    "2016": {
+        "13": {
+            "BYE": true
+        },
+        "12": {
+            "passing_incmp_air_yds": 128,
+            "passing_att": 23,
+            "rushing_lngtd": 0,
+            "passing_ints": 0,
+            "passing_twoptm": 0,
+            "passing_twopta": 0,
+            "rushing_tds": 0,
+            "passing_yds": 226,
+            "passing_incmp": 8,
+            "passing_cmp": 15,
+            "rushing_twopta": 0,
+            "rushing_lng": 29,
+            "rushing_yds": 46,
+            "rushing_att": 4,
+            "passing_tds": 2,
+            "passing_cmp_air_yds": 151,
+            "rushing_twoptm": 0
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "2016": {
+        "13": {
+            "receiving_tar": 1
+        },
+        "12": {
+            "puntret_tds": 0,
+            "puntret_ret": 1,
+            "puntret_yds": 6,
+            "receiving_tds": 0,
+            "puntret_avg": 6,
+            "puntret_lngtd": 0,
+            "receiving_yac_yds": 6,
+            "receiving_lng": 19,
+            "puntret_lng": 6,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "puntret_tot": 1,
+            "receiving_yds": 19,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2
+        }
+    }
+}

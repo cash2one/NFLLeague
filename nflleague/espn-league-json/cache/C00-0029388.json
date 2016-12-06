@@ -1,0 +1,30 @@
+{
+    "2016": {
+        "13": {
+            "fumbles_tot": 1,
+            "penalty_yds": 10,
+            "fumbles_forced": 1,
+            "fumbles_lost": 1,
+            "receiving_yac_yds": 1,
+            "kickret_yds": 28,
+            "penalty": 1,
+            "defense_tkl": 1,
+            "receiving_rec": 2,
+            "receiving_yds": 19,
+            "receiving_tar": 3,
+            "kickret_ret": 1,
+            "kickret_lngtd": 0,
+            "kickret_lng": 28,
+            "receiving_tds": 0,
+            "fumbles_yds": 0,
+            "fumbles_trcv": 0,
+            "kickret_tds": 0,
+            "receiving_lng": 11,
+            "fumbles_rcv": 0,
+            "kickret_avg": 28,
+            "receiving_twopta": 0,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0
+        }
+    }
+}

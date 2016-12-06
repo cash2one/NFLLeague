@@ -1,0 +1,186 @@
+{
+    "2016": {
+        "12": {
+            "00-0031193": {
+                "defense_qbhit": 1
+            },
+            "00-0027829": {
+                "defense_tkl": 1,
+                "defense_sk": 0,
+                "defense_ffum": 0,
+                "defense_ast": 0,
+                "defense_int": 0
+            },
+            "00-0031438": {
+                "defense_tkl": 1,
+                "defense_sk": 0,
+                "defense_ffum": 0,
+                "defense_ast": 0,
+                "defense_int": 0
+            },
+            "00-0033053": {
+                "defense_tkl": 5,
+                "defense_sk": 0,
+                "defense_ffum": 0,
+                "defense_ast": 0,
+                "defense_int": 0
+            },
+            "00-0031412": {
+                "defense_qbhit": 3,
+                "defense_ast": 2,
+                "defense_sk": 0,
+                "defense_tkl": 0,
+                "defense_ffum": 0,
+                "defense_int": 0
+            },
+            "00-0031365": {
+                "defense_qbhit": 1,
+                "defense_tkl": 3,
+                "defense_ast": 3,
+                "defense_sk": 0,
+                "defense_ffum": 0,
+                "defense_int": 0
+            },
+            "00-0032166": {
+                "receiving_tar": 3,
+                "kickret_ret": 1,
+                "kickret_yds": 21,
+                "kickret_lngtd": 0,
+                "kickret_lng": 21,
+                "kickret_avg": 21,
+                "kickret_tds": 0
+            },
+            "00-0033109": {
+                "defense_sk_yds": -6,
+                "defense_tkl_loss": 2,
+                "defense_sk": 1,
+                "defense_tkl": 4,
+                "defense_tkl_loss_yds": 11,
+                "defense_qbhit": 2,
+                "defense_ast": 1,
+                "defense_ffum": 0,
+                "defense_int": 0
+            },
+            "00-0020712": {
+                "defense_sk_yds": -5,
+                "defense_tkl_loss": 1,
+                "defense_sk": 1,
+                "defense_tkl": 2,
+                "defense_tkl_loss_yds": 5,
+                "defense_qbhit": 1,
+                "defense_ffum": 0,
+                "defense_ast": 0,
+                "defense_int": 0
+            },
+            "00-0027023": {
+                "defense_pass_def": 2,
+                "defense_tkl": 6,
+                "defense_int_yds": 26,
+                "defense_int": 1,
+                "defense_ast": 1,
+                "defense_sk": 0,
+                "defense_ffum": 0
+            },
+            "00-0031956": {
+                "defense_tkl": 4,
+                "defense_tkl_loss_yds": 10,
+                "defense_tkl_loss": 1,
+                "defense_sk": 0,
+                "defense_ffum": 0,
+                "defense_ast": 0,
+                "defense_int": 0
+            },
+            "defense": {
+                "receiving_tds": 3,
+                "receiving_yac_yds": 10,
+                "defense_int_yds": 26,
+                "defense_tkl": 46,
+                "receiving_lngtd": 33,
+                "defense_PA": 7,
+                "penalty": 2,
+                "defense_TYDA": 310,
+                "kickret_yds": 21,
+                "defense_sk": 3,
+                "defense_pass_def": 6,
+                "receiving_rec": 5,
+                "defense_int": 2,
+                "defense_qbhit": 11,
+                "defense_rush": 91,
+                "receiving_tar": 9,
+                "receiving_lng": 33,
+                "defense_tkl_loss": 4,
+                "receiving_yds": 91,
+                "defense_pass": 219,
+                "puntret_fair": 2,
+                "penalty_yds": 25,
+                "defense_ffum": 1,
+                "kickret_lng": 21,
+                "kickret_avg": 21,
+                "defense_tkl_loss_yds": 26,
+                "kickret_ret": 1,
+                "defense_ast": 10
+            },
+            "00-0032366": {
+                "defense_tkl": 1
+            },
+            "00-0033103": {
+                "defense_tkl": 4,
+                "defense_ast": 1,
+                "defense_sk": 0,
+                "defense_ffum": 0,
+                "defense_int": 0
+            },
+            "00-0025557": {
+                "defense_sk_yds": -10,
+                "defense_int_yds": 0,
+                "defense_sk": 1,
+                "defense_pass_def": 2,
+                "defense_tkl": 3,
+                "defense_int": 1,
+                "defense_ffum": 1,
+                "defense_ast": 0
+            },
+            "00-0025402": {
+                "penalty": 1,
+                "defense_qbhit": 1,
+                "penalty_yds": 15,
+                "defense_tkl": 8,
+                "defense_ast": 2,
+                "defense_sk": 0,
+                "defense_ffum": 0,
+                "defense_int": 0
+            },
+            "00-0032146": {
+                "defense_qbhit": 1,
+                "defense_tkl": 2,
+                "defense_sk": 0,
+                "defense_ffum": 0,
+                "defense_ast": 0,
+                "defense_int": 0
+            },
+            "00-0031016": {
+                "defense_pass_def": 2,
+                "defense_qbhit": 1,
+                "defense_tkl": 2,
+                "defense_sk": 0,
+                "defense_ffum": 0,
+                "defense_ast": 0,
+                "defense_int": 0
+            },
+            "00-0027793": {
+                "penalty_yds": 10,
+                "receiving_tds": 3,
+                "receiving_yac_yds": 10,
+                "penalty": 1,
+                "receiving_rec": 5,
+                "receiving_yds": 91,
+                "puntret_fair": 2,
+                "receiving_tar": 6,
+                "receiving_lng": 33,
+                "receiving_twopta": 0,
+                "receiving_lngtd": 33,
+                "receiving_twoptm": 0
+            }
+        }
+    }
+}

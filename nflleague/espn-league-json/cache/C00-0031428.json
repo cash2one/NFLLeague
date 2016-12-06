@@ -1,0 +1,140 @@
+{
+    "2016": {
+        "11": {
+            "receiving_tds": 1,
+            "receiving_yac_yds": 7,
+            "receiving_lng": 11,
+            "receiving_rec": 3,
+            "receiving_twopta": 0,
+            "receiving_yds": 18,
+            "receiving_lngtd": 3,
+            "receiving_twoptm": 0,
+            "receiving_tar": 7
+        },
+        "10": {
+            "receiving_tds": 1,
+            "receiving_yac_yds": 21,
+            "receiving_lng": 19,
+            "receiving_rec": 9,
+            "receiving_twopta": 1,
+            "receiving_yds": 107,
+            "receiving_lngtd": 14,
+            "receiving_twoptm": 1,
+            "receiving_tar": 13
+        },
+        "13": {
+            "BYE": true
+        },
+        "12": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 2,
+            "receiving_lng": 24,
+            "receiving_rec": 2,
+            "receiving_twopta": 0,
+            "receiving_yds": 24,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 4
+        },
+        "1": {
+            "fumbles_tot": 1,
+            "fumbles_forced": 1,
+            "receiving_tds": 0,
+            "fumbles_yds": 0,
+            "fumbles_lost": 0,
+            "receiving_yac_yds": 17,
+            "fumbles_rec": 1,
+            "receiving_lng": 22,
+            "fumbles_rcv": 1,
+            "fumbles_trcv": 1,
+            "receiving_rec": 6,
+            "fumbles_rec_yds": 0,
+            "receiving_twopta": 0,
+            "receiving_yds": 72,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 15
+        },
+        "3": {
+            "receiving_tds": 2,
+            "receiving_yac_yds": 11,
+            "receiving_lng": 14,
+            "receiving_rec": 7,
+            "receiving_twopta": 0,
+            "receiving_yds": 57,
+            "receiving_lngtd": 11,
+            "receiving_twoptm": 0,
+            "receiving_tar": 11
+        },
+        "2": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 21,
+            "receiving_lng": 35,
+            "receiving_rec": 3,
+            "receiving_twopta": 0,
+            "receiving_yds": 54,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 5
+        },
+        "5": {
+            "BYE": true
+        },
+        "4": {
+            "receiving_tds": 1,
+            "receiving_yac_yds": 1,
+            "receiving_lng": 17,
+            "receiving_rec": 5,
+            "receiving_twopta": 0,
+            "receiving_yds": 55,
+            "receiving_lngtd": 3,
+            "receiving_twoptm": 0,
+            "receiving_tar": 10
+        },
+        "7": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 0,
+            "receiving_lng": 5,
+            "receiving_rec": 2,
+            "receiving_twopta": 0,
+            "receiving_yds": 9,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 8
+        },
+        "6": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 2,
+            "receiving_lng": 18,
+            "receiving_rec": 3,
+            "receiving_twopta": 0,
+            "receiving_yds": 49,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 6
+        },
+        "9": {
+            "receiving_tds": 1,
+            "receiving_yac_yds": 15,
+            "receiving_lng": 20,
+            "defense_tkl": 1,
+            "receiving_rec": 7,
+            "receiving_twopta": 0,
+            "receiving_yds": 76,
+            "receiving_lngtd": 1,
+            "receiving_twoptm": 0,
+            "receiving_tar": 11
+        },
+        "8": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 10,
+            "receiving_lng": 21,
+            "receiving_rec": 6,
+            "receiving_twopta": 0,
+            "receiving_yds": 70,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 15
+        }
+    }
+}

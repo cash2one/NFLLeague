@@ -1,0 +1,46 @@
+{
+    "2016": {
+        "13": {
+            "fumbles_rec": 1,
+            "rushing_tds": 3,
+            "fumbles_rec_yds": 0,
+            "rushing_yds": 117,
+            "rushing_att": 32,
+            "receiving_tar": 1,
+            "fumbles_tot": 0,
+            "rushing_lngtd": 5,
+            "fumbles_yds": 0,
+            "fumbles_lost": 0,
+            "fumbles_trcv": 1,
+            "fumbles_rcv": 1,
+            "rushing_twopta": 0,
+            "rushing_lng": 25,
+            "rushing_twoptm": 0
+        },
+        "12": {
+            "fumbles_tot": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 36,
+            "fumbles_rcv": 1,
+            "rushing_yds": 84,
+            "receiving_lngtd": 0,
+            "fumbles_lost": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "receiving_rec": 3,
+            "receiving_twopta": 0,
+            "receiving_yds": 43,
+            "rushing_att": 18,
+            "receiving_twoptm": 0,
+            "receiving_tar": 5,
+            "rushing_twoptm": 0,
+            "rushing_lng": 22,
+            "rushing_lngtd": 0,
+            "fumbles_yds": 0,
+            "receiving_lng": 23,
+            "fumbles_trcv": 1,
+            "fumbles_rec": 1,
+            "fumbles_rec_yds": 0
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "2016": {
+        "13": {
+            "BYE": true
+        },
+        "12": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 7,
+            "receiving_lng": 3,
+            "rushing_yds": 17,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "rushing_tds": 0,
+            "receiving_twopta": 0,
+            "rushing_att": 6,
+            "receiving_yds": 3,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lng": 6
+        }
+    }
+}

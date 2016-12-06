@@ -1,0 +1,45 @@
+{
+    "2016": {
+        "13": {
+            "passing_sk": 2,
+            "passing_incmp_air_yds": 116,
+            "passing_att": 26,
+            "passing_sk_yds": -14,
+            "passing_int": 2,
+            "passing_yds": 225,
+            "passing_incmp": 11,
+            "passing_cmp": 15,
+            "penalty": 1,
+            "rushing_yds": 18,
+            "rushing_att": 3,
+            "passing_tds": 2,
+            "passing_cmp_air_yds": 114,
+            "penalty_yds": 11,
+            "rushing_lngtd": 0,
+            "passing_twoptm": 0,
+            "passing_twopta": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 9,
+            "passing_ints": 2,
+            "rushing_twoptm": 0
+        },
+        "12": {
+            "passing_sk": 1,
+            "passing_incmp_air_yds": 138,
+            "passing_att": 30,
+            "passing_sk_yds": -7,
+            "passing_twoptm": 0,
+            "passing_int": 1,
+            "passing_twopta": 0,
+            "passing_yds": 242,
+            "passing_incmp": 8,
+            "passing_cmp": 22,
+            "penalty": 1,
+            "passing_ints": 1,
+            "passing_tds": 3,
+            "passing_cmp_air_yds": 152,
+            "penalty_yds": 5
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "2016": {
+        "13": {
+            "passing_incmp_air_yds": 85,
+            "passing_att": 12,
+            "passing_int": 1,
+            "fumbles_rec": 1,
+            "passing_yds": 81,
+            "passing_incmp": 7,
+            "passing_cmp": 5,
+            "fumbles_rec_yds": 0,
+            "rushing_yds": 3,
+            "rushing_att": 2,
+            "passing_cmp_air_yds": 14,
+            "fumbles_tot": 0,
+            "rushing_lngtd": 0,
+            "passing_twoptm": 0,
+            "fumbles_yds": 0,
+            "fumbles_rcv": 1,
+            "fumbles_trcv": 1,
+            "passing_twopta": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "fumbles_lost": 0,
+            "rushing_lng": 4,
+            "passing_ints": 1,
+            "passing_tds": 0,
+            "rushing_twoptm": 0
+        }
+    }
+}

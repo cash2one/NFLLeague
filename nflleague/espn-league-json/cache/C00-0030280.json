@@ -1,0 +1,38 @@
+{
+    "2016": {
+        "8": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_twopta": 0,
+            "receiving_yac_yds": 6,
+            "receiving_lng": 10,
+            "rushing_twopta": 0,
+            "receiving_rec": 2,
+            "rushing_tds": 0,
+            "rushing_yds": 4,
+            "receiving_lngtd": 0,
+            "receiving_yds": 4,
+            "rushing_att": 3,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lng": 4
+        },
+        "13": {},
+        "7": {
+            "kickret_lngtd": 0,
+            "rushing_lngtd": 0,
+            "kickret_lng": 18,
+            "rushing_yds": 1,
+            "kickret_ret": 1,
+            "kickret_yds": 18,
+            "kickret_avg": 18,
+            "rushing_twopta": 0,
+            "rushing_tds": 0,
+            "kickret_tds": 0,
+            "rushing_att": 2,
+            "rushing_twoptm": 0,
+            "rushing_lng": 1
+        }
+    }
+}

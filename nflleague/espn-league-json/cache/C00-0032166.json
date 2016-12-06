@@ -1,0 +1,15 @@
+{
+    "2016": {
+        "13": {
+            "penalty": 1,
+            "penalty_yds": 15,
+            "kickret_ret": 1,
+            "kickret_yds": 24,
+            "defense_ast": 2,
+            "kickret_lngtd": 0,
+            "kickret_lng": 24,
+            "kickret_avg": 24,
+            "kickret_tds": 0
+        }
+    }
+}

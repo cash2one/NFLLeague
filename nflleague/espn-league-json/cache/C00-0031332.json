@@ -1,0 +1,29 @@
+{
+    "2016": {
+        "11": {},
+        "10": {
+            "kickret_lngtd": 0,
+            "kickret_lng": 33,
+            "kickret_tds": 0,
+            "kickret_yds": 50,
+            "kickret_avg": 25,
+            "receiving_twoptmissed": 1,
+            "receiving_twopta": 1,
+            "kickret_ret": 2
+        },
+        "13": {
+            "penalty": 1,
+            "penalty_yds": 10,
+            "defense_tkl": 1
+        },
+        "12": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 16,
+            "rushing_yds": 28,
+            "rushing_att": 6,
+            "rushing_twoptm": 0
+        }
+    }
+}

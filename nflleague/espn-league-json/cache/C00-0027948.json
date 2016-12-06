@@ -1,0 +1,25 @@
+{
+    "2016": {
+        "13": {
+            "passing_incmp_air_yds": 46,
+            "passing_sk": 1,
+            "passing_att": 10,
+            "passing_sk_yds": -8,
+            "passing_yds": 35,
+            "passing_incmp": 6,
+            "passing_cmp": 4,
+            "rushing_yds": 1,
+            "rushing_att": 1,
+            "passing_cmp_air_yds": 32,
+            "rushing_lngtd": 0,
+            "passing_twoptm": 0,
+            "passing_twopta": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 1,
+            "passing_ints": 0,
+            "passing_tds": 0,
+            "rushing_twoptm": 0
+        }
+    }
+}

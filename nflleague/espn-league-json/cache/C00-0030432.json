@@ -1,0 +1,22 @@
+{
+    "2016": {
+        "13": {
+            "rushing_att": 9,
+            "rushing_yds": 19,
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 7,
+            "rushing_twoptm": 0
+        },
+        "12": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 4,
+            "rushing_yds": 4,
+            "rushing_att": 1,
+            "rushing_twoptm": 0
+        }
+    }
+}

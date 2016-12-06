@@ -1,0 +1,37 @@
+{
+    "2016": {
+        "11": {
+            "BYE": true
+        },
+        "10": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 9,
+            "rushing_yds": 22,
+            "rushing_att": 7,
+            "receiving_tar": 1,
+            "rushing_twoptm": 0
+        },
+        "13": {
+            "rushing_att": 5,
+            "rushing_yds": 49,
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 24,
+            "rushing_twoptm": 0
+        },
+        "12": {
+            "rushing_twopta": 0,
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "penalty": 1,
+            "rushing_lng": 8,
+            "rushing_yds": 22,
+            "rushing_att": 9,
+            "penalty_yds": 10,
+            "rushing_twoptm": 0
+        }
+    }
+}

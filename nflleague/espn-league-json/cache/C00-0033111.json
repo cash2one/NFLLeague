@@ -1,0 +1,24 @@
+{
+    "2016": {
+        "13": {
+            "puntret_yds": 8,
+            "receiving_yac_yds": 10,
+            "defense_tkl": 1,
+            "receiving_rec": 1,
+            "puntret_tot": 4,
+            "receiving_yds": 8,
+            "puntret_fair": 1,
+            "receiving_tar": 4,
+            "puntret_tds": 0,
+            "puntret_ret": 4,
+            "receiving_tds": 0,
+            "puntret_avg": 2,
+            "puntret_lngtd": 0,
+            "receiving_lng": 8,
+            "puntret_lng": 6,
+            "receiving_twopta": 0,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0
+        }
+    }
+}

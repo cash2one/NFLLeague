@@ -1,0 +1,31 @@
+{
+    "2016": {
+        "13": {
+            "BYE": true
+        },
+        "12": {
+            "fumbles_tot": 1,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 51,
+            "fumbles_rcv": 0,
+            "rushing_yds": 44,
+            "receiving_lngtd": 0,
+            "fumbles_forced": 1,
+            "fumbles_lost": 1,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "receiving_rec": 6,
+            "receiving_twopta": 0,
+            "receiving_yds": 47,
+            "rushing_att": 16,
+            "receiving_twoptm": 0,
+            "receiving_tar": 7,
+            "rushing_twoptm": 0,
+            "rushing_lngtd": 0,
+            "fumbles_yds": 0,
+            "receiving_lng": 13,
+            "fumbles_trcv": 0,
+            "rushing_lng": 9
+        }
+    }
+}

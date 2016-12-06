@@ -1,0 +1,26 @@
+{
+    "2016": {
+        "13": {
+            "receiving_yds": 78,
+            "receiving_yac_yds": 42,
+            "receiving_tar": 9,
+            "receiving_rec": 7,
+            "receiving_tds": 0,
+            "receiving_lng": 28,
+            "receiving_twopta": 0,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0
+        },
+        "12": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 8,
+            "receiving_lng": 27,
+            "receiving_rec": 4,
+            "receiving_twopta": 0,
+            "receiving_yds": 43,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 4
+        }
+    }
+}

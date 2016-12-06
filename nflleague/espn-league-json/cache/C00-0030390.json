@@ -1,0 +1,61 @@
+{
+    "2016": {
+        "13": {
+            "kicking_all_yds": 74,
+            "kicking_totpfg": 0,
+            "kicking_xptot": 2,
+            "kicking_fgmissed_yds": 51,
+            "kicking_touchback": 1,
+            "kicking_xpmade": 2,
+            "kicking_xpa": 2,
+            "kicking_xpb": 0,
+            "kicking_fgyds": 0,
+            "kicking_i20": 1,
+            "kicking_xpmissed": 0,
+            "kicking_tot": 3,
+            "kicking_fgmissed": 1,
+            "kicking_yds": 144,
+            "kicking_fga": 1,
+            "kicking_fgm": 0
+        },
+        "12": {
+            "kicking_i20": 1,
+            "kicking_fgm_yds": 98,
+            "kicking_all_yds": 211,
+            "kicking_totpfg": 6,
+            "kicking_xptot": 1,
+            "kicking_tot": 4,
+            "kicking_touchback": 3,
+            "kicking_xpmissed": 0,
+            "kicking_xpmade": 1,
+            "kicking_yds": 261,
+            "kicking_fgm_40_49": 1,
+            "kicking_fga": 2,
+            "kicking_fgm_50_100": 1,
+            "kicking_fgm": 2,
+            "kicking_xpa": 1,
+            "kicking_xpb": 0,
+            "kicking_fgyds": 50
+        },
+        "5": {
+            "kicking_i20": 2,
+            "kicking_fgm_yds": 132,
+            "kicking_all_yds": 219,
+            "kicking_fgm_0_39": 1,
+            "kicking_totpfg": 9,
+            "kicking_xptot": 2,
+            "kicking_tot": 5,
+            "kicking_touchback": 3,
+            "kicking_xpmissed": 0,
+            "kicking_xpmade": 2,
+            "kicking_yds": 324,
+            "kicking_fgm_40_49": 1,
+            "kicking_fga": 3,
+            "kicking_fgm_50_100": 1,
+            "kicking_fgm": 3,
+            "kicking_xpa": 2,
+            "kicking_xpb": 0,
+            "kicking_fgyds": 50
+        }
+    }
+}

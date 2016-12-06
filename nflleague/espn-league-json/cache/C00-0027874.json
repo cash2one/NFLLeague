@@ -1,0 +1,158 @@
+{
+    "2016": {
+        "11": {
+            "BYE": true
+        },
+        "10": {
+            "receiving_tds": 1,
+            "receiving_yac_yds": 20,
+            "receiving_lng": 18,
+            "receiving_rec": 8,
+            "receiving_twopta": 0,
+            "receiving_yds": 87,
+            "receiving_lngtd": 2,
+            "receiving_twoptm": 0,
+            "receiving_tar": 11
+        },
+        "13": {
+            "receiving_yds": 61,
+            "receiving_yac_yds": 17,
+            "receiving_tar": 10,
+            "receiving_rec": 6,
+            "receiving_tds": 0,
+            "receiving_lng": 18,
+            "receiving_twopta": 0,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0
+        },
+        "12": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 14,
+            "receiving_lng": 24,
+            "receiving_rec": 5,
+            "receiving_twopta": 0,
+            "receiving_yds": 60,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 8
+        },
+        "1": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 20,
+            "receiving_lng": 23,
+            "receiving_rec": 4,
+            "receiving_twopta": 0,
+            "receiving_yds": 48,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 6
+        },
+        "3": {
+            "fumbles_tot": 1,
+            "penalty_yds": 5,
+            "fumbles_forced": 1,
+            "receiving_tds": 1,
+            "fumbles_yds": 0,
+            "fumbles_lost": 1,
+            "receiving_yac_yds": 36,
+            "receiving_lng": 55,
+            "fumbles_rcv": 0,
+            "penalty": 1,
+            "fumbles_trcv": 0,
+            "defense_tkl": 1,
+            "receiving_rec": 6,
+            "receiving_twopta": 0,
+            "receiving_yds": 100,
+            "receiving_lngtd": 55,
+            "receiving_twoptm": 0,
+            "receiving_tar": 7
+        },
+        "2": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 53,
+            "receiving_lng": 44,
+            "receiving_rec": 5,
+            "receiving_twopta": 1,
+            "receiving_yds": 90,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 1,
+            "receiving_tar": 7
+        },
+        "5": {
+            "receiving_tds": 1,
+            "receiving_yac_yds": 24,
+            "receiving_lng": 14,
+            "receiving_rec": 5,
+            "receiving_twopta": 0,
+            "receiving_yds": 49,
+            "receiving_lngtd": 3,
+            "receiving_twoptm": 0,
+            "receiving_tar": 7
+        },
+        "4": {
+            "receiving_tar": 7,
+            "receiving_tds": 1,
+            "receiving_yac_yds": 22,
+            "receiving_lng": 31,
+            "penalty": 1,
+            "receiving_rec": 6,
+            "receiving_twopta": 0,
+            "receiving_yds": 94,
+            "receiving_lngtd": 11,
+            "receiving_twoptm": 0,
+            "penalty_yds": 10
+        },
+        "7": {
+            "receiving_tds": 1,
+            "receiving_yac_yds": 17,
+            "receiving_lng": 11,
+            "receiving_rec": 6,
+            "receiving_twopta": 0,
+            "receiving_yds": 40,
+            "receiving_lngtd": 4,
+            "receiving_twoptm": 0,
+            "receiving_tar": 10
+        },
+        "6": {
+            "fumbles_tot": 1,
+            "fumbles_forced": 1,
+            "receiving_tds": 0,
+            "fumbles_yds": 0,
+            "fumbles_lost": 1,
+            "receiving_yac_yds": 12,
+            "receiving_lng": 11,
+            "fumbles_rcv": 0,
+            "fumbles_trcv": 0,
+            "receiving_rec": 5,
+            "receiving_twopta": 0,
+            "receiving_yds": 35,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 10
+        },
+        "9": {
+            "penalty_yds": 5,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 3,
+            "receiving_lng": 23,
+            "penalty": 1,
+            "receiving_rec": 5,
+            "receiving_twopta": 0,
+            "receiving_yds": 56,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 10
+        },
+        "8": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 8,
+            "receiving_lng": 40,
+            "receiving_rec": 5,
+            "receiving_twopta": 0,
+            "receiving_yds": 79,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 10
+        }
+    }
+}

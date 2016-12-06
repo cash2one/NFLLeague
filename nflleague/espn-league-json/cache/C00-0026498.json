@@ -1,0 +1,49 @@
+{
+    "2016": {
+        "13": {
+            "passing_incmp_air_yds": 139,
+            "passing_sk": 2,
+            "passing_att": 42,
+            "passing_sk_yds": -4,
+            "passing_twopta": 1,
+            "passing_yds": 341,
+            "passing_incmp": 12,
+            "passing_cmp": 30,
+            "penalty": 1,
+            "passing_twoptmissed": 1,
+            "rushing_yds": 22,
+            "rushing_att": 3,
+            "passing_tds": 2,
+            "passing_cmp_air_yds": 150,
+            "penalty_yds": 4,
+            "rushing_lngtd": 0,
+            "passing_twoptm": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 11,
+            "passing_ints": 0,
+            "rushing_twoptm": 0
+        },
+        "12": {
+            "passing_incmp_air_yds": 270,
+            "passing_sk": 2,
+            "passing_att": 40,
+            "passing_sk_yds": -18,
+            "passing_ints": 0,
+            "passing_twoptm": 0,
+            "passing_twopta": 0,
+            "rushing_tds": 0,
+            "passing_yds": 232,
+            "passing_incmp": 17,
+            "passing_cmp": 23,
+            "rushing_twopta": 0,
+            "rushing_lngtd": 0,
+            "rushing_lng": 15,
+            "rushing_yds": 30,
+            "rushing_att": 4,
+            "passing_tds": 1,
+            "passing_cmp_air_yds": 130,
+            "rushing_twoptm": 0
+        }
+    }
+}

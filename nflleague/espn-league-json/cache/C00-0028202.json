@@ -1,0 +1,41 @@
+{
+    "2016": {
+        "1": {
+            "fumbles_tot": 1,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 12,
+            "fumbles_rcv": 0,
+            "defense_tkl": 1,
+            "rushing_yds": 18,
+            "receiving_lngtd": 0,
+            "fumbles_forced": 1,
+            "fumbles_lost": 1,
+            "rushing_tds": 1,
+            "rushing_twopta": 0,
+            "receiving_rec": 2,
+            "receiving_twopta": 0,
+            "receiving_yds": 18,
+            "rushing_att": 7,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lngtd": 3,
+            "fumbles_yds": 0,
+            "receiving_lng": 11,
+            "fumbles_trcv": 0,
+            "rushing_lng": 6
+        },
+        "13": {
+            "penalty": 1,
+            "rushing_att": 5,
+            "penalty_yds": 10,
+            "receiving_tar": 2,
+            "rushing_yds": 20,
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 9,
+            "rushing_twoptm": 0
+        }
+    }
+}

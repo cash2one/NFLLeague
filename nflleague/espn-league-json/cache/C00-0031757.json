@@ -1,0 +1,32 @@
+{
+    "2016": {
+        "13": {
+            "fumbles_tot": 1,
+            "puntret_yds": 1,
+            "fumbles_lost": 1,
+            "kickret_yds": 22,
+            "fumbles_forced": 1,
+            "rushing_yds": 6,
+            "puntret_tot": 2,
+            "rushing_att": 1,
+            "kickret_ret": 1,
+            "fumbles_rcv": 0,
+            "kickret_tds": 0,
+            "puntret_ret": 2,
+            "puntret_avg": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_twoptm": 0,
+            "puntret_lngtd": 0,
+            "kickret_lngtd": 0,
+            "rushing_lngtd": 0,
+            "fumbles_yds": 0,
+            "puntret_lng": 1,
+            "puntret_tds": 0,
+            "kickret_lng": 22,
+            "fumbles_trcv": 0,
+            "kickret_avg": 22,
+            "rushing_lng": 6
+        }
+    }
+}

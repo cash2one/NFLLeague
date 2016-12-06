@@ -1,0 +1,51 @@
+{
+    "2016": {
+        "13": {
+            "passing_incmp_air_yds": 115,
+            "passing_att": 46,
+            "passing_yds": 269,
+            "passing_incmp": 13,
+            "passing_cmp": 33,
+            "rushing_yds": 1,
+            "rushing_att": 3,
+            "passing_tds": 1,
+            "passing_cmp_air_yds": 162,
+            "rushing_lngtd": 0,
+            "passing_twoptm": 0,
+            "passing_twopta": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 3,
+            "passing_ints": 0,
+            "rushing_twoptm": 0
+        },
+        "12": {
+            "passing_incmp_air_yds": 191,
+            "fumbles_tot": 1,
+            "passing_att": 50,
+            "fumbles_rcv": 1,
+            "passing_incmp": 20,
+            "rushing_yds": -4,
+            "passing_cmp_air_yds": 145,
+            "fumbles_lost": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "fumbles_notforced": 1,
+            "rushing_att": 3,
+            "rushing_twoptm": 0,
+            "rushing_lng": -1,
+            "rushing_lngtd": 0,
+            "passing_twoptm": 0,
+            "fumbles_yds": 0,
+            "passing_twopta": 1,
+            "passing_yds": 286,
+            "passing_ints": 0,
+            "passing_cmp": 30,
+            "fumbles_trcv": 1,
+            "fumbles_rec": 1,
+            "passing_twoptmissed": 1,
+            "fumbles_rec_yds": 0,
+            "passing_tds": 2
+        }
+    }
+}

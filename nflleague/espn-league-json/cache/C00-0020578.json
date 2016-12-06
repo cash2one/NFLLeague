@@ -1,0 +1,44 @@
+{
+    "2016": {
+        "3": {
+            "kicking_fgm_yds": 21,
+            "kicking_xpmissed": 0,
+            "kicking_fgm_0_39": 1,
+            "kicking_totpfg": 3,
+            "kicking_xptot": 6,
+            "kicking_xpmade": 6,
+            "kicking_fga": 1,
+            "kicking_fgm": 1,
+            "kicking_xpa": 6,
+            "kicking_xpb": 0,
+            "kicking_fgyds": 21
+        },
+        "12": {
+            "kicking_fgm_yds": 45,
+            "kicking_xpmissed": 0,
+            "kicking_totpfg": 3,
+            "kicking_xptot": 5,
+            "kicking_xpmade": 5,
+            "kicking_fgm_40_49": 1,
+            "kicking_fga": 1,
+            "kicking_fgm": 1,
+            "kicking_xpa": 5,
+            "kicking_xpb": 0,
+            "kicking_fgyds": 45
+        },
+        "13": {
+            "kicking_fgm_yds": 103,
+            "kicking_xpmissed": 0,
+            "kicking_fgm_0_39": 2,
+            "kicking_totpfg": 9,
+            "kicking_xptot": 1,
+            "kicking_xpmade": 1,
+            "kicking_fga": 3,
+            "kicking_fgm_50_100": 1,
+            "kicking_fgm": 3,
+            "kicking_xpa": 1,
+            "kicking_xpb": 0,
+            "kicking_fgyds": 59
+        }
+    }
+}
