@@ -1,18 +1,17 @@
 NFLLeague is an API for ESPN Fantasy Football which harnesses the power of BurntSushi's nflgame.  By utilizing several key features of nflgame, nflleague offers league-oriented, player-focused methods for rapidly accessing a wide range of ESPN and NFL player data. NFLLeague is ideal for those who are interested in performing analysis in a league-wise fashion, researching league historical data, or accessing real-time fantasy stats and scores.
 
+To output the results of any given week from any given year, say my team in week 4 of the 2015 season:
 ```python
 import nflleague
 
 league=nflleague.league.League(203986,2015)
 game=league.team('CHAD MORTON').week(4)
 
-print('{} vs. {}'.format(game.team_name,game.opponent().team_name))
-for player_home,player_away in zip(game.lineup,game.opponent().lineup):
-    slot=player_home.slot
-    player_h,player_a=player_home.gsis_name,player_away.gsis_name
-    score_h,score_a=player_home.statistics().score(),player_away.statistics().score()
-    print('{}:\t{}\t{}\t\t{}\t{}'.format(slot,player_h,score_h,player_a,score_a))
-print('{} {} {}-{}'.format(game.team_name,'win' if game.win() else 'lose',game.get_score(),game.opponent().get_score()))
+print('%s vs. %s' % (game.team_name,game.opponent().team_name))
+for plyr,opp_plyr in zip(game.lineup,game.opponent().lineup):
+    m='%s:\t%s\t%f\t\t%s\t%f'
+    print(m % (plyr.slot,plyr.gsis_nam,plyr.statistics().score(),opp_plyr.gsis_name,opp_plyr.statistics().score()))
+print('%s %s %f-%f' % (game.team_name,'win' if game.win() else 'lose',game.get_score(),game.opponent().get_score()))
 ```
 Which gives the result:
 ```
