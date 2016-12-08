@@ -43,9 +43,9 @@ game=league.team('CHAD MORTON').week(4)
 
 print('%s vs. %s' % (game.team_name,game.opponent().team_name))
 for plyr,opp_plyr in zip(game.lineup,game.opponent().lineup):
-    m='%s:\t%s\t%f\t\t%s\t%f'
+    m='%s:\t%s\t%.1f\t\t%s\t%.1f'
     print(m % (plyr.slot,plyr.gsis_nam,plyr.statistics().score(),opp_plyr.gsis_name,opp_plyr.statistics().score()))
-print('%s %s %f-%f' % (game.team_name,'win' if game.win() else 'lose',game.get_score(),game.opponent().get_score()))
+print('%s %s %.1f-%.1f' % (game.team_name,'win' if game.win() else 'lose',game.get_score(),game.opponent().get_score()))
 ```
 Which gives the result:
 ```
@@ -65,15 +65,15 @@ THE LOG CHOPPERZ win 118.5-60.9
 ###Help Wanted!
 NFLLeague is a work in progress, and I am always looking for contributors to help test, improve, and expand the functionality of this package.  My background is in numerical analysis and statistics, so professional programmers are desired to help sure up andoptimize the code.  In attempting to expand programmatic access to expert projection data, one bottleneck that I have encountered is the speed in which I can scrape data from projection sources using python and selenium.  I chose Selenium for this project for the sake of uniformity and simplicity of having the package exclusively Python, but due to the length of time it takes to gather projection data from just three sources(ESPN,CBS,Fantasy Pros), it'd be best to find a more efficient method. 
 What's been tried:
-⋅⋅* Multithreading to scrape multiple sources at once. Biggest improvement, but still slow and burdensome on resources
-⋅⋅* Using headless browser PhantomGS.  Due to known issues with trying to use PhantomGS and Selenium together, I 
-⋅⋅⋅ found it to be unuseable.  Someone more knowledgeable with Selenium may be able find a work around. But I'm leaning
-⋅⋅⋅ towards abandoning Selenium all together.
+  * Multithreading to scrape multiple sources at once. Biggest improvement, but still slow and burdensome on resources
+  * Using headless browser PhantomGS.  Due to known issues with trying to use PhantomGS and Selenium together, I 
+   found it to be unuseable.  Someone more knowledgeable with Selenium may be able find a work around. But I'm leaning
+   towards abandoning Selenium all together.
 Ideas:
-⋅⋅⋅* I have had seen some improvement while experimenting with using R or Google Sheets to scrape. One route that may 
-⋅⋅⋅ be worth exploring further is to use the Google Sheets API to write a background script that manages what projection 
-⋅⋅⋅ sites Google needs to scrape and when.  This would export the workload entirely to Google, keep the package Python, 
-⋅⋅⋅ and give quick access to up-to-date projections without having to run a 'get_projections.py' function.
-⋅⋅* R has quick and efficient methods for scraping data.  Consider this a last resort.
+  * I have had seen some improvement while experimenting with using R or Google Sheets to scrape. One route that may 
+   be worth exploring further is to use the Google Sheets API to write a background script that manages what projection 
+   sites Google needs to scrape and when.  This would export the workload entirely to Google, keep the package Python, 
+   and give quick access to up-to-date projections without having to run a 'get_projections.py' function.
+  * R has quick and efficient methods for scraping data.  Consider this a last resort.
 
 Any other ideas? See Issue Tracker for discussion.
