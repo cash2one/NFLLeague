@@ -64,7 +64,6 @@ class Generate():
         self.browser=Page(browser)
         self.season=season
         self.current_season,self.current_week=nflgame.live.current_year_and_week()
-        self.current_season=True if self.current_season == self.season else False
         self.league_id=league_id
         self.owners=dict
         self.player_game=nflgame.combine_game_stats(nflgame.games_gen(int(self.season)))
@@ -103,7 +102,13 @@ class Generate():
             return True
         except:
             return False
-    
+    def init_league(self):
+        self.update_league_settings()
+        self.update_owners()
+        self.update_schedule()
+        for week in range(1,self.current_week+1):
+            self.update_lineups_by_week(week,force=True)
+
     def update_owners(self):
         """
         Scrapes ESPN Fantasy Football website for owner information and generates a json file
