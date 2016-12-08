@@ -63,17 +63,31 @@ THE LOG CHOPPERZ win 118.5-60.9
 ```
 
 ###Help Wanted!
-NFLLeague is a work in progress, and I am always looking for contributors to help test, improve, and expand the functionality of this package.  My background is in numerical analysis and statistics, so professional programmers are desired to help sure up andoptimize the code.  In attempting to expand programmatic access to expert projection data, one bottleneck that I have encountered is the speed in which I can scrape data from projection sources using python and selenium.  I chose Selenium for this project for the sake of uniformity and simplicity of having the package exclusively Python, but due to the length of time it takes to gather projection data from just three sources(ESPN,CBS,Fantasy Pros), it'd be best to find a more efficient method. 
+NFLLeague is a work in progress, and I am always looking for contributors to help test, improve, and expand the functionality of this package.  My background is in numerical analysis and statistics, so professional and/or highly skilled programmers are desired to help sure up and optimize the code.
+
+###Current Issues/Public TODO List
+There are several aspects of NFLLeague that I would like assistance in improving.
+
+####Scraping Expert Projections/Scraping Method in General
+In attempting to expand programmatic access to expert projection data, one bottleneck that I have encountered is the speed in which I can scrape data from projection sources using python and selenium.  I chose Selenium for this project for the sake of uniformity and simplicity of having the package exclusively Python, but due to the length of time it takes to gather projection data from just three sources(ESPN,CBS,Fantasy Pros), it'd be best to find a more efficient method. 
+
 What's been tried:
   * Multithreading to scrape multiple sources at once. Biggest improvement, but still slow and burdensome on resources
   * Using headless browser PhantomGS.  Due to known issues with trying to use PhantomGS and Selenium together, I 
    found it to be unuseable.  Someone more knowledgeable with Selenium may be able find a work around. But I'm leaning
    towards abandoning Selenium all together.
+
 Ideas:
   * I have had seen some improvement while experimenting with using R or Google Sheets to scrape. One route that may 
    be worth exploring further is to use the Google Sheets API to write a background script that manages what projection 
    sites Google needs to scrape and when.  This would export the workload entirely to Google, keep the package Python, 
-   and give quick access to up-to-date projections without having to run a 'get_projections.py' function.
+   and give quick access via API to up-to-date projections without having to run a 'scrape_projections.py' function locally.
   * R has quick and efficient methods for scraping data.  Consider this a last resort.
 
+If we can improve scraping speed of projections in such a way that would integrate nicely into the package as a whole, we might apply it to the rest of the scraping functions in nflleague.update.
+
 Any other ideas? See Issue Tracker for discussion.
+
+####Adding Yahoo Fantasy Sports Functionality
+While it sounds difficult, this would just be a weekend project for someone who wants to create the scraping functions that pull data from Yahoo and save it in a format identical to existing ESPN data.  I personally don't use Yahoo so I have never had the need to do it, but doing so would ultimately allow for more fantasy players to use and help support this package.
+
