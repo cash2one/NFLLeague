@@ -46,12 +46,15 @@ class Player(nflgame.player.Player):
         self.week=week
         
         if type(self.team)==dict:
-            self.team=self.team.get(str(season),{}).get(str(week),'')
-        
-        self.game_eid=data['schedule'].get(str(season),{}).get(str(week),None)
+            self.team=self.team.get(str(season),{}).get(str(week),'UNK')
+        if type(self.position)==dict:
+            self.position=self.position.get(str(season),{}).get(str(week),'UNK')
+        self.game_eid=data['schedule'].get(str(season),{}).get(str(week),'bye')
         self.bye=True if self.game_eid=='bye' else False
         if not self.bye:
-            self.schedule=nflgame.sched.games.get(self.game_eid)
+            self.schedule=nflgame.sched.games.get(self.game_eid,{})
+        else:
+            self.schedule={}
     
     def game_status(self):
         return get_game_status(self.game)
@@ -75,7 +78,7 @@ class Player(nflgame.player.Player):
     def formatted_stats(self):
         stats=self.statistics()
         try:
-            print("{} {} {} {}".format(self.full_name,self.position,self.team,self.game_status()))
+            print("{} [{}] {} {} {}".format(self.full_name,self.player_id,self.position,self.team,self.game_status()))
             print("\tScore: {}".format(self.statistics().score()))
             for k,v in self.statistics().stats.iteritems():
                 print("\t{}: {} ({} pts)".format(k,v,self.statistics().scoring().get(k,0)))
@@ -92,6 +95,7 @@ class PlayerWeek(Player):
         self._plays=None
         
         if not self.bye:
+            print(self.schedule.get('eid'))
             self.game=nflgame.game.Game(self.schedule.get('eid'))
         else:
             self.game='bye'
@@ -121,7 +125,8 @@ class PlayerWeek(Player):
         #Returns dictionary of historical and current player stats which can be quickly accessed by [season][week]
         #Will be cached locally for fast retreival if stats have not been accessed before.
         #Use self.statistics() for current weeks stats when live functionality is important. 
-        
+        #Completely independent of fantasy league
+
         #For all weeks. Regular season only for now.
         if weeks==None:
             weeks=[]
@@ -402,7 +407,7 @@ def gen_player_stats(season,week,player_id,team,game=None):
     fp='nflleague/espn-league-json/cache/C{}.json'
     filepath=fp.format(player_id)
     cache=get_json(filepath,{})
-    game_eid=nflleague.players[player_id]['schedule'][str(season)][str(week)]
+    game_eid=nflleague.players[player_id]['schedule'].get(str(season),{}).get(str(week),'bye')
     week,season=str(week),str(season)
     if season not in cache.keys():
         cache[season]={}
@@ -421,21 +426,20 @@ def gen_player_stats(season,week,player_id,team,game=None):
             return {}
         if game_status in ['PLAYING','HALFTIME'] or week not in cache[season].keys():
             player=None
-            if player_id in nflgame.players:
-                #player=player_correct(season,week,nflgame.players[player_id])
-                player=nflgame.players[player_id]
+            if player_id in nflleague.players:
+                player=Player(season,week,player_id)
             print('Caching Player {}, {} {} (Y:{}  W:{})'.format(player.full_name,team,player.position,season,week))
             play_stats=nflgame.combine_max_stats([game])
-            players=list(play_stats.filter(playerid=player_id))
-            if len(players) != 0:
-                cache[season][week]=players[0].stats  
+            player_stats=list(play_stats.filter(playerid=player_id))
+            if len(player_stats) != 0:
+                cache[season][week]=player_stats[0].stats  
             else:
                 cache[season][week]={}
-            
             #Any specialty stats that need to be broken down by play or some other metric can be added here
             if player.position=='K':
                 #Need to break down kicker scoring by play here because most efficient way to find length of indvl field goal.
                 #Adds num of field goals made in 0-39,40-49,50+ ranges to kicker's stats dictionary.  
+                print('Calculating Kicker Stats')
                 play_stats=nflgame.combine_plays([game])
                 plays=list(filter(lambda p: p.has_player(player_id),play_stats))
                 cache[season][week]=defaultdict(int,cache[season][week])
@@ -485,30 +489,30 @@ def gen_defense_stats(season,week,team,game=None):
                     cache[season][week][dst_plyr.playerid]=dst_plyr._stats
             else:
                 cache[season][week]={}
+            #combines all individual player stats dicts into one team stats category for access w/o initing player objs
+            cache[season][week]['defense']=reduce(lambda x,y:x+y,[Counter(dstats) for dstats in cache[season][week].values()])
             
             #team stats
-            cache[season][week]['defense']={}
             if game.home == team:
                 cache[season][week]['defense']['defense_PA']=game.score_away
                 opponent=game.away
             if game.away == team:
                 cache[season][week]['defense']['defense_PA']=game.score_home
                 opponent=game.home
+            
             cache[season][week]['defense']['defense_rush'],cache[season][week]['defense']['defense_pass']=0,0
             dst_team=filter(lambda t:t.team==opponent,players)
             for off_p in dst_team:
                 try:
+                    #Find better way
                     DEF=['DE','DT','CB','SS','FS','MLB','OLB','ILB','DB','T','RT','LT','S','LB']
-                    if player_correct(season,week,off_p).player.position not in DEF:
+                    if off_p.player.position not in DEF:
                         cache[season][week]['defense']['defense_rush']+=off_p.rushing_yds
                         cache[season][week]['defense']['defense_pass']+=off_p.passing_yds+off_p.passing_sk_yds
-                except:
-                    pass
+                except Exception as err:
+                    print(err)
             TYDA=cache[season][week]['defense']['defense_rush']+cache[season][week]['defense']['defense_pass']
             cache[season][week]['defense']['defense_TYDA']=TYDA
-            
-            #combines all individual player stats dicts into one team stats category for access w/o initing player objs
-            cache[season][week]['defense']=reduce(lambda x,y:x+y,[Counter(dstats) for dstats in cache[season][week].values()])
             
             save_json(filepath,cache)
     return cache[season][week]

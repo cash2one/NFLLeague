@@ -122,9 +122,13 @@ class Settings(object):
         self.roster=Category(_load_settings(self.league_id,self.season,'roster'))
         self.basic=Category(_load_settings(self.league_id,self.season,'basic'))
     
+    def positions(self,Bench=False,IR=False):
+        func=lambda x: x not in ['' if Bench else 'Bench', '' if IR else 'IR']
+        return filter(func,self.roster.actives)
+
     def divisions(self):
         #TODO scrape divisions
         return ['NORTHNORTHEASTERN','GREAT LAKES REGION']
     
     def n_teams(self):
-        return self.basic.number_of_teams
+        return int(self.basic.number_of_teams)

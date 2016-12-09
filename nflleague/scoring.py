@@ -50,6 +50,11 @@ class LeagueScoring(object):
             return (int(val)/5)*(float(self.points['passing_yds_py5']))
         elif key == 'passing_int' or key == 'defense_int':
             return val*float(self.points.get('interception',0))
+        elif key == 'defense_fgblk' or key == 'defense_xpblk' or key == 'defense_puntblk':
+            return val*float(self.points.get('defense_blkk',0))
+        #potential problem here
+        elif key == 'defense_misc_tds':
+            return val*float(self.points.get('defense_blkkrtd',0))
         elif key == 'kickret_yds' or key == 'puntret_yds':
             return (int(val)/25)*float(self.points.get(key,0))
         elif key == 'defense_PA':
@@ -156,10 +161,14 @@ class DefenseStatistics(LeagueScoring):
             self._stats=defaultdict(int,self._stats)
             for plyr in self.game.max_player_stats():
                 if plyr.team != self.team:
-                    if plyr.player.position in ['QB','WR','RB','TE']:
-                       self._stats['yds_allowed_pass_{}'.format(plyr.player.position.lower())]+=plyr.passing_yds
-                       self._stats['yds_allowed_rush_{}'.format(plyr.player.position.lower())]+=plyr.rushing_yds
-                       self._stats['yds_allowed_rec_{}'.format(plyr.player.position.lower())]+=plyr.receiving_yds
+                    if plyr.player==None:
+                        pos=nflleague.team_rosters.guess_pos(plyr)
+                    else:
+                        pos=plyr.player.position
+                    if pos in ['QB','WR','RB','TE']:
+                       self._stats['yds_allowed_pass_{}'.format(pos.lower())]+=plyr.passing_yds
+                       self._stats['yds_allowed_rush_{}'.format(pos.lower())]+=plyr.rushing_yds
+                       self._stats['yds_allowed_rec_{}'.format(pos.lower())]+=plyr.receiving_yds
         return self._stats
 
 #deprecated

@@ -1,0 +1,6 @@
+.*.swp
+doc
+MANIFEST
+reports/*
+*.pyc
+nflleague/espn-league-json/cache

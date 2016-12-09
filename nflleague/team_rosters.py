@@ -1,6 +1,6 @@
 import nflgame
 import json
-
+import collections
 from nflleague.functions import get_json,save_json
 
 def load_schedule_info(season,week,team):
@@ -27,12 +27,12 @@ def guess_pos(plyr):
                     (plyr.punting_tot, 'P')]
             return sorted(stats, reverse=True)[0][1]
     try:
-        position=plyr.guess_position()
+        position=plyr.guess_position
         if position in ['',None]:
-            position='UNK'
+            position='UNKNOWN POS'
     except Exception as err:
         print(err)
-        position='UNK'
+        position='UNKNOWN POS'
     return position
 
 def identity_player():
@@ -46,7 +46,7 @@ def identity_player():
               "height": 0,
               "last_name": "N/A",
               "number": 0,
-              "position": "NA",
+              "position": {},
               "profile_id": 000000,
               "profile_url": "http://www.nfl.com/",
               "team": {},
@@ -65,13 +65,15 @@ def generate_week_players():
         for pid,plyr in nflgame_players.iteritems():
             if plyr.get('team',False):
                 plyr['team']={str(s):{str(w):plyr.get('team','NUTTIN')}}
+                plyr['position']={str(s):{str(w):plyr.get('position','NONE')}}
             else:
+                plyr['position']={}
                 plyr['team']={}
             plyr['schedule']={}
             plyr['gsis_name']='.'.join([plyr['first_name'][0],plyr['last_name']])
             week_players[pid]=plyr
     
-    for season in range(2010,s+1):
+    for season in range(2016,s+1):
         for week in range(1,18):
             if (season,week) == (s,w):
                 break
@@ -83,18 +85,23 @@ def generate_week_players():
                     print('S:{}  W:{} passed'.format(season,week))
                 else:
                     week_players['00-0000000']['team'][str(season)][str(week)]='NA'
+                    week_players['00-0000000']['position'][str(season)][str(week)]='NA'
             else:
                 week_players['00-0000000']['team'][str(season)]={str(week):'NA'}
+                week_players['00-0000000']['position'][str(season)]={str(week):'NA'}
 
             games=nflgame.games(season,week=week)
             players=nflgame.combine_max_stats(games) 
             for plyr in players:
                 team=nflgame.standard_team(plyr.team)
                 if plyr.player!=None:
+                    position=guess_pos(plyr)
                     if str(season) not in week_players[plyr.playerid]['team'].keys():
                         week_players[plyr.playerid]['team'][str(season)]={str(week):team}
+                        week_players[plyr.playerid]['position'][str(season)]={str(week):position}
                     else:
                         week_players[plyr.playerid]['team'][str(season)][str(week)]=team
+                        week_players[plyr.playerid]['position'][str(season)][str(week)]=position
 
         #Fill in any unknown team weeks with most likely correct team
         for pid,plyr in week_players.iteritems():
@@ -102,7 +109,16 @@ def generate_week_players():
                 continue
             if plyr.get('position','')=='D/ST':
                 continue
-
+            
+            #Only 1 position per season, so find most commonly guessed position and set to all games.  For now
+            count=collections.Counter()
+            for pos in plyr['position'][str(season)].values():
+                count[pos]+=1
+            position=sorted(count.items(),key=lambda x:x[1],reverse=True)[0][0]
+            for i in range(1,18):
+                plyr['position'][str(season)][str(i)]=position
+            
+            #Fill in Teams
             act=[]
             for week in range(1,18):
                 if str(week) in plyr['team'][str(season)].keys():
@@ -122,7 +138,7 @@ def generate_week_players():
                 if not team_week:
                     plyr['team'][str(season)][str(i)]=plyr['team'][str(season)][str(i-1)]
             week_players[pid]=plyr
-        
+
         #Build Defenses.  Defenses will have constant team and position
         for did in nflgame.teams:
             if did[0] not in week_players:

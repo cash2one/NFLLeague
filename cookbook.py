@@ -1,5 +1,7 @@
 import nflleague
 
+
+#To output the results of any given week from any given year, say my team in week 4 of the 2015 season:
 league=nflleague.league.League(203986,2015)
 game=league.team('CHAD MORTON').week(4)
 
@@ -10,4 +12,5 @@ for plyr,opp_plyr in zip(game.lineup,game.opponent().lineup):
 print('%s %s %.1f-%.1f' % (game.team_name,'win' if game.win() else 'lose',game.get_score(),game.opponent().get_score()))
 
 
-                            
+
+                           
