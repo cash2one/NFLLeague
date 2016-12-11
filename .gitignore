@@ -1,6 +1,10 @@
-.*.swp
-doc
-MANIFEST
-reports/*
-*.pyc
-nflleague/espn-league-json/cache
+**/*.swp
+**/*.swo
+**/*.png
+**/*.pyc
+*.log
+geckodriver
+reports/**
+nflleague/espn-league-json/*
+!nflleague/espn-league-json/projections
+
