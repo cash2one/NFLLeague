@@ -11,27 +11,24 @@ import os
 import scipy.stats
 import collections
 
-team=[]
-#TODO Replace with nflleague.league.Settings(x,y).rosters.{actives/gsis_actives}
-ACTIVES=['QB','RB','RB','WR','WR','TE','FLEX','D/ST','K']
-GSIS_POS=['QB','RB1','RB2','WR1','WR2','TE','FLEX','D/ST','K']
 #TODO cache win/loss
-class Week(nflleague.team.Team):
-    def __init__(self,week,schedule,team):
-        super(Week,self).__init__(team.owner_info,team.league)
-        self.week=week
-        self.team=self.team_id
-        self._opponent=schedule['Opponent']
+class Week(object):
+    def __init__(self,week,team):
+        for k,v in team.__dict__.iteritems():
+            self.__dict__[k]=v
+        
+        self.week=str(week)
+        self.schedule=self.schedule.get(self.week,{})
+        self._opponent=nflleague.standard_team_id(self.league_id,self.season,self.schedule.get('Opponent',None))
         self.__opponent_obj=None
-        self.home=bool(schedule['Home'])
-        self.settings=team.league.settings 
+        self.home=bool(self.schedule.get('Home',False))
         #TODO Reorganize.  I don't like this complex init.  _load_week function for json?
         data=json.loads(open('nflleague/espn-league-json/{}/{}/lineup_by_week.json'.format(self.league_id,self.season)).read()) 
-        data=data[str(self.team_id)][str(self.week)]
+        data=data.get(self.team_id,{}).get(self.week,{}) 
         
         #sIs:slot/playerId or name/score
         self.lineup=[]
-        for slt in GSIS_POS:
+        for slt in self.settings.gsis_positions():
             if slt in data.keys():
                 if slt != 'D/ST':
                     self.lineup.extend([PlayerTeam(data[slt],self)])
@@ -44,15 +41,15 @@ class Week(nflleague.team.Team):
                     self.lineup.extend([DefenseWeekEmpty(slt,self)])
         
         self.bench=[]
-        for sIs in data['Bench']:
+        for sIs in data.get('Bench',{}):
             if sIs['player_id'].split(" ")[-1]!='D/ST':
                 self.bench.extend([PlayerTeam(sIs,self)])
             else:
                 self.bench.extend([DefenseWeek(sIs,self)])
         
-        try:
-            self.IR=PlayerTeam(data['IR'],self)
-        except KeyError:
+        if 'IR' in data: 
+            self.IR=PlayerTeam(data.get('IR'),self)
+        else:
             self.IR=None
     
     def get_all(self,IR=False):
@@ -62,11 +59,13 @@ class Week(nflleague.team.Team):
             return self.lineup+self.bench
     
     def get_score(self):
-        return sum([p.score for p in self.lineup])
+        return sum([p.statistics().score() for p in self.lineup])
 
     def opponent(self):
+        if self._opponent==None:
+            return None
         if self.__opponent_obj==None:
-            self.__opponent_obj=self.league.team(self._opponent).week(self.week)
+            self.__opponent_obj=self._teams.get(self._opponent).week(self.week)
         return self.__opponent_obj
 
     def win(self):
@@ -93,14 +92,14 @@ class Week(nflleague.team.Team):
         optimized=sorted(optimized, key=lambda x: x[1],reverse=True)
         
         optimal=list()
-        for slot in ACTIVES:
+        for slot in self.settings.positions():
             for p in optimized:
                 if p[0].position == slot and p not in optimal:
                     optimal.append(p)
                     break
         
         flex=[p for p in optimized if p not in optimal and p[0].position in ['WR','RB','TE']][0]
-        optimal.insert(ACTIVES.index('FLEX'),flex)
+        optimal.insert(self.settings.positions().index('FLEX'),flex)
         return optimal
 
     def mins_remaining(self):

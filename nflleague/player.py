@@ -95,7 +95,6 @@ class PlayerWeek(Player):
         self._plays=None
         
         if not self.bye:
-            print(self.schedule.get('eid'))
             self.game=nflgame.game.Game(self.schedule.get('eid'))
         else:
             self.game='bye'
@@ -262,7 +261,6 @@ class DefenseWeek(Defense):
         self._stats=None
         self._projs=None
         self._players=None
-        print(self.gsis_name) 
         if not self.bye:
             self.game=nflgame.game.Game(self.game_eid)
         else:
@@ -439,7 +437,6 @@ def gen_player_stats(season,week,player_id,team,game=None):
             if player.position=='K':
                 #Need to break down kicker scoring by play here because most efficient way to find length of indvl field goal.
                 #Adds num of field goals made in 0-39,40-49,50+ ranges to kicker's stats dictionary.  
-                print('Calculating Kicker Stats')
                 play_stats=nflgame.combine_plays([game])
                 plays=list(filter(lambda p: p.has_player(player_id),play_stats))
                 cache[season][week]=defaultdict(int,cache[season][week])

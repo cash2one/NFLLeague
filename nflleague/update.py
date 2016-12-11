@@ -279,20 +279,23 @@ class Generate():
         #schedule={1:[[11,3], ... ],2:[[4,6]...],...}
         for row in schedule_table.find_elements_by_tag_name('tr'):
             try:
-                if row.text.split(" ")[3] == 'PLAYOFFS':
+                if row.text.split(" ")[3] == 'SETUP':
                     break
             except IndexError:
                 pass
             if row.get_attribute('class')=='tableHead':
-                current_week=row.text.split(" ")[1]
+                current_week=row.find_element_by_tag_name('a').get_attribute('name')
+                current_week=current_week[7:]
                 schedule[current_week]={}
             elif row.get_attribute('class')!='tableSubHead' and row.get_attribute('bgcolor')!='#ffffff':
-                string='{}(.*){}'.format('teamId=','&seasonId')
-                temp=[int(re.search(string,col.find_element_by_tag_name('a').get_attribute('href')).group(1))\
-                                                for i,col in enumerate(row.find_elements_by_tag_name('td')) if i in [0,3]]
-                schedule[current_week][temp[0]]={'Opponent':temp[1],'Home':False}
-                schedule[current_week][temp[1]]={'Opponent':temp[0],'Home':True}
-
+                try:
+                    string='{}(.*){}'.format('teamId=','&seasonId')
+                    temp=[int(re.search(string,col.find_element_by_tag_name('a').get_attribute('href')).group(1))\
+                                                    for i,col in enumerate(row.find_elements_by_tag_name('td')) if i in [0,3]]
+                    schedule[current_week][temp[0]]={'Opponent':temp[1],'Home':False}
+                    schedule[current_week][temp[1]]={'Opponent':temp[0],'Home':True}
+                except Exception as err:
+                    print(err)
         with open(filename,'w') as out:
             json.dump(schedule,out,indent=4,sort_keys=True,separators=(',',': '),ensure_ascii=True)
         out.close()
@@ -388,7 +391,7 @@ class Generate():
         elif site=='FantasyPros':
             self.__fantasy_pros(week)
         now = datetime.now()
-        with open('nflleague/projections/updated.txt','w') as out:
+        with open('nflleague/espn-league-json/projections/updated.txt','w') as out:
             out.write('{}/{} {}:{}'.format(now.month,'0{}'.format(now.day) if now.day<10 else now.day,\
                                                        now.hour, '0{}'.format(now.minute) if now.minute < 10 else now.minute))
         out.close()

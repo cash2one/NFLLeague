@@ -8,49 +8,60 @@ from scipy.misc import imread
 import matplotlib.cbook as cbook
 import collections
 
-class Team(nflleague.league.League):
-    def __init__(self,owner_info,league):
-        super(Team,self).__init__(league.league_id,league.season)
-        self.owner_info=owner_info 
-        self.league=league
-        
-        self.team_id=int(owner_info.get('team_id'))
+def _load_logo(league_id,season,team_id):
+    logo_fp='{}/nflleague/espn-league-json/{}/{}/logos/{}.jpg'.format(os.getcwd(),league_id,season,team_id)
+    if not os.path.isfile(logo_fp):
+        logo_fp='{}/nflleague/defaults/default_logo.jpg'.format(os.getcwd())
+    return logo_fp
+
+class FantasyTeam(object):
+    def __init__(self,league_id,season,team_id):
+        self.league_id=league_id
+        self.season=season
+        self.team_id=team_id
+        owner_info=nflleague.league._json_load_owners(self.league_id,self.season).get(str(self.team_id),{})
+
         self.team_abv=owner_info.get('team_abv')
         self.team_name=owner_info.get('team_name')
         self.team_div=owner_info.get('team_div')
         self.owner=owner_info.get('team_owner')
-        
-        self.logo='{}/nflleague/espn-league-json/{}/{}/logos/{}.jpg'.format(os.getcwd(),self.league_id,self.season,self.team_id)
-        if not os.path.isfile(self.logo):
-            self.logo='{}/nflleague/defaults/default_logo.jpg'.format(os.getcwd())
 
         self.schedule={}
-        for key in league._league_schedule:
-            for keykey in league._league_schedule[key]:
-                if str(keykey) == str(self.team_id):
-                    self.schedule[int(key)]=league._league_schedule[str(key)][str(keykey)]
+        json_sched=nflleague.league._json_load_schedule(self.league_id,self.season)
+        for week,sched in json_sched.iteritems():
+            self.schedule[str(week)]=sched.get(str(self.team_id),{})
 
-        self._week_data=json.loads(open('nflleague/espn-league-json/{}/{}/lineup_by_week.json'.format(\
-                                                                                    self.league_id,self.season)).read())
+        self.logo=_load_logo(self.league_id,self.season,self.team_id)
         self._weeks={}
-
+         
     #TODO Add REG and PLAYOFFS, and option to send list (LOW)    
     def weeks(self):
         #Generate entire set of week objects if not already and return list of all weeks played
-        if len(self._weeks.keys()) != len(self._week_data.keys()):
-            for week in self._week_data[str(self.team_id)]:
-                try:
-                    self._weeks[int(week)]=nflleague.week.Week(int(week),self.schedule[int(week)],self)
-                except KeyError:
-                    pass
+        if self._weeks=={}:
+            for week,sched in self.schedule.iteritems():
+                self._weeks[week]=nflleague.week.Week(week,self)
         self._weeks=collections.OrderedDict(sorted(self._weeks.items()))
         return self._weeks.values()
-
+        
     def week(self,week):
         #Create specific week object if not already and return 
-        if week not in self._weeks.keys():
-            self._weeks[int(week)]=nflleague.week.Week(week,self.schedule[int(week)],self)
-        return(self._weeks[int(week)])
+        if str(week) not in self._weeks.keys():
+            self._weeks[str(week)]=nflleague.week.Week(week,self)
+        return(self._weeks[str(week)])
+
+    def __str__(self):
+        return '{} ({})'.format(self.team_name,self.team_abv)
+
+class Team(FantasyTeam):
+    #def __init__(self,owner_info,league):
+    #    super(Team,self).__init__(league.league_id,league.season)
+    #    self.league=league
+    def __init__(self,team_id,league):
+        super(Team,self).__init__(league.league_id,league.season,team_id)
+        #pass all league vars, but avoid passing previously inited Team objects to new Team object
+        for k,v in league.__dict__.iteritems():
+            #if k!='_teams':
+            self.__dict__[k]=v
     
     def record(self):
         #Takes insane amount of time to calculate. Cache
@@ -65,7 +76,4 @@ class Team(nflleague.league.League):
             else:
                 record['T']+=1
         return record
-     
-    def __str__(self):
-       return ' / '.join(['{}: {}'.format(k,v) for k,v in self.owner_info.iteritems()])
 

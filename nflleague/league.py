@@ -16,50 +16,46 @@ from collections import defaultdict
 #   Would make interface more intuitive and eliminate need for confusing 'Seasons' dictionary with different league objects
 #   Might take much longer to initialize Leauge Objet.  Could avoid, though
 
-def _create_owners(league_id,season):
-    return json.loads(open('nflleague/espn-league-json/{}/{}/owner_info.json'.format(league_id,season)).read())
-
-def _create_league(league_id):
-    #TODO Change to _load_settings and implement in Settings.  Use to manage all settings
-    return {'league_name':'Penn Champions League'}
+def _json_load_owners(league_id,season):
+    return get_json('nflleague/espn-league-json/{}/{}/owner_info.json'.format(league_id,season),{})
 
 def _load_settings(league_id,season,category):
     settings=get_json('nflleague/espn-league-json/{}/{}/settings.json'.format(league_id,season),{})
-    
     assert settings!={},'Settings Not Created.'
-    
     return settings.get(category,{})
 
+def _json_load_schedule(league_id,season):
+    schedule=get_json('nflleague/espn-league-json/{}/{}/schedule.json'.format(league_id,season),{})
+    assert schedule!={},'Schedule Not Created.'
+    return schedule
 
 
 class League(object):
     def __init__(self,league_id,season):
         self.season=int(season)
         self.league_id=int(league_id)
-        self._league_info=_create_league(self.league_id)
-        self.league_name=self._league_info.get('league_name','NA')
-        self._owner_info=_create_owners(self.league_id,self.season)
-        self._league_schedule=json.loads(open('nflleague/espn-league-json/{}/{}/schedule.json'.format(\
-                                                                                     self.league_id,self.season)).read())
-        self._scoring=''
-        self._teams={} 
+        self.team_ids=_json_load_owners(self.league_id,self.season).keys()
         self.settings=Settings(self.league_id,self.season)
-    
+        self.league_name=self.settings.basic.league_name 
+       
+        self._teams={}
+
     def teams(self):
         #returns list of all Team objects in league. Creates if not exisitent
-        if len(self._teams.keys()) != len(self._owner_info.keys()):
-            for key,value in self._owner_info.iteritems():
-                self._teams[key]=nflleague.team.Team(value,self)
+        for tid in self.team_ids:
+            if tid not in self._teams:
+                self._teams[tid]=nflleague.team.Team(tid,self)
         return self._teams.values()
 
     def team(self,team):
         #returns specified Team object
-        for key,value in self._owner_info.iteritems():
-            if team in value.values():
-                return nflleague.team.Team(value,self)
-    
+        tid=nflleague.standard_team_id(self.league_id,self.season,team)
+        if tid not in self._teams:
+            self._teams[tid]=nflleague.team.Team(tid,self)
+        return self._teams[tid]
+          
     def team_ids(self):
-        return self._owner_info.keys()
+        return self.team_ids
     
     def divisions(self):
         divs={}
@@ -118,13 +114,20 @@ class Settings(object):
     def __init__(self,league_id,season):
         self.league_id=league_id
         self.season=season
-        rost=_load_settings(self.league_id,self.season,'roster')
         self.roster=Category(_load_settings(self.league_id,self.season,'roster'))
         self.basic=Category(_load_settings(self.league_id,self.season,'basic'))
-    
+        self._schedule=Category(_json_load_schedule(self.league_id,self.season))    
+     
+    def schedule(self,week,team_id):
+        return self._schedule.get(str(week),{}).get(str(team_id),0)
+
     def positions(self,Bench=False,IR=False):
         func=lambda x: x not in ['' if Bench else 'Bench', '' if IR else 'IR']
         return filter(func,self.roster.actives)
+    
+    def gsis_positions(self,Bench=False,IR=False):
+        func=lambda x: x not in ['' if Bench else 'Bench', '' if IR else 'IR']
+        return filter(func,self.roster.gsis_actives)
 
     def divisions(self):
         #TODO scrape divisions
