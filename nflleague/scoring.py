@@ -68,7 +68,7 @@ class LeagueScoring(object):
             elif val <= 45: return self.points.get('defense_PA_35_45',0)
             elif val > 46: return self.points.get('defense_PA_46',0)
         elif key == 'defense_TYDA':
-            if val <= 99: return self.point.get('defense_YA_99',0)
+            if val <= 99: return self.points.get('defense_YA_99',0)
             elif val <= 199: return self.points.get('defense_YA_199',0)
             elif val <= 299: return self.points.get('defense_YA_299',0)
             elif val <= 349: return self.points.get('defense_YA_349',0)
@@ -90,8 +90,8 @@ class LeagueScoring(object):
             return self.points.get(key,0)
         elif key == 'receiving_yds_100' and self._stats.get('receiving_yds',0) >= 100:
             return self.points.get(key,0)
-        elif key == 'kicking_fgm':
-            return 0
+        elif key == 'kicking_fgm_proj':
+            return float(self.points.get('kicking_fgm_0_39',0))*val
         return float(self.points.get(key,0))*val
 
     @property
@@ -192,8 +192,7 @@ class DefenseProjections(DefenseStatistics):
     def __init__(self,projection_stats,defense,system):
         self.team=defense.team
         self.game=defense.game
-        self.points=_load_scoring(defense.league_id,defense.season,system)['defense']
-        
+        self.points=_load_scoring(defense.league_id,defense.season,defense=True,system=system)
         self._stats=projection_stats
         
 class Projections(dict):
