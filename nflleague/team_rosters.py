@@ -64,7 +64,8 @@ def generate_week_players():
     if len(week_players)==1:
         for pid,plyr in nflgame_players.iteritems():
             if plyr.get('team',False):
-                plyr['team']={str(s):{str(w):plyr.get('team','NUTTIN')}}
+                team=plyr.get('team') if plyr.get('team')!='JAC' else 'JAX'
+                plyr['team']={str(s):{str(w):team}}
                 plyr['position']={str(s):{str(w):plyr.get('position','NONE')}}
             else:
                 plyr['position']={}
@@ -94,6 +95,8 @@ def generate_week_players():
             players=nflgame.combine_max_stats(games) 
             for plyr in players:
                 team=nflgame.standard_team(plyr.team)
+                if plyr.name=='A.Robinson':
+                    print(plyr.name,week,team)
                 if plyr.player!=None:
                     position=guess_pos(plyr)
                     if str(season) not in week_players[plyr.playerid]['team'].keys():
@@ -134,9 +137,9 @@ def generate_week_players():
                 act[0]=T
                 plyr['team'][str(season)]['1']=T
             
-            for i,team_week in enumerate(act,start=1):
+            for i,team_week in enumerate(act,start=0):
                 if not team_week:
-                    plyr['team'][str(season)][str(i)]=plyr['team'][str(season)][str(i-1)]
+                    plyr['team'][str(season)][str(i+1)]=plyr['team'][str(season)][str(i)]
             week_players[pid]=plyr
 
         #Build Defenses.  Defenses will have constant team and position
