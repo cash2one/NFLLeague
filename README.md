@@ -62,6 +62,16 @@ K:      P.Dawson        2.0         J.Tucker        10.2
 THE LOG CHOPPERZ win 118.5-60.9
 ```
 
+##Check Out Some Project Examples!
+Here are a few examples of some of the ways that I've used NFLLeague within my own Fantasy league:
+   Every week, I post a LIVE infographic, which I call "Weekly Matchup Showcase".  It is a general but detailed look 
+   at real-time scoring, information, and statistics in a head-to-head format.  I use APScheduler to schedule lineup 
+   and projection updates all throughout the week, and on gamedays, NFLLeague's ability to rapidly access statistics 
+   allows me to generate the repost and post updates up to every 15 seconds. Here is a [recent example.](https://www.seventhirtyseven.net/WMS123456201614.png)
+
+   Here is another report detailing the scoring breakdown and statistics for the 2016 season per team
+
+
 ###Help Wanted!
 NFLLeague is a work in progress, and I am always looking for contributors to help test, improve, and expand the functionality of this package.  My background is in numerical analysis and statistics, so professional and/or highly skilled programmers are desired to help sure up and optimize the code.
 
