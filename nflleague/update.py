@@ -625,7 +625,7 @@ class Generate():
         scoring['defense']['defense_rush']=0
         scoring['defense']['defense_pass']=0
         """
-        scoring={'passing_yds':0.04,
+udo        scoring={'passing_yds':0.04,
                  'passing_yds_py5':0.2,
                  'passing_tds':4.0, 
                  'passing_int':-2.0, 

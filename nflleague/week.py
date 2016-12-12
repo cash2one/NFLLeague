@@ -22,6 +22,7 @@ class Week(object):
         self._opponent=nflleague.standard_team_id(self.league_id,self.season,self.schedule.get('Opponent',None))
         self.__opponent_obj=None
         self.home=bool(self.schedule.get('Home',False))
+        
         #TODO Reorganize.  I don't like this complex init.  _load_week function for json?
         data=json.loads(open('nflleague/espn-league-json/{}/{}/lineup_by_week.json'.format(self.league_id,self.season)).read()) 
         data=data.get(self.team_id,{}).get(self.week,{}) 
@@ -65,7 +66,11 @@ class Week(object):
         if self._opponent==None:
             return None
         if self.__opponent_obj==None:
-            self.__opponent_obj=self._teams.get(self._opponent).week(self.week)
+            if self._opponent in self._teams:
+                self.__opponent_obj=self._teams.get(self._opponent).week(self.week)
+            else:
+                self.__opponent_obj=nflleague.team.FantasyTeam(self.league_id,self.season,self._opponent).week(self.week)
+        
         return self.__opponent_obj
 
     def win(self):

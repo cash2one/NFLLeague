@@ -14,26 +14,25 @@ def _load_logo(league_id,season,team_id):
         logo_fp='{}/nflleague/defaults/default_logo.jpg'.format(os.getcwd())
     return logo_fp
 
-class FantasyTeam(object):
-    def __init__(self,league_id,season,team_id):
-        self.league_id=league_id
-        self.season=season
-        self.team_id=team_id
-        owner_info=nflleague.league._json_load_owners(self.league_id,self.season).get(str(self.team_id),{})
-
-        self.team_abv=owner_info.get('team_abv')
-        self.team_name=owner_info.get('team_name')
-        self.team_div=owner_info.get('team_div')
-        self.owner=owner_info.get('team_owner')
-
-        self.schedule={}
-        json_sched=nflleague.league._json_load_schedule(self.league_id,self.season)
-        for week,sched in json_sched.iteritems():
-            self.schedule[str(week)]=sched.get(str(self.team_id),{})
-
+         
+class Team(object):
+    def __init__(self,team_id,league):
+        #pass all league vars, but avoid passing previously inited Team objects to new Team object
+        for k,v in league.__dict__.iteritems():
+            self.__dict__[k]=v
+        self.team_id=nflleague.standard_team_id(self.league_id,self.season,team_id)
+        self.team_abv=self.owner_info.get(self.team_id,{}).get('team_abv','')
+        self.team_name=self.owner_info.get(self.team_id,{}).get('team_name','')
+        self.team_div=self.owner_info.get(self.team_id,{}).get('team_div','')
+        self.owner=self.owner_info.get(self.team_id,{}).get('team_owner','')
+        temp={}
+        for week,sched in self.schedule.iteritems():
+            temp[str(week)]=sched.get(self.team_id,{})
+        self.schedule=temp
+        
         self.logo=_load_logo(self.league_id,self.season,self.team_id)
         self._weeks={}
-         
+
     #TODO Add REG and PLAYOFFS, and option to send list (LOW)    
     def weeks(self):
         #Generate entire set of week objects if not already and return list of all weeks played
@@ -49,20 +48,6 @@ class FantasyTeam(object):
             self._weeks[str(week)]=nflleague.week.Week(week,self)
         return(self._weeks[str(week)])
 
-    def __str__(self):
-        return '{} ({})'.format(self.team_name,self.team_abv)
-
-class Team(FantasyTeam):
-    #def __init__(self,owner_info,league):
-    #    super(Team,self).__init__(league.league_id,league.season)
-    #    self.league=league
-    def __init__(self,team_id,league):
-        super(Team,self).__init__(league.league_id,league.season,team_id)
-        #pass all league vars, but avoid passing previously inited Team objects to new Team object
-        for k,v in league.__dict__.iteritems():
-            #if k!='_teams':
-            self.__dict__[k]=v
-    
     def record(self):
         #Takes insane amount of time to calculate. Cache
         #Update 10-01: With rebuild of players.json time is greatly reduced.  Still not optimized
@@ -76,4 +61,10 @@ class Team(FantasyTeam):
             else:
                 record['T']+=1
         return record
+    
+    def __str__(self):
+        return '{} ({})'.format(self.team_name,self.team_abv)
 
+class FantasyTeam(Team):
+    def __init__(self,league_id,season,team_id):
+        super(FantasyTeam,self).__init__(team_id,nflleague.league.League(league_id,season))

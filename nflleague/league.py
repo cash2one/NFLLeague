@@ -37,7 +37,8 @@ class League(object):
         self.team_ids=_json_load_owners(self.league_id,self.season).keys()
         self.settings=Settings(self.league_id,self.season)
         self.league_name=self.settings.basic.league_name 
-       
+        self.schedule=_json_load_schedule(self.league_id,self.season)       
+        self.owner_info=_json_load_owners(self.league_id,self.season)
         self._teams={}
 
     def teams(self):
@@ -116,7 +117,7 @@ class Settings(object):
         self.season=season
         self.roster=Category(_load_settings(self.league_id,self.season,'roster'))
         self.basic=Category(_load_settings(self.league_id,self.season,'basic'))
-        self._schedule=Category(_json_load_schedule(self.league_id,self.season))    
+        self._schedule=Category(_json_load_schedule(self.league_id,self.season))
      
     def schedule(self,week,team_id):
         return self._schedule.get(str(week),{}).get(str(team_id),0)

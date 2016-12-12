@@ -55,35 +55,7 @@ class Player(nflgame.player.Player):
             self.schedule=nflgame.sched.games.get(self.game_eid,{})
         else:
             self.schedule={}
-    
-    def game_status(self):
-        return get_game_status(self.game)
-    
-    def game_info(self,item):
-        if self.bye:
-            return 'BYE'
-        else:
-            return self.schedule.get(item,'')
-    
-    def mins_remaining(self):
-        if self.game_status() in ['NOT PLAYED','PREGAME']:
-            return 60
-        elif self.game_status() == 'HALFTIME':
-            return 30
-        elif self.game_status() in ['BYE','PLAYED']:
-            return 0
-        elif self.game_status() == 'PLAYING':
-            return int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr)))
-    
-    def formatted_stats(self):
-        stats=self.statistics()
-        try:
-            print("{} [{}] {} {} {}".format(self.full_name,self.player_id,self.position,self.team,self.game_status()))
-            print("\tScore: {}".format(self.statistics().score()))
-            for k,v in self.statistics().stats.iteritems():
-                print("\t{}: {} ({} pts)".format(k,v,self.statistics().scoring().get(k,0)))
-        except Exception as err:
-            print('No stats available for {}'.format(self.full_name))
+
     
 class PlayerWeek(Player):
     def __init__(self,league_id,season,week,player_id):
@@ -100,10 +72,11 @@ class PlayerWeek(Player):
             self.game='bye'
 
     def statistics(self,system='Custom'):
-        stats=gen_player_stats(self.season,self.week,self.player_id,self.team,self.game)
-        if self._stats==None and stats!=False:
-            a,b,c,d,e=self.league_id,self.season,self.position,stats,self.game
-            self._stats=nflleague.scoring.PlayerStatistics(a,b,c,d,e)
+        if self._stats==None:
+            stats=gen_player_stats(self.season,self.week,self.player_id,self.team,self.game)
+            if stats!=False:
+                a,b,c,d,e=self.league_id,self.season,self.position,stats,self.game
+                self._stats=nflleague.scoring.PlayerStatistics(a,b,c,d,e)
         return self._stats
         
     def projections(self,sites=['ESPN','FantasyPros','CBS'],system='Custom'):
@@ -204,6 +177,42 @@ class PlayerWeek(Player):
             return filter(lambda p: p.team==team and p.yardline>=pos,play_gen)
         return filter(lambda p:p.has_player(self.player_id),redzone(self.team,self.game.drives.plays()))
 
+    def game_status(self):
+        return get_game_status(self.game)
+    
+    def game_info(self,item):
+        if self.bye:
+            return 'BYE'
+        else:
+            return self.schedule.get(item,'')
+    
+    def mins_remaining(self):
+        if self.game_status() in ['NOT PLAYED','PREGAME']:
+            return 60
+        elif self.game_status() == 'HALFTIME':
+            return 30
+        elif self.game_status() in ['BYE','PLAYED']:
+            return 0
+        elif self.game_status() == 'PLAYING':
+            return int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr)))
+    
+    def __add__(self,other):
+        assert self.player_id==other.player_id,"Player Id's don't match"
+        assert type(self)==type(other)
+        new_player=self 
+        new_player._stats=self.statistics()+other.statistics()
+        new_player.week=None
+        return new_player
+    
+    def formatted_stats(self):
+        stats=self.statistics()
+        try:
+            print("{} [{}] {} {} {}".format(self.full_name,self.player_id,self.position,self.team,self.game_status()))
+            print("\tScore: {}".format(self.statistics().score()))
+            for k,v in self.statistics().stats.iteritems():
+                print("\t{}: {} ({} pts)".format(k,v,self.statistics().scoring().get(k,0)))
+        except Exception as err:
+            print('No stats available for {}'.format(self.full_name))
 
 #Class for managing owned players within a league.  Contains league,team, and week metadata
 class PlayerTeam(PlayerWeek):
@@ -270,10 +279,11 @@ class DefenseWeek(Defense):
             
     def statistics(self,system='Custom'):
         #Fastest way to access statistics for current week.
-        stats=gen_defense_stats(self.season,self.week,self.team,self.game)
-        if self._stats==None and stats!=False:
-            stats=stats.get('defense',{})
-            self._stats=nflleague.scoring.DefenseStatistics(self.league_id,self.season,self.team,stats,self.game)
+        if self._stats==None:
+            stats=gen_defense_stats(self.season,self.week,self.team,self.game)
+            if stats!=False:
+                stats=stats.get('defense',{})
+                self._stats=nflleague.scoring.DefenseStatistics(self.league_id,self.season,self.team,stats,self.game)
         
         return self._stats
 
@@ -285,12 +295,13 @@ class DefenseWeek(Defense):
             projection=json.loads(open(filename).read())
             try:         
                 #TODO make all internal references to defense of standard name type (i.e. NE vs Patriots)
-                proj=projection[self.full_name]
-            except KeyError:
+                proj=projection[self.gsis_name]
+            except KeyError as err:
+                print(err)
                 proj={}
-            #TODO make generic LeagueScoring Object? 
-            a,b,c,d,e=self.league_id,self.season,self.team,proj,self.game
-            projections[site]=nflleague.scoring.DefenseStatistics(a,b,c,d,e)
+            #DONE make generic LeagueScoring Object 
+            a,b,c,d,e=self.league_id,self.season,'D/ST',proj,'Custom'
+            projections[site]=nflleague.scoring.LeagueScoring(a,b,c,d,e)
         
         return projections
     
@@ -327,6 +338,25 @@ class DefenseWeek(Defense):
                 if plyr!='defense':
                     self._players.append(DefensePlayerWeek(self.meta,plyr,stats[plyr],game=self.game))
         return self._players
+    
+    def game_status(self):
+        return get_game_status(self.game)
+    
+    def game_info(self,item):
+        if self.bye:
+            return 'BYE'
+        else:
+            return self.schedule.get(item,'')
+    
+    def mins_remaining(self):
+        if self.game_status() in ['NOT PLAYED','PREGAME']:
+            return 60
+        elif self.game_status() == 'HALFTIME':
+            return 30
+        elif self.game_status() in ['BYE','PLAYED']:
+            return 0
+        elif self.game_status() == 'PLAYING':
+            return int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr)))
     
     def formatted_stats(self):
         try:
@@ -487,8 +517,11 @@ def gen_defense_stats(season,week,team,game=None):
             else:
                 cache[season][week]={}
             #combines all individual player stats dicts into one team stats category for access w/o initing player objs
-            cache[season][week]['defense']=reduce(lambda x,y:x+y,[Counter(dstats) for dstats in cache[season][week].values()])
-            
+            if not cache[season][week]=={}:
+                val=cache[season][week].values()
+                cache[season][week]['defense']=reduce(lambda x,y:x+y,[Counter(dstats) for dstats in val])
+            else:
+                cache[season][week]['defense']={}
             #team stats
             if game.home == team:
                 cache[season][week]['defense']['defense_PA']=game.score_away
