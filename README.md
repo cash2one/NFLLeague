@@ -1,4 +1,4 @@
-NFLLeague is an API for ESPN Fantasy Football which harnesses the power of BurntSushi's nflgame.  By utilizing several key features of nflgame, nflleague offers league-oriented, player-focused methods for rapidly accessing a wide range of ESPN and NFL player data. NFLLeague is ideal for those who are interested in performing analysis in a league-wise fashion, researching league historical data, or accessing real-time fantasy stats and scores.
+NFLLeague is an API for ESPN Fantasy Football which harnesses the power of [BurntSushi](https://github.com/BurntSushi)'s nflgame.  By utilizing several key features of nflgame, nflleague offers league-oriented, player-focused methods for rapidly accessing a wide range of ESPN and NFL player data. NFLLeague is ideal for those who are interested in performing analysis in a league-wise fashion, researching league historical data, or accessing real-time fantasy stats and scores.
 
 To gather ESPN data for your league, substitute your league information and run the following:
 ```python
@@ -67,11 +67,14 @@ Here are a few examples of some of the ways that I've used NFLLeague within my o
 
    Every week, I post a LIVE infographic, which I call "Weekly Matchup Showcase".  It is a general but detailed look 
    at real-time scoring, information, and statistics in a head-to-head format.  I use APScheduler to schedule lineup 
-   and projection updates all throughout the week, and on gamedays, NFLLeague's ability to rapidly access statistics 
-   allows updates to be posted as often as every 15 seconds. Here is a [recent example.](https://www.seventhirtyseven.net/WMS123456201614.png)
+   and projection updates all throughout the week.  While games are being played, NFLLeague's ability to rapidly access data
+   allows updated reports to be generated and posted as often as every 15 seconds. Here is a 
+   [recent example.](cs.iusb.edu/~chmorton/WMS123456201614.png) taken after the Sunday games.
 
-   Here is another report detailing the scoring breakdown and statistics for the 2016 season per team
+   [Here](cs.iusb.edu/~chmorton/ScoringReport123456201613.png) is a basic report where I break down the scoring of each 
+   individual team by week and by opponent.
 
+   Code to generate these reports is available upon request.  
 
 ###Help Wanted!
 NFLLeague is a work in progress, and I am always looking for contributors to help test, improve, and expand the functionality of this package.  My background is in numerical analysis and statistics, so professional and/or highly skilled programmers are desired to help sure up and optimize the code.
