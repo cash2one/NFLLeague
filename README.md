@@ -88,7 +88,7 @@ In attempting to expand programmatic access to expert projection data, one bottl
 
 What's been tried:
   * Multithreading to scrape multiple sources at once. Biggest improvement, but still slow and burdensome on resources
-  * Using headless browser PhantomGS.  Due to known issues with trying to use PhantomGS and Selenium together, I 
+  * Using headless browser PhantomJS.  Due to known issues with trying to use PhantomJS and Selenium together, I 
    found it to be unuseable.  Someone more knowledgeable with Selenium may be able find a work around. But I'm leaning
    towards abandoning Selenium all together.
 
