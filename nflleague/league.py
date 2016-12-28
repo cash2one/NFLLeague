@@ -37,7 +37,7 @@ class League(object):
         self.team_ids=_json_load_owners(self.league_id,self.season).keys()
         self.settings=Settings(self.league_id,self.season)
         self.league_name=self.settings.basic.league_name 
-        self.schedule=_json_load_schedule(self.league_id,self.season)       
+        self._schedule=_json_load_schedule(self.league_id,self.season)       
         self.owner_info=_json_load_owners(self.league_id,self.season)
         self._teams={}
 

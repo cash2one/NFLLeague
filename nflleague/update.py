@@ -140,7 +140,8 @@ class Generate():
                     idString=team.find_element_by_class_name('teamName').find_element_by_tag_name('a').get_attribute('href')
                     currentInfo['team_id']=int(re.search('{}(.*){}'.format('teamId=','&seasonId'),idString).group(1))
                     owner_info[currentInfo['team_id']]=currentInfo
-                except IndexError:
+                except IndexError as err:
+                    print(err)
                     pass
         print("Owner Information Gathered           ") 
         with open('nflleague/espn-league-json/{}/{}/owner_info.json'.format(self.league_id,self.season),'w') as out:

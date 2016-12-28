@@ -12,6 +12,7 @@ import scipy.stats
 import collections
 
 #TODO cache win/loss
+
 class Week(object):
     def __init__(self,week,team):
         for k,v in team.__dict__.iteritems():
@@ -64,7 +65,7 @@ class Week(object):
 
     def opponent(self):
         if self._opponent==None:
-            return None
+            return ByeWeek(self.week)
         if self.__opponent_obj==None:
             if self._opponent in self._teams:
                 self.__opponent_obj=self._teams.get(self._opponent).week(self.week)
@@ -84,8 +85,9 @@ class Week(object):
         return False
 
     def optimal_lineup(self):
+        #This function determines what the current optimal lineup would be at any given moment in time.  Projections 
+        #and PF are taken into account.
         optimized=[]
-        #JAC/Jax issue fixed 11/15
         for p in self.get_all():
             if p.game_status() in ['NOT PLAYED','PREGAME']:
                 optimized.append((p,float(p.projections().mean_score())))
@@ -102,9 +104,9 @@ class Week(object):
                 if p[0].position == slot and p not in optimal:
                     optimal.append(p)
                     break
-        
-        flex=[p for p in optimized if p not in optimal and p[0].position in ['WR','RB','TE']][0]
-        optimal.insert(self.settings.positions().index('FLEX'),flex)
+        flex=[p for p in optimized if p not in optimal and p[0].position in ['WR','RB','TE']]
+        if len(flex)!=0:
+            optimal.insert(self.settings.positions().index('FLEX'),flex[0])
         return optimal
 
     def mins_remaining(self):
@@ -213,4 +215,13 @@ class Week(object):
             json.dump(data,out)
 
         return data[str(self.team_id)]
+    
+    def __getattr__(self,item):
+        return self.__dict__.get(item,'')
 
+    def __str__(self,item):
+        return '{} ({}) vs {} ({})'.format(self.team_abv,self.get_score(),self.opponent().team_abv,self.opponent().get_score())
+
+class ByeWeek(Week):
+    def __init__(self,week):
+        self.week=week

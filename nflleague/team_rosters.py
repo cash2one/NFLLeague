@@ -74,7 +74,7 @@ def generate_week_players():
             plyr['gsis_name']='.'.join([plyr['first_name'][0],plyr['last_name']])
             week_players[pid]=plyr
     
-    for season in range(2016,s+1):
+    for season in range(2014,s+1):
         for week in range(1,18):
             if (season,week) == (s,w):
                 break
