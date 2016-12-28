@@ -69,9 +69,9 @@ Here are a few examples of some of the ways that I've used NFLLeague within my o
    at real-time scoring, information, and statistics in a head-to-head format.  I use APScheduler to schedule lineup 
    and projection updates all throughout the week.  While games are being played, NFLLeague's ability to rapidly access data
    allows updated reports to be generated and posted as often as every 15 seconds. Here is a 
-   [recent example](cs.iusb.edu/~chmorton/WMS123456201614.png) taken after the Sunday games.
+   [recent example](http://cs.iusb.edu/~chmorton/WMS123456201614.png) taken after the Sunday games.
 
-   [Here](cs.iusb.edu/~chmorton/ScoringReport123456201613.png) is a basic report where I break down the scoring of each 
+   [Here](http://cs.iusb.edu/~chmorton/ScoringReport123456201613.png) is a basic report where I break down the scoring of each 
    individual team by week and by opponent.
 
    Code to generate these reports is available upon request.  
