@@ -55,8 +55,9 @@ class Player(nflgame.player.Player):
             self.schedule=nflgame.sched.games.get(self.game_eid,{})
         else:
             self.schedule={}
-
-    
+    def __str__(self):
+        return '{}, {} {}'.format(self.full_name,self.team,self.position)
+        
 class PlayerWeek(Player):
     def __init__(self,league_id,season,week,player_id):
         super(PlayerWeek,self).__init__(season,week,player_id)
@@ -78,7 +79,7 @@ class PlayerWeek(Player):
                 a,b,c,d,e=self.league_id,self.season,self.position,stats,self.game
                 self._stats=nflleague.scoring.PlayerStatistics(a,b,c,d,e)
         return self._stats
-        
+    
     def projections(self,sites=['ESPN','FantasyPros','CBS'],system='Custom'):
         projections=nflleague.scoring.Projections()
         for site in sites:

@@ -219,7 +219,7 @@ class Week(object):
     def __getattr__(self,item):
         return self.__dict__.get(item,'')
 
-    def __str__(self,item):
+    def __str__(self):
         return '{} ({}) vs {} ({})'.format(self.team_abv,self.get_score(),self.opponent().team_abv,self.opponent().get_score())
 
 class ByeWeek(Week):

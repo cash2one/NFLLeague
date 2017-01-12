@@ -39,27 +39,58 @@ To output the results of any given week from any given year, say my team in week
 import nflleague
 
 league=nflleague.league.League(203986,2015)
-game=league.team('CHAD MORTON').week(4)
+game=league.team('CHAD MORTON').week(6)
 
+print(game)
 print('%s vs. %s' % (game.team_name,game.opponent().team_name))
-for p,op in zip(game.lineup,game.opponent().lineup):
+for plyr,opp_plyr in zip(game.lineup,game.opponent().lineup):
     m='%s:\t%s\t%.1f\t\t%s\t%.1f'
-    print(m % (p.slot,p.gsis_name,p.statistics().score(),op.gsis_name,op.statistics().score()))
-print('%s %s %.1f-%.1f' % (game.team_name,'win' if game.win() else 'lose',game.get_score(),game.opponent().get_score()))
+    print(m % (plyr.slot,plyr.gsis_name,plyr.statistics().score(),opp_plyr.gsis_name,opp_plyr.statistics().score()))
 ```
 Which gives the result:
 ```
-THE LOG CHOPPERZ vs. THE BAY AREA BEAUTIES
-QB:     D.Brees         22.2        P.Manning       8.2
-RB:     L.Bell          22.4        M.Lynch         0.0
-RB:     J.Randle        8.6         L.Murray        4.7
-WR:     A.Green         9.6         C.Johnson       5.0
-WR:     B.Marshall      14.2        D.Hopkins       17.5
-TE:     M.Bennett       16.5        J.Witten        6.5
-FLEX:   K.Allen         14.0        R.Matthews      1.8
-D/ST:   Broncos D/ST    9.0         Seahawks D/ST   3.0
-K:      P.Dawson        2.0         J.Tucker        10.2
-THE LOG CHOPPERZ win 118.5-60.9
+HOP (124.4) vs WISE (104.1)
+THE LOG CHOPPERZ vs. WYNNEDALE WINERY DINERY
+QB:     A.Luck          27.9    B.Bortles       22.9
+RB:     L.Bell          8.8     E.Lacy          2.4
+RB:     R.Hillman       12.1    M.Ingram        18.2
+WR:     A.Green         4.4     J.Edelman       12.4
+WR:     K.Allen         18.5    D.Moncrief      14.1
+TE:     M.Bennett       7.1     A.Gates         11.3
+FLEX:   B.Marshall      16.5    T.Hilton        14.6
+D/ST:   Broncos D/ST    18.0    Lions D/ST      -1.0
+K:      P.Dawson        11.1    S.Hauschka      9.2
+```
+
+To break down the number of Fantasy points/TDs scored by WRs on my team in 2015:
+```python
+import nflleague
+
+league=nflleague.league.League(203986,2015)
+team=league.team('CHAD MORTON')
+
+stats={}
+for week in team.weeks():
+    for plyr in week.lineup:
+        if plyr.position=='WR':
+            if plyr.player_id not in stats:
+                stats[plyr.player_id]=plyr
+            else:
+                stats[plyr.player_id]+=plyr
+
+for plyr in sorted(stats.values(),key=lambda x:x.statistics().score(),reverse=True):
+    ps=plyr.statistics()
+    print('%s: %.1f pts/ %i TDs' % (plyr,ps.score(),ps.stats.get('receiving_tds',0)))
+```
+
+which returns:
+```
+Brandon Marshall, NYJ WR: 164.6 pts/ 10 TDs
+Keenan Allen, SD WR: 93.9 pts/ 3 TDs
+A.J. Green, CIN WR: 88.5 pts/ 4 TDs
+Martavis Bryant, PIT WR: 65.9 pts/ 3 TDs
+Kendall Wright, TEN WR: 15.0 pts/ 1 TDs
+Golden Tate, DET WR: 9.7 pts/ 0 TDs
 ```
 
 ###Check Out Some Project Examples!
