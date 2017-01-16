@@ -1,0 +1,72 @@
+{
+    "1": {
+        "team_abv": "WKPG",
+        "team_div": "NORTHNORTHEASTERN",
+        "team_id": 1,
+        "team_name": "WEEKAPAUG LITTLE LEAGUE",
+        "team_owner": "BROC SMITH"
+    },
+    "2": {
+        "team_abv": "FUCK",
+        "team_div": "NORTHNORTHEASTERN",
+        "team_id": 2,
+        "team_name": "THE RONALD MCMEXICO HOUSE",
+        "team_owner": "JASON BERGSTRAND"
+    },
+    "3": {
+        "team_abv": "CUMM",
+        "team_div": "GREAT LAKES REGION",
+        "team_id": 3,
+        "team_name": "TEAM DANZA",
+        "team_owner": "PETER CUMMINGS"
+    },
+    "5": {
+        "team_abv": "BARN",
+        "team_div": "GREAT LAKES REGION",
+        "team_id": 5,
+        "team_name": "THE BAY AREA BEAUTIES",
+        "team_owner": "TYLER BARNUM"
+    },
+    "6": {
+        "team_abv": "JOHN",
+        "team_div": "NORTHNORTHEASTERN",
+        "team_id": 6,
+        "team_name": "SYMPATHY FOR THE DEVELIN",
+        "team_owner": "NICK JOHNSON"
+    },
+    "7": {
+        "team_abv": "NIGS",
+        "team_div": "GREAT LAKES REGION",
+        "team_id": 7,
+        "team_name": "NORTH KOREA",
+        "team_owner": "GARY DOWNEY"
+    },
+    "11": {
+        "team_abv": "CHOP",
+        "team_div": "GREAT LAKES REGION",
+        "team_id": 11,
+        "team_name": "THE LOG CHOPPERZ",
+        "team_owner": "CHAD MORTON"
+    },
+    "15": {
+        "team_abv": "MAST",
+        "team_div": "NORTHNORTHEASTERN",
+        "team_id": 15,
+        "team_name": "DEMARYIUS TARGARYEN",
+        "team_owner": "AUSTIN MASTERS"
+    },
+    "16": {
+        "team_abv": "CLUB",
+        "team_div": "GREAT LAKES REGION",
+        "team_id": 16,
+        "team_name": "YPSILANTI YACHT CLUB",
+        "team_owner": "KARTER KISTLER"
+    },
+    "17": {
+        "team_abv": "WISE",
+        "team_div": "NORTHNORTHEASTERN",
+        "team_id": 17,
+        "team_name": "WYNNEDALE WINERY DINERY",
+        "team_owner": "ANDY WISEMAN"
+    }
+}

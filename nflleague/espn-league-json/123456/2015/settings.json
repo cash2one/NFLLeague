@@ -1,0 +1,105 @@
+{
+    "roster": {
+        "flex": [
+            "RB",
+            "WR",
+            "TE"
+        ],
+        "total_on_bench": "6 (1 IR)",
+        "positions": {
+            "QB": "1",
+            "RB": "2",
+            "WR": "2",
+            "TE": "1",
+            "FLEX": "1",
+            "D/ST": "1",
+            "K": "1",
+            "Bench": "6",
+            "IR": "1"
+        },
+        "gsis_actives": [
+            "QB",
+            "RB1",
+            "RB2",
+            "WR1",
+            "WR2",
+            "TE",
+            "FLEX",
+            "D/ST",
+            "K",
+            "Bench",
+            "Bench",
+            "Bench",
+            "Bench",
+            "Bench",
+            "Bench",
+            "IR"
+        ],
+        "slots_gsis": {
+            "FLEX": [
+                "FLEX"
+            ],
+            "K": [
+                "K"
+            ],
+            "IR": [
+                "IR"
+            ],
+            "Bench": [
+                "Bench",
+                "Bench",
+                "Bench",
+                "Bench",
+                "Bench",
+                "Bench"
+            ],
+            "QB": [
+                "QB"
+            ],
+            "WR": [
+                "WR1",
+                "WR2",
+                "FLEX"
+            ],
+            "RB": [
+                "RB1",
+                "RB2",
+                "FLEX"
+            ],
+            "TE": [
+                "TE",
+                "FLEX"
+            ],
+            "D/ST": [
+                "D/ST"
+            ]
+        },
+        "actives": [
+            "QB",
+            "RB",
+            "RB",
+            "WR",
+            "WR",
+            "TE",
+            "FLEX",
+            "D/ST",
+            "K",
+            "Bench",
+            "Bench",
+            "Bench",
+            "Bench",
+            "Bench",
+            "Bench",
+            "IR"
+        ],
+        "current_roster_size": "15",
+        "total_starters": "9"
+    },
+    "basic": {
+        "make_league_viewable_to_public": "Yes",
+        "number_of_teams": "10",
+        "league_name": "Penn Champions League",
+        "scoring_type": "Head to Head Points",
+        "format": "League Manager"
+    }
+}
