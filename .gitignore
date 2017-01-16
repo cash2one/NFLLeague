@@ -7,4 +7,5 @@ geckodriver
 reports/**
 nflleague/espn-league-json/*
 !nflleague/espn-league-json/projections
+playground.py
 
