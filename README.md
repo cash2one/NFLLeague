@@ -34,7 +34,7 @@ scraper.close()
 
 It's too early to begin official documentation for NFLLeague, because I am sure there are some heavy structural changes yet to be made.  However, I'm currently working my best to document classes and functions in code to help people become accustom to how the package works.  Please address any questions in the Issue Tracker, or, for now, e-mail me at CMorton737@gmail.com.  Below I'll provide some basic usage examples, as well as in the cookbook.py
 
-To output the results of any given week from any given year, say my team in week 4 of the 2015 season:
+To output the results of any given week from any given year, say my team in week 6 of the 2015 season:
 ```python
 import nflleague
 
