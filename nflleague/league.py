@@ -16,6 +16,10 @@ from collections import defaultdict
 #   Would make interface more intuitive and eliminate need for confusing 'Seasons' dictionary with different league objects
 #   Might take much longer to initialize Leauge Objet.  Could avoid, though
 
+#Need to create a list type that can be sorted by some passed parameter(i.e. stat/pts scored) as well as return a limited
+#number of items (i.e. obj.sort('receiving_tds').limit(5))
+
+
 def _json_load_owners(league_id,season):
     return get_json('nflleague/espn-league-json/{}/{}/owner_info.json'.format(league_id,season),{})
 
@@ -67,20 +71,19 @@ class League(object):
                 divs[team.team_div]=[team]
         return divs
     
-    def all_players(self,week,pos=None):
-        all_plyrs={}
-        for pid,plyr in nflgame.players.iteritems():
-            if plyr.status!='' and plyr.position in self.settings.roster.actives:
-                if pos==None or plyr.position==pos:
-                    all_plyrs[pid]=nflleague.player.FreeAgent(self.league_id,self.season,week,pid)
-        return all_plyrs
-    
-    def waivers(self,week,pos=None):
-        waiver_wire=self.all_players(week,pos=pos)
+    def all_players(self,week):
+        everyone=nflleague.gen_players_week(self.league_id,self.season,week)
         for team in self.teams():
             for plyr in team.week(week).get_all(IR=True):
-                if plyr!=None and plyr.player_id in waiver_wire:
-                    del waiver_wire[plyr.player_id]
+                if plyr!=None:
+                    everyone=everyone.remove(plyr.player_id)
+                    everyone=everyone.add(plyr)
+        return everyone
+    
+    def waivers(self,week,pos=None):
+        waiver_wire=self.all_players(week).filter(team_abv='FA')
+        if pos!=None:
+            return waiver_wire.filter(position=pos)
         return waiver_wire
 
 class Seasons(dict):

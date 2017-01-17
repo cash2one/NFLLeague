@@ -34,13 +34,20 @@ def get_game_status(game):
     else:
         assert "game does not fall into any predefined categories (FUNCTION)" 
 
-def _create_week_players():
+def _json_week_players():
     return get_json('nflleague/players.json',{})
+
+def _create_week_players(season,week):
+    players={}
+    for pid,plyr in nflleague.players:
+        players[pid]=nflleague.player.Player(season,week,pid)
+    return players
 
 #Could combine Player and Defense classes
 class Player(nflgame.player.Player):
     def __init__(self,season,week,player_id):
-        data=nflleague.players.get(player_id)
+        data=nflleague.players.get(player_id,nflleague.players['00-0000000'])
+        #data=nflleague.players.get(player_id)
         super(Player,self).__init__(data)
         self.season=season
         self.week=week
@@ -71,6 +78,14 @@ class PlayerWeek(Player):
             self.game=nflgame.game.Game(self.schedule.get('eid'))
         else:
             self.game='bye'
+        
+        self.team_id=0
+        self.team_abv='FA'
+        self.slot='NA'
+        self.gsis_slot='NA'
+        self.score='NA'
+        self.in_lineup=False
+        self.condition='NA'
 
     def statistics(self,system='Custom'):
         if self._stats==None:
@@ -95,6 +110,8 @@ class PlayerWeek(Player):
         return projections
     
     def historical_stats(self,years,weeks=None):
+        #BAD. antiintuitive
+        
         #Returns dictionary of historical and current player stats which can be quickly accessed by [season][week]
         #Will be cached locally for fast retreival if stats have not been accessed before.
         #Use self.statistics() for current weeks stats when live functionality is important. 
@@ -117,7 +134,14 @@ class PlayerWeek(Player):
                 stats=gen_player_stats(a,b,c,d)
                 history[year][week]=nflleague.scoring.LeagueScoring(self.league_id,year,self.position,stats)
         return history
-    
+    def seasonal_stats(self,inclusive=False):
+        seasonal=[]
+        for week in range(1,self.week + 1 if inclusive else self.week):
+            a,b,c,d=self.season,week,self.player_id,self.team
+            stats=gen_player_stats(a,b,c,d)
+            seasonal.append(nflleague.scoring.LeagueScoring(self.league_id,self.season,self.position,stats))
+        return seasonal
+
     def combine_plays(self):
         if self._plays==None:
             self._plays=filter(lambda p: p.has_player(self.player_id),nflgame.combine_plays([self.game]))
@@ -214,14 +238,21 @@ class PlayerWeek(Player):
                 print("\t{}: {} ({} pts)".format(k,v,self.statistics().scoring().get(k,0)))
         except Exception as err:
             print('No stats available for {}'.format(self.full_name))
-
+    """
+    def __getattribute__(self,item):
+        try:
+            return getattr(self,item)
+        except:
+            return 
+    """
 #Class for managing owned players within a league.  Contains league,team, and week metadata
 class PlayerTeam(PlayerWeek):
     def __init__(self,data,meta):
         super(PlayerTeam,self).__init__(meta.league_id,meta.season,meta.week,data.get('player_id'))
         self.team_id=meta.team_id
-
-        self.position=data.get('position','')
+        self.team_abv=meta.owner_info[self.team_id]['team_abv']
+        
+        self.position=data.get('position',self.position)
         self.slot=data.get('slot','')
         self.gsis_slot=data.get('gsis_slot','')
         self.score=round(float(data.get('score',0)),1)
@@ -232,7 +263,6 @@ class PlayerTeam(PlayerWeek):
 class FreeAgent(PlayerWeek):
     def __init__(self,league_id,season,week,player_id):
         super(FreeAgent,self).__init__(league_id,season,week,player_id)
-        
 
 class Defense(Player):
     def __init__(self,season,week,team):

@@ -110,6 +110,11 @@ class LeagueScoring(object):
         new_object._add_stats(other._stats)
         
         return new_object
+    def __getattr__(self,item):
+        try:
+            return self.stats[item]
+        except KeyError:
+            return 0
 
 
 class PlayerStatistics(LeagueScoring):

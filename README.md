@@ -1,4 +1,4 @@
-NFLLeague is an API for ESPN Fantasy Football which harnesses the power of [BurntSushi](https://github.com/BurntSushi)'s nflgame.  By utilizing several key features of nflgame, nflleague offers league-oriented, player-focused methods for rapidly accessing a wide range of ESPN and NFL player data. NFLLeague is ideal for those who are interested in performing analysis in a league-wise fashion, researching league historical data, or accessing real-time fantasy stats and scores.
+NFLLeague is an API for ESPN Fantasy Football which harnesses the power of BurntSushi's nflgame.  By utilizing several key features of nflgame, nflleague offers league-oriented, player-focused methods for rapidly accessing a wide range of ESPN and NFL player data. NFLLeague is ideal for those who are interested in performing analysis in a league-wise fashion, researching league historical data, or accessing real-time fantasy stats and scores.
 
 To gather ESPN data for your league, substitute your league information and run the following:
 ```python
@@ -49,7 +49,7 @@ for plyr,opp_plyr in zip(game.lineup,game.opponent().lineup):
 ```
 Which gives the result:
 ```
-HOP (124.4) vs WISE (104.1)
+CHOP (124.4) vs WISE (104.1)
 THE LOG CHOPPERZ vs. WYNNEDALE WINERY DINERY
 QB:     A.Luck          27.9    B.Bortles       22.9
 RB:     L.Bell          8.8     E.Lacy          2.4
@@ -93,20 +93,39 @@ Kendall Wright, TEN WR: 15.0 pts/ 1 TDs
 Golden Tate, DET WR: 9.7 pts/ 0 TDs
 ```
 
+And one final teaser... 
+NFLLeague can help in making informed, data-driven waiver decisions, as well as identify "sleepers".  For example, lets look at the top 5 WR's available on waivers going in to week 6 of 2015 ordered by how many times they were targeted in week 5.  We'll compare that to their average targets/game in weeks previous.
+
+```python
+import numpy as np
+
+league=nflleague.league.League(123456,2015)
+
+for p in league.waivers(5,pos='WR').sort(lambda x:x.statistics().receiving_tar).limit(5):
+    m='%s:\tWeek 5: %i\tAve: %.2f'
+    print(m % (p,p.statistics().receiving_tar,np.mean([n.receiving_tar for n in p.seasonal_stats()])))
+```
+Which gives the following:
+
+```
+Golden Tate, DET WR:    Week 5: 18  Ave: 7.25
+Anquan Boldin, SF WR:   Week 5: 12  Ave: 6.50
+Travis Benjamin, CLE WR:    Week 5: 12  Ave: 6.75
+Willie Snead, NO WR:    Week 5: 11  Ave: 5.50
+Allen Robinson, JAC WR: Week 5: 9   Ave: 9.75
+```
+
+
 ###Check Out Some Project Examples!
-Here are just two examples of how I have used NFLLeague to generate reports within my own Fantasy league.  These examples highlight 
-some of the features and capabilities of NFLLeague:
+Here are a few examples of some of the ways that I've used NFLLeague within my own Fantasy league:
 
    Every week, I post a LIVE infographic, which I call "Weekly Matchup Showcase".  It is a general but detailed look 
    at real-time scoring, information, and statistics in a head-to-head format.  I use APScheduler to schedule lineup 
-   and projection updates all throughout the week.  While games are being played, NFLLeague's ability to rapidly access data
-   allows updated reports to be generated and posted as often as every 15 seconds. Here is a 
-   [recent example](http://cs.iusb.edu/~chmorton/WMS123456201614.png) taken after the Sunday games.
+   and projection updates all throughout the week, and on gamedays, NFLLeague's ability to rapidly access statistics 
+   allows updates to be posted as often as every 15 seconds. Here is a [recent example.](https://www.seventhirtyseven.net/WMS123456201614.png)
 
-   [Here](http://cs.iusb.edu/~chmorton/ScoringReport123456201613.png) is a basic report where I break down the scoring of each 
-   individual team by week and by opponent.
+   Here is another report detailing the scoring breakdown and statistics for the 2016 season per team
 
-   Code to generate these reports is available upon request.  
 
 ###Help Wanted!
 NFLLeague is a work in progress, and I am always looking for contributors to help test, improve, and expand the functionality of this package.  My background is in numerical analysis and statistics, so professional and/or highly skilled programmers are desired to help sure up and optimize the code.
@@ -119,7 +138,7 @@ In attempting to expand programmatic access to expert projection data, one bottl
 
 What's been tried:
   * Multithreading to scrape multiple sources at once. Biggest improvement, but still slow and burdensome on resources
-  * Using headless browser PhantomJS.  Due to known issues with trying to use PhantomJS and Selenium together, I 
+  * Using headless browser PhantomGS.  Due to known issues with trying to use PhantomGS and Selenium together, I 
    found it to be unuseable.  Someone more knowledgeable with Selenium may be able find a work around. But I'm leaning
    towards abandoning Selenium all together.
 
