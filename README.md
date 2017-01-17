@@ -108,11 +108,11 @@ for p in league.waivers(5,pos='WR').sort(lambda x:x.statistics().receiving_tar).
 Which gives the following:
 
 ```
-Golden Tate, DET WR:    Week 5: 18  Ave: 7.25
-Anquan Boldin, SF WR:   Week 5: 12  Ave: 6.50
+Golden Tate, DET WR:        Week 5: 18  Ave: 7.25
+Anquan Boldin, SF WR:       Week 5: 12  Ave: 6.50
 Travis Benjamin, CLE WR:    Week 5: 12  Ave: 6.75
-Willie Snead, NO WR:    Week 5: 11  Ave: 5.50
-Allen Robinson, JAC WR: Week 5: 9   Ave: 9.75
+Willie Snead, NO WR:        Week 5: 11  Ave: 5.50
+Allen Robinson, JAC WR:     Week 5: 9   Ave: 9.75
 ```
 
 
@@ -122,13 +122,13 @@ Here are a few examples of some of the ways that I've used NFLLeague within my o
    Every week, I post a LIVE infographic, which I call "Weekly Matchup Showcase".  It is a general but detailed look 
    at real-time scoring, information, and statistics in a head-to-head format.  I use APScheduler to schedule lineup 
    and projection updates all throughout the week, and on gamedays, NFLLeague's ability to rapidly access statistics 
-   allows updates to be posted as often as every 15 seconds. Here is a [recent example.](https://www.seventhirtyseven.net/WMS123456201614.png)
+   allows updates to be posted as often as every 15 seconds. Here is a [recent example.](cs.iusb.edu/~chmorton/WMS123456201614.png)
 
-   Here is another report detailing the scoring breakdown and statistics for the 2016 season per team
+   [Here](http://cs.iusb.edu/~chmorton/ScoringReport123456201613.png) is another report detailing the scoring breakdown and statistics for the 2016 season per team
 
 
-###Help Wanted!
-NFLLeague is a work in progress, and I am always looking for contributors to help test, improve, and expand the functionality of this package.  My background is in numerical analysis and statistics, so professional and/or highly skilled programmers are desired to help sure up and optimize the code.
+###Help Wanted
+NFLLeague is a work in progress, and I am always looking for contributors to help test, improve, and expand the functionality of this package.  My background is in mathematics/statistics, so professional and/or highly skilled programmers are desired to help sure up and optimize the code.
 
 ###Current Issues/Public TODO List
 There are several aspects of NFLLeague that I would like assistance in improving.
