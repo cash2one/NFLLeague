@@ -38,7 +38,7 @@ To output the results of any given week from any given year, say my team in week
 ```python
 import nflleague
 
-league=nflleague.league.League(203986,2015)
+league=nflleague.league.League(123456,2015)
 game=league.team('CHAD MORTON').week(6)
 
 print(game)
@@ -66,7 +66,7 @@ To break down the number of Fantasy points/TDs scored by WRs on my team in 2015:
 ```python
 import nflleague
 
-league=nflleague.league.League(203986,2015)
+league=nflleague.league.League(123456,2015)
 team=league.team('CHAD MORTON')
 
 stats={}
@@ -97,6 +97,7 @@ And one final teaser...
 NFLLeague can help in making informed, data-driven waiver decisions, as well as identify "sleepers".  For example, lets look at the top 5 WR's available on waivers going in to week 6 of 2015 ordered by how many times they were targeted in week 5.  We'll compare that to their average targets/game in weeks previous.
 
 ```python
+import nflleague
 import numpy as np
 
 league=nflleague.league.League(123456,2015)
@@ -122,9 +123,9 @@ Here are a few examples of some of the ways that I've used NFLLeague within my o
    Every week, I post a LIVE infographic, which I call "Weekly Matchup Showcase".  It is a general but detailed look 
    at real-time scoring, information, and statistics in a head-to-head format.  I use APScheduler to schedule lineup 
    and projection updates all throughout the week, and on gamedays, NFLLeague's ability to rapidly access statistics 
-   allows updates to be posted as often as every 15 seconds. Here is a [recent example.](cs.iusb.edu/~chmorton/WMS123456201614.png)
+   allows updates to be posted as often as every 15 seconds. Here is a [recent example.](http://cs.iusb.edu/~chmorton/WMS123456201614.png)
 
-   [Here](http://cs.iusb.edu/~chmorton/ScoringReport123456201613.png) is another report detailing the scoring breakdown and statistics for the 2016 season per team
+   [Here](http://cs.iusb.edu/~chmorton/ScoringReport123456201613.pngi) is another report detailing the scoring breakdown and statistics for the 2016 season per team
 
 
 ###Help Wanted
