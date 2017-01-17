@@ -125,7 +125,7 @@ Here are a few examples of some of the ways that I've used NFLLeague within my o
    and projection updates all throughout the week, and on gamedays, NFLLeague's ability to rapidly access statistics 
    allows updates to be posted as often as every 15 seconds. Here is a [recent example.](http://cs.iusb.edu/~chmorton/WMS123456201614.png)
 
-   [Here](http://cs.iusb.edu/~chmorton/ScoringReport123456201613.pngi) is another report detailing the scoring breakdown and statistics for the 2016 season per team
+   [Here](http://cs.iusb.edu/~chmorton/ScoringReport123456201613.png) is another report detailing the scoring breakdown and statistics for the 2016 season per team
 
 
 ###Help Wanted
