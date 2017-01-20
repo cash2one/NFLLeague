@@ -20,10 +20,11 @@ def gen_players_week(league_id,season,week):
         for pid,plyr in players.iteritems():
             try:
                 if plyr['schedule'][str(season)][str(week)]!='bye':
-                    yield nflleague.player.PlayerWeek(league_id, season, week, pid)
+                    yield nflleague.player.FreeAgent(league_id, season, week, pid)
             except KeyError:
                 continue
     return nflleague.seq.GenPlayer(gen())
+    
 
 def standard_team_id(league_id,season,team_iden):
     #Converts any team identifier(i.e. team name or owner or abv) to the team number

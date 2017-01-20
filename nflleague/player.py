@@ -65,9 +65,9 @@ class Player(nflgame.player.Player):
     def __str__(self):
         return '{}, {} {}'.format(self.full_name,self.team,self.position)
         
-class PlayerWeek(Player):
+class FreeAgent(Player):
     def __init__(self,league_id,season,week,player_id):
-        super(PlayerWeek,self).__init__(season,week,player_id)
+        super(FreeAgent,self).__init__(season,week,player_id)
         self.league_id=league_id
 
         self._stats=None
@@ -246,7 +246,7 @@ class PlayerWeek(Player):
             return 
     """
 #Class for managing owned players within a league.  Contains league,team, and week metadata
-class PlayerTeam(PlayerWeek):
+class PlayerTeam(FreeAgent):
     def __init__(self,data,meta):
         super(PlayerTeam,self).__init__(meta.league_id,meta.season,meta.week,data.get('player_id'))
         self.team_id=meta.team_id
@@ -259,10 +259,6 @@ class PlayerTeam(PlayerWeek):
         self.in_lineup=bool(data.get('in_lineup',False))
         self.condition=data.get('condition','')
     
-#class for managing Free Agents within a league.  Players will have no metadata.
-class FreeAgent(PlayerWeek):
-    def __init__(self,league_id,season,week,player_id):
-        super(FreeAgent,self).__init__(league_id,season,week,player_id)
 
 class Defense(Player):
     def __init__(self,season,week,team):
@@ -399,7 +395,7 @@ class DefenseWeek(Defense):
             print('No stats available for {}'.format(self.team))
 
 #TODO Clean these up or eliminate.  To be deprecated soon
-class PlayerWeekEmpty(PlayerWeek):
+class PlayerWeekEmpty(FreeAgent):
     def __init__(self,data,meta):
         self.player_id=None
         self.league_id=meta.league_id
