@@ -94,7 +94,7 @@ Donte Moncrief, IND WR: 20.0 pts/ 1 TDs
 ```
 
 And one final teaser... 
-NFLLeague can help in making informed, data-driven waiver decisions, as well as identify "sleepers".  For example, lets look at the top 5 WR's available on waivers going in to week 6 of 2015 ordered by how many times they were targeted in week 5.  We'll compare that to their average targets/game in weeks previous.
+NFLLeague can help in making informed, data-driven waiver decisions, as well as identify "sleepers".  For example, lets look at the top 5 WR's available on waivers going in to week 6 of 2016 ordered by how many times they were targeted in week 5.  We'll compare that to their average targets/game in weeks previous.
 
 ```python
 import nflleague
