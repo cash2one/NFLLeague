@@ -1,0 +1,105 @@
+{
+    "1": {
+        "second_owner": "DANIEL DOPP",
+        "team_abv": "BERR",
+        "team_div": "EAST",
+        "team_id": 1,
+        "team_name": "FREE BRADY",
+        "team_owner": "MATTHEW BERRY"
+    },
+    "3": {
+        "second_owner": "DEVIN KURANT",
+        "team_abv": "35",
+        "team_div": "EAST",
+        "team_id": 3,
+        "team_name": "SEAT PLEASANT FOOT SOLDIERS",
+        "team_owner": "KEVIN DURANT"
+    },
+    "4": {
+        "team_abv": "DEJR",
+        "team_div": "EAST",
+        "team_id": 4,
+        "team_name": "STUCK IN TRAFFIC",
+        "team_owner": "RDE JR"
+    },
+    "6": {
+        "second_owner": "JAIME EDMONDSON",
+        "team_abv": "ELJE",
+        "team_div": "EAST",
+        "team_id": 6,
+        "team_name": "3'S COMPANY",
+        "team_owner": "EVAN LONGORIA"
+    },
+    "7": {
+        "second_owner": "CHRISTOPHER MILLER",
+        "team_abv": "PLCM",
+        "team_div": "EAST",
+        "team_id": 7,
+        "team_name": "SEAMI DOLHAWKS",
+        "team_owner": "PHILIP LORD"
+    },
+    "8": {
+        "team_abv": "JP",
+        "team_div": "EAST",
+        "team_id": 8,
+        "team_name": "JIM PARSONS",
+        "team_owner": "JAMES PARSONS"
+    },
+    "9": {
+        "team_abv": "FY",
+        "team_div": "EAST",
+        "team_id": 9,
+        "team_name": "SPICY TOMATOES",
+        "team_owner": "FIELD YATES"
+    },
+    "10": {
+        "team_abv": "BARI",
+        "team_div": "EAST",
+        "team_id": 10,
+        "team_name": "TEAM BARINHOLTZ",
+        "team_owner": "ISAAC BARINHOLTZ"
+    },
+    "11": {
+        "team_abv": "BELL",
+        "team_div": "EAST",
+        "team_id": 11,
+        "team_name": "TEAM BELL",
+        "team_owner": "STEPHANIA BELL"
+    },
+    "12": {
+        "team_abv": "EFRO",
+        "team_div": "EAST",
+        "team_id": 12,
+        "team_name": "TEAM EFRON",
+        "team_owner": "ZAC EFRON"
+    },
+    "13": {
+        "team_abv": "HAND",
+        "team_div": "EAST",
+        "team_id": 13,
+        "team_name": "TEAM HANDLER",
+        "team_owner": "CHELSEA HANDLER"
+    },
+    "14": {
+        "second_owner": "ANNA FARIS",
+        "team_abv": "AFU",
+        "team_div": "EAST",
+        "team_id": 14,
+        "team_name": "F*CK YOU SIMS",
+        "team_owner": "SIM SARNA"
+    },
+    "15": {
+        "team_abv": "DR",
+        "team_div": "EAST",
+        "team_id": 15,
+        "team_name": "MOUNT PLEASANT MADEMEN",
+        "team_owner": "DARIUS RUCKER"
+    },
+    "16": {
+        "team_abv": "TELL",
+        "team_div": "EAST",
+        "team_id": 16,
+        "team_name": "MY BALL ZACH ERTZ",
+        "team_owner": "MILES TELLER"
+    }
+}
