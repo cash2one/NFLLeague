@@ -9,7 +9,6 @@ import os
 import json
 import re
 import random
-from pyvirtualdisplay import Display
 from os import walk
 import urllib
 import cv
@@ -18,6 +17,14 @@ import nflgame
 from datetime import datetime
 import nflleague
 import collections
+
+#Optional installation
+try:
+    from pyvirtualdisplay import Display
+    _pvd_avail=True
+except ImportError:
+    _pvd_avail=False
+
 #DONE finish settings/scoring scrape (HIGH)
 #TODO make a separte scrape file for all the projection scraping functions. or make a bunch of indiviual programs and 
 #use multithreading to simply run each program.  Need to research resource usage of scraping, or consider using
@@ -28,20 +35,73 @@ PLAYERS=nflgame.player._create_players()
 TEAMS=[i[2] for i in list(nflgame.teams)]
 ACTIVES=['QB','RB','WR','TE','FLEX','D/ST','K']
 
-ESPN_SCORING_MAP={'PY':'passing_yds','PTD':'passing_tds','INT':'interception','2PC':'passing_twoptm','P300':'passing_yds_300',
-              'P400':'passing_yds_400','RY':'rushing_yds','RTD':'rushing_tds','2PR':'rushing_twoptm','RY100':'rushing_yds_100',
-              'RY200':'rushing_yds_200','REY':'receiving_yds','RETD':'receiving_tds','2PRE':'receiving_twoptm',
-              'REY100':'receiving_yds_100','REY200':'receiving_yds_200','KRTD':'kickret_tds','PRTD':'puntret_tds',
-              'FTD':'fumbles_frec_tds','FUML':'fumbles_lost','SK':'defense_sk','INTTD':'defense_int_tds',
-              'FRTD':'defense_frec_tds','BLKKRTD':'defense_blkkrtd','BLKK':'defense_blkk','FR':'defense_frec',
-              'SF':'defense_safe','PA0':'defense_PA_0','PA1':'defense_PA_1_6','PA7':'defense_PA_7_13','PA14':'defense_PA_14_17',
-              'PA18':'defense_PA_18_21','PA22':'defense_PA_22_27','PA28':'defense_PA_28_34','PA35':'defense_PA_35_45',
-              'PA46':'defense_PA_46','YA100':'defense_YA_99','YA199':'defense_YA_199','YA299':'defense_YA_299',
-              'YA349':'defense_YA_349','YA399':'defense_YA_399','YA449':'defense_YA_449','YA499':'defense_YA_499',
-              'YA549':'defense_YA_549','YA550':'defense_YA_550','PAT':'kicking_xpmade','PATM':'kicking_xpmissed',
-              'FG0':'kicking_fgm_0_39','FGM':'kicking_fgmissed','FG40':'kicking_fgm_40_49','FG50':'kicking_fgm_50_100',
-              'FGM0':'kicking_fgmissed_0_39','PY5':'passing_yds_py5','REC':'receiving_rec','KR25':'kickret_yds',
-              'PR25':'puntret_yds'}
+#Works fine for now, but could restructure per position
+ESPN_SCORING_MAP={'PY':'passing_yds_1',
+                  'PY5':'passing_yds_5',
+                  'PY10':'passing_yds_10',
+                  'PY25':'passing_yds_25',
+                  'PTD':'passing_tds',
+                  'INT':'interception',
+                  '2PC':'passing_twoptm',
+                  'P300':'passing_yds_300',
+                  'P400':'passing_yds_400',
+                  'RY':'rushing_yds_1',
+                  'RY5':'rushing_yds_5',
+                  'RY10':'rushing_yds_10',
+                  'RY25':'rushing_yds_25',
+                  'RTD':'rushing_tds',
+                  '2PR':'rushing_twoptm',
+                  'RY100':'rushing_yds_100',
+                  'RY200':'rushing_yds_200',
+                  'REY':'receiving_yds_1',
+                  'REY5':'receiving_yds_5',
+                  'REY10':'receiving_yds_10',
+                  'REY25':'receiving_yds_25',
+                  'RETD':'receiving_tds',
+                  '2PRE':'receiving_twoptm',
+                  'REY100':'receiving_yds_100',
+                  'REY200':'receiving_yds_200',
+                  'KRTD':'kickret_tds',
+                  'PRTD':'puntret_tds',
+                  'FTD':'fumbles_frec_tds',
+                  'FUML':'fumbles_lost',
+                  'SK':'defense_sk',
+                  'INTTD':'defense_int_tds',
+                  'FRTD':'defense_frec_tds',
+                  'BLKKRTD':'defense_blkkrtd',
+                  'BLKK':'defense_blkk',
+                  'FR':'defense_frec',
+                  'SF':'defense_safe',
+                  '2PTRET':'defense_twoptret',
+                  '1PSF':'defense_oneptsf',
+                  'PA0':'defense_PA_0',
+                  'PA1':'defense_PA_1_6',
+                  'PA7':'defense_PA_7_13',
+                  'PA14':'defense_PA_14_17',
+                  'PA18':'defense_PA_18_21',
+                  'PA22':'defense_PA_22_27',
+                  'PA28':'defense_PA_28_34',
+                  'PA35':'defense_PA_35_45',
+                  'PA46':'defense_PA_46',
+                  'YA100':'defense_YA_99',
+                  'YA199':'defense_YA_199',
+                  'YA299':'defense_YA_299',
+                  'YA349':'defense_YA_349',
+                  'YA399':'defense_YA_399',
+                  'YA449':'defense_YA_449',
+                  'YA499':'defense_YA_499',
+                  'YA549':'defense_YA_549',
+                  'YA550':'defense_YA_550',
+                  'PAT':'kicking_xpmade',
+                  'PATM':'kicking_xpmissed',
+                  'FG0':'kicking_fgm_0_39',
+                  'FGM':'kicking_fgmissed',
+                  'FG40':'kicking_fgm_40_49',
+                  'FG50':'kicking_fgm_50_100',
+                  'FGM0':'kicking_fgmissed_0_39',
+                  'REC':'receiving_rec',
+                  'KR25':'kickret_yds',
+                  'PR25':'puntret_yds'}
 
 class Page(webdriver.Firefox):
     def __init__(self, browser):
@@ -52,38 +112,37 @@ class Page(webdriver.Firefox):
             webdriver.Firefox.__init__(self,firefox_profile=pro)
 
 class Generate():
-    def __init__(self,league_id,season,browser,private=False,visible=True):
+    def __init__(self,league_id,season,browser,private=False,visible=True,username=None,password=None):
         print("Season {}".format(season))
-        if visible==False:
+        self.visible=True
+        if not visible and _pvd_avail:
             print('Starting Virtual Environment',end='\r')
             self.display=Display(visible=0,size=(200,200))
             self.display.start()
             print('Virtual Environment Established')
-
-        self.visible=visible
+            self.visible=visible
+        
         self.browser=Page(browser)
         self.season=season
-        self.current_season,self.current_week=nflgame.live.current_year_and_week()
+        self.current_season,self.current_week=nflleague.c_year,nflleague.c_week
         self.league_id=league_id
         self.owners=dict
+        #Needed for player ID matching
         self.player_game=nflgame.combine_game_stats(nflgame.games_gen(int(self.season)))
         if private:
-            print('Signing in to ESPN.com',end='\r')
+            print('Signing in to ESPN.com')
             self.browser.get("http://games.espn.go.com/ffl/signin")
             sleep(3)
             self.browser.switch_to.frame(self.browser.find_element_by_name("disneyid-iframe"))
-            self.browser.find_element_by_xpath("//input[@placeholder='Username or Email Address']").\
-                                                                                            send_keys(raw_input("Username: "))
-            self.browser.find_element_by_xpath("//input[@placeholder='Password (case sensitive)']").\
-                                                                                            send_keys(raw_input("Password: "))
- 
-            #self.browser.find_element_by_xpath("//input[@placeholder='Username or Email Address']").\
-            #                                                                                send_keys('username')
-            #self.browser.find_element_by_xpath("//input[@placeholder='Password (case sensitive)']").\
-            #                                                                                send_keys('password')
+            if username == None:
+                username==raw_input("Username: ")
+            if password == None:
+                password=raw_input("Password: ") 
+            self.browser.find_element_by_xpath("//input[@placeholder='Username or Email Address']").send_keys(username)
+            self.browser.find_element_by_xpath("//input[@placeholder='Password (case sensitive)']").send_keys(password)
             self.browser.find_element_by_xpath("//button[@type='submit']").click()
             sleep(5)
-            print('Logged in to ESPN.com          ')
+            print('Logged in to ESPN.com')
     
         filename='nflleague/espn-league-json/{}/{}/owner_info.json'.format(self.league_id,self.season)
         if os.path.isfile(filename):
@@ -114,15 +173,15 @@ class Generate():
         Scrapes ESPN Fantasy Football website for owner information and generates a json file
         of info to be assigned to league object by create_team function
         """
-        print('Gathering Owner Information',end='\r')
+        print('Gathering Owner Information')
         filename='nflleague/espn-league-json/{}/{}/owner_info.json'.format(self.league_id,self.season)
         check_dir(filename)
         
-        self.__home()
+        #self.__home()
         #navigate to members for scraping owner name/team name information
         #Gathers team_num/team_abv/team_name/Division/Owner
-        
         self.browser.get('http://games.espn.go.com/ffl/leaguesetup/ownerinfo?leagueId={}'.format(self.league_id))
+        print(self.browser.current_url)
         sleep(5)
         
         owner_info={}
@@ -131,19 +190,21 @@ class Generate():
             if team.text!='':
                 try:    
                     temp=[u2a(name.text).upper() for name in team.find_elements_by_tag_name('td') \
-                                                               if (name.text not in ['','Joined','Send Email','Add 2nd Owner'])]
+                                          if (name.text not in ['',' ','Joined','Send Email','Add 2nd Owner','Hidden'])]
+                    
                     currentInfo['team_abv']=temp[1]
                     currentInfo['team_name']=temp[2]
                     currentInfo['team_div']=temp[3]
                     currentInfo['team_owner']=temp[4]
-                   
+                     
                     idString=team.find_element_by_class_name('teamName').find_element_by_tag_name('a').get_attribute('href')
                     currentInfo['team_id']=int(re.search('{}(.*){}'.format('teamId=','&seasonId'),idString).group(1))
+                    previous_team=currentInfo['team_id']
                     owner_info[currentInfo['team_id']]=currentInfo
                 except IndexError as err:
-                    print(err)
-                    pass
-        print("Owner Information Gathered           ") 
+                    if len(temp)==1:
+                        owner_info[previous_team]['second_owner']=temp[0]
+        print("Owner Information Gathered") 
         with open('nflleague/espn-league-json/{}/{}/owner_info.json'.format(self.league_id,self.season),'w') as out:
             json.dump(owner_info,out,indent=4,sort_keys=True, separators=(',',': '),ensure_ascii=True)
         self.owners=owner_info
@@ -309,10 +370,11 @@ class Generate():
         print('Updating {} Settings'.format(self.season))
         filename='nflleague/espn-league-json/{}/{}/settings.json'.format(self.league_id,self.season)
         check_dir(filename)
+        """
         if os.path.isfile(filename) and raw_input("Settings Exists. Update?(Y/N): ") in ['N','n']:
             print("Settings Update Skipped")
             return False
-
+        """
         self.__home()
         address="http://games.espn.com/ffl/leaguesetup/settings?leagueId={}".format(self.league_id)
         self.browser.get(address)
