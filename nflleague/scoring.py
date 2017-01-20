@@ -50,7 +50,7 @@ class LeagueScoring(object):
         if key in ['passing_yds','rushing_yds','receiving_yds']:
             for yds in [1,5,10,25]:
                 if self.points.get('{}_{}'.format(key,yds),False):
-                    return (int(val)/yds)*(float(self.points['passing_yds_{}'.format(yds)]))
+                    return (int(val)/yds)*(float(self.points['{}_{}'.format(key,yds)]))
         elif key == 'passing_int' or key == 'defense_int':
             return val*float(self.points.get('interception',0))
         elif key == 'defense_fgblk' or key == 'defense_xpblk' or key == 'defense_puntblk':
