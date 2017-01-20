@@ -3,7 +3,7 @@ NFLLeague is an API for ESPN Fantasy Football which harnesses the power of Burnt
 ###Installation
 To use this package, run the following commands to install the necessary dependencies:
 ```
-pip install nflgame selenium matplotlib scipy numpy
+sudo pip install nflgame selenium matplotlib scipy numpy
 sudo apt-get install firefox python-levenshtein
 ```
 Optional: To run the scraping in a virtual environment (faster scraping), install PyVirtualDisplay
@@ -16,31 +16,20 @@ To gather ESPN data for your league, substitute your league information and run 
 ```python
 import nflleague.update
 
-current_week=5
-league_id=123456
-season=2015
-scraper=nflleague.update.Generate(league_id,season,'firefox',private=True,username='USERNAME',password='PASSWORD')
+scraper=nflleague.update.Generate(LEAGUE_ID,SEASON,username='USERNAME',password='PASSWORD')
 scraper.update_league_settings()
 scraper.update_owners()
 scraper.update_schedule()
-for week in range(1,current_week+1):
+for week in range(1,17):
     scraper.update_lineups_by_week(week,force=True)
-
-#scrape projection data if needed.
-scraper.scrape_projections(current_week)
 scraper.close()
 ```
 or equivalently:
 ```python
 import nflleague.update
 
-league_id=123456
-season=2015
-scraper=nflleague.update.Generate(league_id,season,'firefox',private=True,username='USERNAME',password='PASSWORD')
-scraper.init_league()
-
-#scrape projection data if needed.
-scraper.scrape_projections()
+scraper=nflleague.update.Generate(LEAGUE_ID,SEASON,username='USERNAME',password='PASSWORD')
+scraper.gen_league()
 scraper.close()
 ```
 

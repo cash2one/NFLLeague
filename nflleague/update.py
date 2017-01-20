@@ -112,17 +112,17 @@ class Page(webdriver.Firefox):
             webdriver.Firefox.__init__(self,firefox_profile=pro)
 
 class Generate():
-    def __init__(self,league_id,season,browser,private=False,visible=True,username=None,password=None):
+    def __init__(self,league_id,season,username=None,password=None,private=True,visible=False):
         print("Season {}".format(season))
         self.visible=True
         if not visible and _pvd_avail:
-            print('Starting Virtual Environment',end='\r')
+            print('Starting Virtual Environment')
             self.display=Display(visible=0,size=(200,200))
             self.display.start()
             print('Virtual Environment Established')
             self.visible=visible
         
-        self.browser=Page(browser)
+        self.browser=Page('firefox')
         self.season=season
         self.current_season,self.current_week=nflleague.c_year,nflleague.c_week
         self.league_id=league_id
@@ -161,7 +161,7 @@ class Generate():
             return True
         except:
             return False
-    def init_league(self):
+    def gen_league(self):
         self.update_league_settings()
         self.update_owners()
         self.update_schedule()
