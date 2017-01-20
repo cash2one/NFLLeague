@@ -1,5 +1,17 @@
 NFLLeague is an API for ESPN Fantasy Football which harnesses the power of BurntSushi's nflgame.  By utilizing several key features of nflgame, nflleague offers league-oriented, player-focused methods for rapidly accessing a wide range of ESPN and NFL player data. NFLLeague is ideal for those who are interested in performing analysis in a league-wise fashion, researching league historical data, or accessing real-time fantasy stats and scores.
 
+###Installation
+To use this package, run the following commands to install the necessary dependencies:
+```
+pip install nflgame selenium matplotlib scipy numpy
+sudo apt-get install firefox python-levenshtein
+```
+Optional: To run the scraping in a virtual environment (faster scraping), install PyVirtualDisplay
+```
+sudo apt-get install xvfb xserver-xephyr vnc4server
+sudo pip install pyvirtualdisplay
+```
+###Gathering Data
 To gather ESPN data for your league, substitute your league information and run the following:
 ```python
 import nflleague.update
@@ -7,7 +19,7 @@ import nflleague.update
 current_week=5
 league_id=123456
 season=2015
-scraper=nflleague.update.Generate(league_id,season,'firefox',private=True,visible=False)
+scraper=nflleague.update.Generate(league_id,season,'firefox',private=True,username='USERNAME',password='PASSWORD')
 scraper.update_league_settings()
 scraper.update_owners()
 scraper.update_schedule()
@@ -24,7 +36,7 @@ import nflleague.update
 
 league_id=123456
 season=2015
-scraper=nflleague.update.Generate(league_id,season,'firefox',private=True,visible=False)
+scraper=nflleague.update.Generate(league_id,season,'firefox',private=True,username='USERNAME',password='PASSWORD')
 scraper.init_league()
 
 #scrape projection data if needed.
@@ -34,12 +46,13 @@ scraper.close()
 
 It's too early to begin official documentation for NFLLeague, because I am sure there are some heavy structural changes yet to be made.  However, I'm currently working my best to document classes and functions in code to help people become accustom to how the package works.  Please address any questions in the Issue Tracker, or, for now, e-mail me at CMorton737@gmail.com.  Below I'll provide some basic usage examples, as well as in the cookbook.py
 
-To output the results of any given week from any given year, say my team in week 6 of the 2015 season:
+For fun and testing purposes, I've included example data scraped from Matthew Berry's celebrity league.
+To output the results of any matchup from any given year, say Chelsea Handler's team in week 10 of 2016:
 ```python
 import nflleague
 
-league=nflleague.league.League(123456,2015)
-game=league.team('CHAD MORTON').week(6)
+league=nflleague.league.League(1773242,2016)
+game=league.team('CHELSEA HANDLER').week(10)
 
 print(game)
 print('%s vs. %s' % (game.team_name,game.opponent().team_name))
@@ -49,25 +62,25 @@ for plyr,opp_plyr in zip(game.lineup,game.opponent().lineup):
 ```
 Which gives the result:
 ```
-CHOP (124.4) vs WISE (104.1)
-THE LOG CHOPPERZ vs. WYNNEDALE WINERY DINERY
-QB:     A.Luck          27.9    B.Bortles       22.9
-RB:     L.Bell          8.8     E.Lacy          2.4
-RB:     R.Hillman       12.1    M.Ingram        18.2
-WR:     A.Green         4.4     J.Edelman       12.4
-WR:     K.Allen         18.5    D.Moncrief      14.1
-TE:     M.Bennett       7.1     A.Gates         11.3
-FLEX:   B.Marshall      16.5    T.Hilton        14.6
-D/ST:   Broncos D/ST    18.0    Lions D/ST      -1.0
-K:      P.Dawson        11.1    S.Hauschka      9.2
+HAND (150.0) vs EFRO (113.0)
+TEAM HANDLER vs. TEAM EFRON
+QB:     C.Newton        23.0        D.Brees         20.0
+RB:     E.Elliott       40.0        J.Ajayi         8.0
+RB:     T.Hightower     7.0         J.Howard        8.0
+WR:     T.Williams      23.0        A.Brown         34.0
+WR:     C.Beasley       8.0         J.Crowder       13.0
+TE:     A.Gates         16.0        J.Graham        8.0
+FLEX:   T.Gabriel       14.0        Q.Enunwa        1.0
+D/ST:   Seahawks D/ST   5.0         Texans D/ST     12.0
+K:      S.Hauschka      14.0        J.Tucker        9.0
 ```
 
-To break down the number of Fantasy points/TDs scored by WRs on my team in 2015:
+To break down the number of Fantasy points/TDs scored by WRs on Kevin Durant's team in 2016:
 ```python
 import nflleague
 
-league=nflleague.league.League(123456,2015)
-team=league.team('CHAD MORTON')
+league=nflleague.league.League(1773242,2016)
+team=league.team('KEVIN DURANT')
 
 stats={}
 for week in team.weeks():
@@ -85,12 +98,10 @@ for plyr in sorted(stats.values(),key=lambda x:x.statistics().score(),reverse=Tr
 
 which returns:
 ```
-Brandon Marshall, NYJ WR: 164.6 pts/ 10 TDs
-Keenan Allen, SD WR: 93.9 pts/ 3 TDs
-A.J. Green, CIN WR: 88.5 pts/ 4 TDs
-Martavis Bryant, PIT WR: 65.9 pts/ 3 TDs
-Kendall Wright, TEN WR: 15.0 pts/ 1 TDs
-Golden Tate, DET WR: 9.7 pts/ 0 TDs
+Golden Tate, DET WR: 202.0 pts/ 3 TDs
+Dez Bryant, DAL WR: 179.0 pts/ 8 TDs
+DeSean Jackson, WAS WR: 151.0 pts/ 4 TDs
+Donte Moncrief, IND WR: 20.0 pts/ 1 TDs
 ```
 
 And one final teaser... 
@@ -100,7 +111,7 @@ NFLLeague can help in making informed, data-driven waiver decisions, as well as 
 import nflleague
 import numpy as np
 
-league=nflleague.league.League(123456,2015)
+league=nflleague.league.League(1773242,2016)
 
 for p in league.waivers(5,pos='WR').sort(lambda x:x.statistics().receiving_tar).limit(5):
     m='%s:\tWeek 5: %i\tAve: %.2f'
@@ -109,11 +120,11 @@ for p in league.waivers(5,pos='WR').sort(lambda x:x.statistics().receiving_tar).
 Which gives the following:
 
 ```
-Golden Tate, DET WR:        Week 5: 18  Ave: 7.25
-Anquan Boldin, SF WR:       Week 5: 12  Ave: 6.50
-Travis Benjamin, CLE WR:    Week 5: 12  Ave: 6.75
-Willie Snead, NO WR:        Week 5: 11  Ave: 5.50
-Allen Robinson, JAC WR:     Week 5: 9   Ave: 9.75
+Jeremy Kerley, SF WR:       Week 5: 13  Ave: 8.00
+Cameron Meredith, CHI WR:   Week 5: 12  Ave: 2.00
+Brandon LaFell, CIN WR:     Week 5: 11  Ave: 5.25
+Eddie Royal, CHI WR:        Week 5: 9   Ave: 5.50
+Jaelen Strong, HOU WR:      Week 5: 9   Ave: 2.75
 ```
 
 
