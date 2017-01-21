@@ -66,7 +66,7 @@ class Player(nflgame.player.Player):
         return '{}, {} {}'.format(self.full_name,self.team,self.position)
         
 class FreeAgent(Player):
-    def __init__(self,league_id,season,week,player_id):
+    def __init__(self,league_id,season,week,player_id,games=None):
         super(FreeAgent,self).__init__(season,week,player_id)
         self.league_id=league_id
 
@@ -74,10 +74,13 @@ class FreeAgent(Player):
         self._projs=None
         self._plays=None
         
-        if not self.bye:
-            self.game=nflgame.game.Game(self.schedule.get('eid'))
-        else:
+        if self.bye:
             self.game='bye'
+        else:
+            if games==None:
+                self.game=nflgame.game.Game(self.game_eid)
+            else:
+                self.game=games.filter(eid=self.game_eid)
         
         self.team_id=0
         self.team_abv='FA'
@@ -114,7 +117,7 @@ class FreeAgent(Player):
         
         #Returns dictionary of historical and current player stats which can be quickly accessed by [season][week]
         #Will be cached locally for fast retreival if stats have not been accessed before.
-        #Use self.statistics() for current weeks stats when live functionality is important. 
+        #Use self.stats() for current weeks stats when live functionality is important. 
         #Completely independent of fantasy league
 
         #For all weeks. Regular season only for now.
@@ -148,7 +151,7 @@ class FreeAgent(Player):
         return self._plays
     
     def RB_success_rate(self):
-        rushing_att=self.statistics().stats.get('rushing_att',0)
+        rushing_att=self.stats().stats.get('rushing_att',0)
         if self.position == 'RB' and rushing_att != 0:
             success=0
             for play in self.combine_plays():
@@ -225,30 +228,41 @@ class FreeAgent(Player):
         assert self.player_id==other.player_id,"Player Id's don't match"
         assert type(self)==type(other)
         new_player=self 
-        new_player._stats=self.statistics()+other.statistics()
+        new_player._stats=self.stats()+other.stats()
         new_player.week=None
         return new_player
     
     def formatted_stats(self):
-        stats=self.statistics()
+        stats=self.stats()
         try:
             print("{} [{}] {} {} {}".format(self.full_name,self.player_id,self.position,self.team,self.game_status()))
-            print("\tScore: {}".format(self.statistics().score()))
-            for k,v in self.statistics().stats.iteritems():
-                print("\t{}: {} ({} pts)".format(k,v,self.statistics().scoring().get(k,0)))
+            print("\tScore: {}".format(self.stats().score()))
+            for k,v in self.stats().stats.iteritems():
+                print("\t{}: {} ({} pts)".format(k,v,self.stats().scoring().get(k,0)))
         except Exception as err:
             print('No stats available for {}'.format(self.full_name))
-    """
+    """ 
     def __getattribute__(self,item):
+        print(self.full_name,'in attribute')
         try:
             return getattr(self,item)
         except:
             return 
     """
+    
+    '''
+    def __getattr__(self,item):
+        try:
+            #self.stats()._stats.get(item,'NOTHING')
+            return getattr(self.stats(),item)
+        except Exception as err:
+            print(err,item)
+    '''
 #Class for managing owned players within a league.  Contains league,team, and week metadata
 class PlayerTeam(FreeAgent):
     def __init__(self,data,meta):
-        super(PlayerTeam,self).__init__(meta.league_id,meta.season,meta.week,data.get('player_id'))
+        #pass leagueid,season,week, player_id, and the list of games inheirited from league
+        super(PlayerTeam,self).__init__(meta.league_id,meta.season,meta.week,data.get('player_id'),games=meta.games)
         self.team_id=meta.team_id
         self.team_abv=meta.owner_info[self.team_id]['team_abv']
         
@@ -335,7 +349,7 @@ class DefenseWeek(Defense):
     def historical_stats(self,years,weeks=None):
         #Returns dictionary of historical and current player stats which can be quickly accessed by [season][week]
         #Will be cached locally for fast retreival if stats have not been accessed before.
-        #Use self.statistics() when live functionality is important. 
+        #Use self.stats() when live functionality is important. 
         
         #For all weeks. Regular season only for now.
         if weeks==None:
@@ -388,9 +402,9 @@ class DefenseWeek(Defense):
     def formatted_stats(self):
         try:
             print("{} {} {} {}".format(self.full_name,self.position,self.team,self.game_status()))
-            print("\tScore: {}".format(self.statistics().score()))
-            for k,v in self.statistics().stats.iteritems():
-                print("\t{}: {} ({} pts)".format(k,v,self.statistics().scoring().get(k,0)))
+            print("\tScore: {}".format(self.stats().score()))
+            for k,v in self.stats().stats.iteritems():
+                print("\t{}: {} ({} pts)".format(k,v,self.stats().scoring().get(k,0)))
         except Exception as err:
             print('No stats available for {}'.format(self.team))
 

@@ -111,7 +111,7 @@ class Page(webdriver.Firefox):
             pro.set_preference("dom.max_script_run_time", 5)
             webdriver.Firefox.__init__(self,firefox_profile=pro)
 
-class Generate():
+class Scraper():
     def __init__(self,league_id,season,username=None,password=None,private=True,visible=False):
         print("Season {}".format(season))
         self.visible=True
@@ -161,7 +161,7 @@ class Generate():
             return True
         except:
             return False
-    def gen_league(self):
+    def scrape_league(self):
         self.update_league_settings()
         self.update_owners()
         self.update_schedule()

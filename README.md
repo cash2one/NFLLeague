@@ -16,7 +16,7 @@ To gather ESPN data for your league, substitute your league information and run 
 ```python
 import nflleague.update
 
-scraper=nflleague.update.Generate(LEAGUE_ID,SEASON,username='USERNAME',password='PASSWORD')
+scraper=nflleague.update.Scraper(LEAGUE_ID,SEASON,username='USERNAME',password='PASSWORD')
 scraper.update_league_settings()
 scraper.update_owners()
 scraper.update_schedule()
@@ -28,8 +28,8 @@ or equivalently:
 ```python
 import nflleague.update
 
-scraper=nflleague.update.Generate(LEAGUE_ID,SEASON,username='USERNAME',password='PASSWORD')
-scraper.gen_league()
+scraper=nflleague.update.Scraper(LEAGUE_ID,SEASON,username='USERNAME',password='PASSWORD')
+scraper.scrape_league()
 scraper.close()
 ```
 
@@ -47,7 +47,7 @@ print(game)
 print('%s vs. %s' % (game.team_name,game.opponent().team_name))
 for plyr,opp_plyr in zip(game.lineup,game.opponent().lineup):
     m='%s:\t%s\t%.1f\t\t%s\t%.1f'
-    print(m % (plyr.slot,plyr.gsis_name,plyr.statistics().score(),opp_plyr.gsis_name,opp_plyr.statistics().score()))
+    print(m % (plyr.slot,plyr.gsis_name,plyr.stats().score(),opp_plyr.gsis_name,opp_plyr.stats().score()))
 ```
 Which gives the result:
 ```
@@ -80,8 +80,8 @@ for week in team.weeks():
             else:
                 stats[plyr.player_id]+=plyr
 
-for plyr in sorted(stats.values(),key=lambda x:x.statistics().score(),reverse=True):
-    ps=plyr.statistics()
+for plyr in sorted(stats.values(),key=lambda x:x.stats().score(),reverse=True):
+    ps=plyr.stats()
     print('%s: %.1f pts/ %i TDs' % (plyr,ps.score(),ps.stats.get('receiving_tds',0)))
 ```
 
@@ -102,9 +102,9 @@ import numpy as np
 
 league=nflleague.league.League(1773242,2016)
 
-for p in league.waivers(5,pos='WR').sort(lambda x:x.statistics().receiving_tar).limit(5):
+for p in league.waivers(5,pos='WR').sort(lambda x:x.stats().receiving_tar).limit(5):
     m='%s:\tWeek 5: %i\tAve: %.2f'
-    print(m % (p,p.statistics().receiving_tar,np.mean([n.receiving_tar for n in p.seasonal_stats()])))
+    print(m % (p,p.stats().receiving_tar,np.mean([n.receiving_tar for n in p.seasonal_stats()])))
 ```
 Which gives the following:
 

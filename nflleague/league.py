@@ -40,6 +40,7 @@ class League(object):
         self.league_id=int(league_id)
         self.team_ids=_json_load_owners(self.league_id,self.season).keys()
         self.settings=Settings(self.league_id,self.season)
+        self.games=nflgame.seq.Gen(nflgame.games(self.season))
         self.league_name=self.settings.basic.league_name 
         self._schedule=_json_load_schedule(self.league_id,self.season)       
         self.owner_info=_json_load_owners(self.league_id,self.season)
@@ -72,7 +73,7 @@ class League(object):
         return divs
     
     def all_players(self,week):
-        everyone=nflleague.gen_players_week(self.league_id,self.season,week)
+        everyone=self._gen_players(week)
         for team in self.teams():
             for plyr in team.week(week).get_all(IR=True):
                 if plyr!=None:
@@ -83,8 +84,18 @@ class League(object):
     def waivers(self,week,pos=None):
         waiver_wire=self.all_players(week).filter(team_abv='FA')
         if pos!=None:
-            return waiver_wire.filter(position=pos)
+          return waiver_wire.filter(position=pos)
         return waiver_wire
+    
+    def _gen_players(self,week):
+        def gen():
+            for pid,plyr in nflleague.players.iteritems():
+                try:
+                    if plyr['schedule'][str(self.season)][str(week)]:
+                        yield nflleague.player.FreeAgent(self.league_id,self.season,week,pid,games=self.games)
+                except KeyError:
+                    continue
+        return nflleague.seq.GenPlayer(gen())
 
 class Seasons(dict):
     def __init__(self,league_id,seasons):

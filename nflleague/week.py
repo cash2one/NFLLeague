@@ -61,7 +61,7 @@ class Week(object):
             return self.lineup+self.bench
     
     def get_score(self):
-        return sum([p.statistics().score() for p in self.lineup])
+        return sum([p.stats().score() for p in self.lineup])
 
     def opponent(self):
         if self._opponent==None:
@@ -92,9 +92,9 @@ class Week(object):
             if p.game_status() in ['NOT PLAYED','PREGAME']:
                 optimized.append((p,float(p.projections().mean_score())))
             elif p.game_status() in ['PLAYING','HALFTIME']:
-                optimized.append((p,float(p.statistics().projected(p.projections().mean_score()))))
+                optimized.append((p,float(p.stats().projected(p.projections().mean_score()))))
             elif p.game_status() == 'PLAYED':
-                optimized.append((p,float(p.statistics().score())))
+                optimized.append((p,float(p.stats().score())))
         
         optimized=sorted(optimized, key=lambda x: x[1],reverse=True)
         
@@ -122,7 +122,7 @@ class Week(object):
         #Demo Basic Win Expectancy Alg (Cauchy Model)
         cum_exp,cum_std=0,0
         for plyr in self.lineup:
-            cum_exp+=plyr.statistics().projected(plyr.projections().mean_score())
+            cum_exp+=plyr.stats().projected(plyr.projections().mean_score())
             if plyr.game_status() in ['NOT PLAYED','PREGAME']:
                 cum_std+=plyr.projections().std_dev()
             elif plyr.game_status() in ['PLAYING','HALFTIME']:

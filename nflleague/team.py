@@ -31,19 +31,9 @@ class Team(object):
         self.schedule=temp
         
         self.logo=_load_logo(self.league_id,self.season,self.team_id)
-        #self._weeks={}
 
     #TODO Add REG and PLAYOFFS, and option to send list (LOW)    
     def weeks(self):
-        #Generate entire set of week objects if not already and return list of all weeks played
-        """
-        for week,sched in self.schedule.iteritems():
-            if int(week)<=int(nflleague.c_week) and str(week) not in map(str,self._weeks):
-                self._weeks[week]=nflleague.week.Week(week,self)
-        self._weeks=collections.OrderedDict(sorted(self._weeks.items(),key=lambda x:int(x[0])))
-        print(self._weeks)
-        return self._weeks.values()
-        """
         wks=[]
         for week,sched in self.schedule.iteritems():
             if int(week)<=int(nflleague.c_week):
@@ -51,13 +41,8 @@ class Team(object):
         return sorted(wks,key=lambda x:int(x.week))
     
     def week(self,week):
-        #Create specific week object if not already and return 
         return nflleague.week.Week(week,self)
-        """    
-        if str(week) not in self._weeks.keys():
-            self._weeks[str(week)]=nflleague.week.Week(week,self)
-        return(self._weeks[str(week)])
-        """
+    
     def record(self):
         #Takes insane amount of time to calculate. Cache
         #Update 10-01: With rebuild of players.json time is greatly reduced.  Still not optimized
