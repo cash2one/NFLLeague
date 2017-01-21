@@ -1,19 +1,60 @@
 {
-    "2016": {
+    "2015": {
+        "11": {
+            "BYE": true
+        },
+        "10": {
+            "BYE": true
+        },
         "13": {
-            "puntret_yds": 24,
-            "kickret_yds": 26,
-            "kickret_ret": 2,
-            "puntret_tot": 1,
-            "puntret_tds": 0,
-            "kickret_lngtd": 0,
-            "puntret_ret": 1,
-            "kickret_lng": 17,
-            "puntret_avg": 24,
-            "puntret_lngtd": 0,
-            "kickret_avg": 13,
-            "puntret_lng": 24,
-            "kickret_tds": 0
+            "BYE": true
+        },
+        "12": {
+            "BYE": true
+        },
+        "15": {
+            "BYE": true
+        },
+        "14": {
+            "BYE": true
+        },
+        "17": {
+            "BYE": true
+        },
+        "16": {
+            "BYE": true
+        },
+        "1": {
+            "BYE": true
+        },
+        "3": {
+            "BYE": true
+        },
+        "2": {
+            "BYE": true
+        },
+        "5": {
+            "BYE": true
+        },
+        "4": {
+            "BYE": true
+        },
+        "7": {
+            "BYE": true
+        },
+        "6": {
+            "BYE": true
+        },
+        "9": {
+            "BYE": true
+        },
+        "8": {
+            "BYE": true
+        }
+    },
+    "2016": {
+        "5": {
+            "BYE": true
         }
     }
 }

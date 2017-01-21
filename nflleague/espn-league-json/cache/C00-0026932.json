@@ -1,5 +1,77 @@
 {
-    "2016": {
-        "13": {}
+    "2015": {
+        "11": {
+            "defense_tkl": 1
+        },
+        "10": {},
+        "13": {
+            "kickret_lngtd": 0,
+            "kickret_lng": 20,
+            "kickret_yds": 20,
+            "kickret_avg": 20,
+            "kickret_tds": 0,
+            "kickret_ret": 1
+        },
+        "12": {
+            "defense_tkl": 1,
+            "defense_ast": 1
+        },
+        "15": {},
+        "14": {},
+        "17": {
+            "defense_tkl": 2,
+            "kickret_ret": 1,
+            "kickret_yds": 12,
+            "defense_ast": 2,
+            "kickret_lngtd": 0,
+            "kickret_lng": 12,
+            "kickret_avg": 12,
+            "kickret_tds": 0
+        },
+        "16": {
+            "kickret_lngtd": 0,
+            "kickret_lng": 5,
+            "kickret_yds": 5,
+            "kickret_avg": 5,
+            "defense_tkl": 1,
+            "kickret_tds": 0,
+            "kickret_ret": 1
+        },
+        "1": {
+            "defense_tkl": 2
+        },
+        "3": {
+            "defense_sk": 0,
+            "defense_tkl": 2,
+            "defense_int": 0,
+            "defense_ast": 0,
+            "defense_ffum": 1
+        },
+        "2": {
+            "defense_ast": 1
+        },
+        "5": {},
+        "4": {
+            "defense_tkl": 1
+        },
+        "7": {
+            "BYE": true
+        },
+        "6": {
+            "defense_tkl_primary": 1,
+            "kickret_lngtd": 0,
+            "kickret_lng": 7,
+            "kickret_yds": 7,
+            "kickret_avg": 7,
+            "defense_tkl": 2,
+            "kickret_tds": 0,
+            "kickret_ret": 1
+        },
+        "9": {
+            "defense_tkl": 1
+        },
+        "8": {
+            "defense_tkl": 2
+        }
     }
 }

@@ -1,22 +1,91 @@
 {
-    "2016": {
+    "2015": {
+        "11": {
+            "BYE": true
+        },
+        "10": {
+            "BYE": true
+        },
         "13": {
-            "receiving_yac_yds": 0,
-            "receiving_rec": 1,
-            "rushing_yds": 1,
-            "receiving_yds": 4,
-            "rushing_att": 1,
-            "receiving_tar": 1,
+            "BYE": true
+        },
+        "12": {
+            "BYE": true
+        },
+        "15": {
+            "BYE": true
+        },
+        "14": {
+            "BYE": true
+        },
+        "17": {
+            "BYE": true
+        },
+        "16": {
+            "BYE": true
+        },
+        "1": {
+            "BYE": true
+        },
+        "3": {
+            "BYE": true
+        },
+        "2": {
+            "BYE": true
+        },
+        "5": {
+            "BYE": true
+        },
+        "4": {
+            "BYE": true
+        },
+        "7": {
+            "BYE": true
+        },
+        "6": {
+            "BYE": true
+        },
+        "9": {
+            "BYE": true
+        },
+        "8": {
+            "BYE": true
+        }
+    },
+    "2016": {
+        "3": {
             "rushing_lngtd": 0,
             "receiving_tds": 0,
-            "receiving_twopta": 0,
-            "receiving_lng": 4,
-            "rushing_tds": 0,
+            "receiving_yac_yds": 7,
+            "receiving_lng": 7,
+            "rushing_yds": 37,
             "rushing_twopta": 0,
-            "rushing_lng": 1,
+            "receiving_rec": 2,
+            "rushing_tds": 0,
+            "receiving_twopta": 0,
+            "rushing_att": 9,
+            "receiving_yds": 11,
             "receiving_lngtd": 0,
             "receiving_twoptm": 0,
-            "rushing_twoptm": 0
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lng": 11
+        },
+        "4": {
+            "kickret_lngtd": 0,
+            "rushing_lngtd": 0,
+            "kickret_lng": 17,
+            "kickret_tds": 0,
+            "rushing_twoptm": 0,
+            "kickret_yds": 17,
+            "kickret_avg": 17,
+            "rushing_twopta": 0,
+            "defense_tkl": 2,
+            "rushing_tds": 0,
+            "rushing_yds": 15,
+            "rushing_att": 2,
+            "kickret_ret": 1,
+            "rushing_lng": 12
         }
     }
 }

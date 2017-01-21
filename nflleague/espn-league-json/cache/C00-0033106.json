@@ -1,26 +1,55 @@
 {
-    "2016": {
+    "2015": {
+        "11": {
+            "BYE": true
+        },
+        "10": {
+            "BYE": true
+        },
         "13": {
-            "passing_incmp_air_yds": 173,
-            "passing_sk": 4,
-            "passing_att": 32,
-            "passing_sk_yds": -35,
-            "passing_int": 2,
-            "passing_yds": 161,
-            "passing_incmp": 18,
-            "passing_cmp": 14,
-            "rushing_yds": -1,
-            "rushing_att": 1,
-            "passing_tds": 1,
-            "passing_cmp_air_yds": 83,
-            "rushing_lngtd": 0,
-            "passing_twoptm": 0,
-            "passing_twopta": 0,
-            "rushing_tds": 0,
-            "rushing_twopta": 0,
-            "rushing_lng": -1,
-            "passing_ints": 2,
-            "rushing_twoptm": 0
+            "BYE": true
+        },
+        "12": {
+            "BYE": true
+        },
+        "15": {
+            "BYE": true
+        },
+        "14": {
+            "BYE": true
+        },
+        "17": {
+            "BYE": true
+        },
+        "16": {
+            "BYE": true
+        },
+        "1": {
+            "BYE": true
+        },
+        "3": {
+            "BYE": true
+        },
+        "2": {
+            "BYE": true
+        },
+        "5": {
+            "BYE": true
+        },
+        "4": {
+            "BYE": true
+        },
+        "7": {
+            "BYE": true
+        },
+        "6": {
+            "BYE": true
+        },
+        "9": {
+            "BYE": true
+        },
+        "8": {
+            "BYE": true
         }
     }
 }

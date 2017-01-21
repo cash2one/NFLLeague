@@ -1,0 +1,41 @@
+{
+    "2015": {
+        "5": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 3,
+            "rushing_yds": 5,
+            "rushing_att": 2,
+            "rushing_twoptm": 0
+        }
+    },
+    "2016": {
+        "1": {},
+        "3": {
+            "penalty": 1,
+            "penalty_yds": 15,
+            "defense_tkl": 1
+        },
+        "2": {
+            "kickret_lngtd": 0,
+            "kickret_lng": 19,
+            "kickret_yds": 19,
+            "kickret_avg": 19,
+            "kickret_tds": 0,
+            "kickret_ret": 1
+        },
+        "5": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 7,
+            "receiving_lng": 4,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 4,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1
+        },
+        "4": {}
+    }
+}

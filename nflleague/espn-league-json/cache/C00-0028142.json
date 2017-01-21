@@ -1,7 +1,138 @@
 {
-    "2016": {
-        "13": {
+    "2015": {
+        "11": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 7,
+            "receiving_lng": 9,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 9,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
             "receiving_tar": 1
+        },
+        "10": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 7,
+            "receiving_lng": 8,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 8,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1
+        },
+        "13": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 17,
+            "receiving_lng": 22,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 22,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1
+        },
+        "12": {
+            "defense_tkl": 1
+        },
+        "15": {
+            "defense_tkl": 1
+        },
+        "14": {
+            "receiving_tar": 1,
+            "defense_tkl": 1
+        },
+        "17": {
+            "receiving_yds": 14,
+            "receiving_yac_yds": 12,
+            "defense_tkl": 1,
+            "receiving_tar": 1,
+            "receiving_rec": 1,
+            "receiving_tds": 0,
+            "receiving_lng": 14,
+            "receiving_twopta": 0,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0
+        },
+        "16": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 6,
+            "receiving_lng": 8,
+            "defense_tkl": 1,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 8,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1
+        },
+        "1": {
+            "receiving_tar": 1
+        },
+        "3": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 21,
+            "receiving_lng": 26,
+            "defense_tkl": 1,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 26,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1
+        },
+        "2": {
+            "receiving_tds": 1,
+            "receiving_yac_yds": 8,
+            "receiving_lng": 11,
+            "receiving_rec": 2,
+            "receiving_twopta": 0,
+            "receiving_yds": 12,
+            "receiving_lngtd": 1,
+            "receiving_twoptm": 0,
+            "receiving_tar": 3
+        },
+        "5": {},
+        "4": {},
+        "7": {
+            "BYE": true
+        },
+        "6": {},
+        "9": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 9,
+            "receiving_lng": 13,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 13,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1
+        },
+        "8": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 34,
+            "receiving_lng": 32,
+            "receiving_rec": 3,
+            "receiving_twopta": 0,
+            "receiving_yds": 61,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 3
+        }
+    },
+    "2016": {
+        "6": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 1,
+            "receiving_lng": 9,
+            "receiving_rec": 3,
+            "receiving_twopta": 0,
+            "receiving_yds": 21,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 4
         }
     }
 }

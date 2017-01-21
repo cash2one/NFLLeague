@@ -1,0 +1,22 @@
+{
+    "2015": {
+        "5": {
+            "defense_sk_yds": -25,
+            "defense_frec_yds": 0,
+            "defense_frec": 1,
+            "defense_tkl_loss": 1,
+            "defense_sk": 3,
+            "defense_tkl": 6,
+            "defense_tkl_loss_yds": 10,
+            "defense_qbhit": 3,
+            "defense_ffum": 2,
+            "fumbles_tot": 0,
+            "fumbles_yds": 0,
+            "fumbles_lost": 0,
+            "fumbles_trcv": 1,
+            "fumbles_rcv": 0,
+            "defense_int": 0,
+            "defense_ast": 0
+        }
+    }
+}

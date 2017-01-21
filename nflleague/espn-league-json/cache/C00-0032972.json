@@ -1,8 +1,58 @@
 {
-    "2016": {
+    "2015": {
         "11": {
             "BYE": true
         },
+        "10": {
+            "BYE": true
+        },
+        "13": {
+            "BYE": true
+        },
+        "12": {
+            "BYE": true
+        },
+        "15": {
+            "BYE": true
+        },
+        "14": {
+            "BYE": true
+        },
+        "17": {
+            "BYE": true
+        },
+        "16": {
+            "BYE": true
+        },
+        "1": {
+            "BYE": true
+        },
+        "3": {
+            "BYE": true
+        },
+        "2": {
+            "BYE": true
+        },
+        "5": {
+            "BYE": true
+        },
+        "4": {
+            "BYE": true
+        },
+        "7": {
+            "BYE": true
+        },
+        "6": {
+            "BYE": true
+        },
+        "9": {
+            "BYE": true
+        },
+        "8": {
+            "BYE": true
+        }
+    },
+    "2016": {
         "10": {
             "rushing_lngtd": 0,
             "receiving_tds": 0,
@@ -22,22 +72,22 @@
             "rushing_lng": 11
         },
         "13": {
-            "receiving_yac_yds": 5,
-            "rushing_tds": 1,
-            "receiving_rec": 1,
-            "rushing_yds": 35,
-            "receiving_yds": 2,
-            "rushing_att": 18,
-            "receiving_tar": 1,
             "rushing_lngtd": 6,
             "receiving_tds": 0,
-            "receiving_twopta": 0,
+            "receiving_yac_yds": 5,
             "receiving_lng": 2,
+            "rushing_yds": 35,
             "rushing_twopta": 0,
-            "rushing_lng": 6,
+            "receiving_rec": 1,
+            "rushing_tds": 1,
+            "receiving_twopta": 0,
+            "rushing_att": 18,
+            "receiving_yds": 2,
             "receiving_lngtd": 0,
             "receiving_twoptm": 0,
-            "rushing_twoptm": 0
+            "receiving_tar": 1,
+            "rushing_twoptm": 0,
+            "rushing_lng": 6
         },
         "12": {
             "rushing_lngtd": 0,
@@ -56,6 +106,76 @@
             "receiving_tar": 2,
             "rushing_twoptm": 0,
             "rushing_lng": 13
+        },
+        "14": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 10,
+            "receiving_lng": 6,
+            "rushing_yds": 1,
+            "rushing_twopta": 0,
+            "receiving_rec": 2,
+            "rushing_tds": 0,
+            "receiving_twopta": 0,
+            "rushing_att": 3,
+            "receiving_yds": 10,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lng": 1
+        },
+        "1": {
+            "fumbles_tot": 1,
+            "rushing_lngtd": 0,
+            "fumbles_forced": 1,
+            "fumbles_yds": 0,
+            "fumbles_lost": 1,
+            "fumbles_trcv": 0,
+            "rushing_tds": 0,
+            "fumbles_rcv": 0,
+            "rushing_twopta": 0,
+            "defense_tkl": 1,
+            "rushing_lng": 6,
+            "rushing_yds": 8,
+            "rushing_att": 3,
+            "rushing_twoptm": 0
+        },
+        "3": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_twopta": 0,
+            "receiving_yac_yds": 7,
+            "receiving_lng": 17,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "rushing_tds": 0,
+            "rushing_yds": 8,
+            "receiving_lngtd": 0,
+            "receiving_yds": 17,
+            "rushing_att": 4,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1,
+            "rushing_twoptm": 0,
+            "rushing_lng": 3
+        },
+        "2": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 1,
+            "receiving_lng": 5,
+            "rushing_yds": 46,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "rushing_tds": 0,
+            "receiving_twopta": 0,
+            "rushing_att": 9,
+            "receiving_yds": 5,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1,
+            "rushing_twoptm": 0,
+            "rushing_lng": 12
         },
         "9": {
             "penalty": 1,

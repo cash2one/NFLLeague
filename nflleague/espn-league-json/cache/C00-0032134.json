@@ -1,5 +1,52 @@
 {
+    "2015": {
+        "11": {},
+        "10": {},
+        "13": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 2,
+            "receiving_lng": 4,
+            "defense_tkl": 1,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 4,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1
+        },
+        "12": {},
+        "15": {},
+        "14": {
+            "penalty": 1,
+            "penalty_yds": 10
+        },
+        "17": {
+            "defense_ast": 1
+        },
+        "16": {},
+        "1": {},
+        "3": {},
+        "2": {},
+        "5": {},
+        "4": {},
+        "7": {
+            "BYE": true
+        },
+        "6": {},
+        "9": {},
+        "8": {}
+    },
     "2016": {
-        "13": {}
+        "5": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 23,
+            "receiving_lng": 14,
+            "receiving_rec": 5,
+            "receiving_twopta": 0,
+            "receiving_yds": 43,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 5
+        }
     }
 }

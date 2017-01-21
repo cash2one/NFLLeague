@@ -1,5 +1,186 @@
 {
+    "2015": {
+        "11": {
+            "BYE": true
+        },
+        "10": {
+            "defense_tkl_primary": 1,
+            "rushing_twopta": 0,
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "penalty": 1,
+            "defense_tkl": 1,
+            "rushing_lng": 4,
+            "rushing_yds": 15,
+            "rushing_att": 5,
+            "penalty_yds": 9,
+            "rushing_twoptm": 0
+        },
+        "13": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 11,
+            "receiving_lng": 10,
+            "rushing_yds": 23,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "rushing_tds": 0,
+            "receiving_twopta": 0,
+            "rushing_att": 8,
+            "receiving_yds": 10,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "defense_ast": 1,
+            "rushing_lng": 6
+        },
+        "12": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 1,
+            "rushing_yds": 2,
+            "rushing_att": 2,
+            "rushing_twoptm": 0
+        },
+        "15": {
+            "defense_tkl_primary": 1,
+            "defense_tkl": 2,
+            "defense_ast": 1
+        },
+        "14": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_twopta": 0,
+            "receiving_yac_yds": 3,
+            "receiving_lng": 6,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "rushing_tds": 0,
+            "rushing_yds": 10,
+            "receiving_lngtd": 0,
+            "receiving_yds": 6,
+            "rushing_att": 3,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1,
+            "rushing_twoptm": 0,
+            "rushing_lng": 10
+        },
+        "17": {},
+        "16": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_twopta": 0,
+            "receiving_yac_yds": 12,
+            "receiving_lng": 15,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "rushing_tds": 0,
+            "rushing_yds": 9,
+            "receiving_lngtd": 0,
+            "receiving_yds": 15,
+            "rushing_att": 1,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1,
+            "rushing_twoptm": 0,
+            "rushing_lng": 9
+        },
+        "1": {
+            "defense_tkl": 2
+        },
+        "3": {
+            "fumbles_tot": 0,
+            "fumbles_yds": 0,
+            "fumbles_lost": 0,
+            "fumbles_trcv": 1,
+            "fumbles_rec": 1,
+            "fumbles_rcv": 1,
+            "fumbles_rec_yds": 0
+        },
+        "2": {},
+        "5": {},
+        "4": {
+            "defense_ast": 2
+        },
+        "7": {
+            "rushing_lngtd": 15,
+            "rushing_tds": 1,
+            "rushing_twopta": 0,
+            "rushing_lng": 15,
+            "rushing_yds": 48,
+            "rushing_att": 8,
+            "receiving_tar": 1,
+            "rushing_twoptm": 0
+        },
+        "6": {},
+        "9": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 9,
+            "rushing_yds": 23,
+            "rushing_att": 6,
+            "rushing_twoptm": 0
+        },
+        "8": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 17,
+            "rushing_yds": 23,
+            "rushing_att": 4,
+            "rushing_twoptm": 0
+        }
+    },
     "2016": {
-        "13": {}
+        "3": {
+            "fumbles_tot": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 15,
+            "fumbles_rcv": 1,
+            "rushing_yds": 53,
+            "receiving_lngtd": 0,
+            "fumbles_lost": 0,
+            "rushing_tds": 1,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 9,
+            "rushing_att": 10,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1,
+            "rushing_twoptm": 0,
+            "rushing_lng": 15,
+            "rushing_lngtd": 2,
+            "fumbles_yds": 0,
+            "receiving_lng": 9,
+            "fumbles_trcv": 1,
+            "fumbles_rec": 1,
+            "fumbles_rec_yds": 0
+        },
+        "5": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 6,
+            "rushing_yds": 11,
+            "rushing_att": 7,
+            "rushing_twoptm": 0
+        },
+        "4": {
+            "rushing_lngtd": 1,
+            "rushing_tds": 1,
+            "rushing_twopta": 0,
+            "rushing_lng": 17,
+            "rushing_yds": 48,
+            "rushing_att": 12,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0
+        },
+        "7": {
+            "defense_tkl": 2
+        },
+        "6": {}
     }
 }

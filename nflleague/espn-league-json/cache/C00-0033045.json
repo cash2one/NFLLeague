@@ -1,32 +1,121 @@
 {
+    "2015": {
+        "11": {
+            "BYE": true
+        },
+        "10": {
+            "BYE": true
+        },
+        "13": {
+            "BYE": true
+        },
+        "12": {
+            "BYE": true
+        },
+        "15": {
+            "BYE": true
+        },
+        "14": {
+            "BYE": true
+        },
+        "17": {
+            "BYE": true
+        },
+        "16": {
+            "BYE": true
+        },
+        "1": {
+            "BYE": true
+        },
+        "3": {
+            "BYE": true
+        },
+        "2": {
+            "BYE": true
+        },
+        "5": {
+            "BYE": true
+        },
+        "4": {
+            "BYE": true
+        },
+        "7": {
+            "BYE": true
+        },
+        "6": {
+            "BYE": true
+        },
+        "9": {
+            "BYE": true
+        },
+        "8": {
+            "BYE": true
+        }
+    },
     "2016": {
+        "11": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 28,
+            "receiving_lng": 17,
+            "rushing_yds": 97,
+            "rushing_twopta": 0,
+            "receiving_rec": 4,
+            "rushing_tds": 0,
+            "receiving_twopta": 0,
+            "rushing_att": 25,
+            "receiving_yds": 30,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 5,
+            "rushing_twoptm": 0,
+            "rushing_lng": 14
+        },
+        "10": {
+            "rushing_lngtd": 32,
+            "receiving_tds": 1,
+            "receiving_yac_yds": 101,
+            "receiving_lng": 83,
+            "rushing_yds": 114,
+            "rushing_twopta": 0,
+            "receiving_rec": 2,
+            "rushing_tds": 2,
+            "receiving_twopta": 0,
+            "rushing_att": 21,
+            "receiving_yds": 95,
+            "receiving_lngtd": 83,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lng": 32
+        },
         "13": {
             "fumbles_tot": 1,
-            "penalty_yds": 10,
-            "fumbles_forced": 1,
+            "receiving_tds": 0,
             "receiving_yac_yds": 24,
-            "fumbles_rec": 2,
+            "fumbles_rcv": 2,
+            "rushing_yds": 86,
+            "receiving_lngtd": 0,
+            "rushing_twopta": 0,
+            "fumbles_forced": 1,
+            "fumbles_lost": 0,
             "rushing_tds": 1,
             "penalty": 1,
             "receiving_rec": 4,
-            "fumbles_rec_yds": 0,
-            "rushing_yds": 86,
+            "receiving_twopta": 0,
             "receiving_yds": 19,
             "rushing_att": 20,
-            "receiving_tar": 5,
-            "rushing_lngtd": 1,
-            "receiving_tds": 0,
-            "fumbles_yds": 0,
-            "receiving_twopta": 0,
-            "fumbles_trcv": 2,
-            "receiving_lng": 16,
-            "fumbles_rcv": 2,
-            "rushing_twopta": 0,
-            "fumbles_lost": 0,
-            "rushing_lng": 30,
-            "receiving_lngtd": 0,
             "receiving_twoptm": 0,
-            "rushing_twoptm": 0
+            "receiving_tar": 5,
+            "rushing_twoptm": 0,
+            "rushing_lng": 30,
+            "rushing_lngtd": 1,
+            "fumbles_yds": 0,
+            "receiving_lng": 16,
+            "penalty_yds": 10,
+            "fumbles_trcv": 2,
+            "fumbles_rec": 2,
+            "fumbles_rec_yds": 0
         },
         "12": {
             "rushing_lngtd": 4,
@@ -34,17 +123,188 @@
             "receiving_twopta": 0,
             "receiving_yac_yds": 21,
             "receiving_lng": 19,
-            "rushing_tds": 2,
             "rushing_twopta": 0,
             "receiving_rec": 2,
-            "rushing_lng": 21,
+            "rushing_tds": 2,
             "rushing_yds": 97,
             "receiving_lngtd": 0,
             "receiving_yds": 23,
             "rushing_att": 20,
             "receiving_twoptm": 0,
             "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lng": 21
+        },
+        "14": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 15,
+            "rushing_yds": 107,
+            "rushing_att": 24,
+            "receiving_tar": 2,
             "rushing_twoptm": 0
+        },
+        "1": {
+            "rushing_lngtd": 8,
+            "receiving_tds": 0,
+            "receiving_twopta": 0,
+            "receiving_yac_yds": 0,
+            "receiving_lng": 1,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "rushing_tds": 1,
+            "rushing_yds": 51,
+            "receiving_lngtd": 0,
+            "receiving_yds": 1,
+            "rushing_att": 20,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lng": 8
+        },
+        "3": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_twopta": 0,
+            "receiving_yac_yds": 24,
+            "receiving_lng": 18,
+            "rushing_twopta": 0,
+            "receiving_rec": 2,
+            "rushing_tds": 0,
+            "rushing_yds": 140,
+            "receiving_lngtd": 0,
+            "receiving_yds": 20,
+            "rushing_att": 30,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lng": 21
+        },
+        "2": {
+            "fumbles_tot": 2,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 4,
+            "fumbles_rcv": 0,
+            "defense_tkl": 1,
+            "rushing_yds": 83,
+            "receiving_lngtd": 0,
+            "fumbles_forced": 2,
+            "fumbles_lost": 1,
+            "rushing_tds": 1,
+            "rushing_twopta": 0,
+            "receiving_rec": 2,
+            "receiving_twopta": 0,
+            "receiving_yds": 4,
+            "rushing_att": 21,
+            "receiving_twoptm": 0,
+            "receiving_tar": 2,
+            "rushing_twoptm": 0,
+            "rushing_lngtd": 1,
+            "fumbles_yds": 0,
+            "receiving_lng": 3,
+            "fumbles_trcv": 0,
+            "rushing_lng": 21
+        },
+        "5": {
+            "rushing_lngtd": 60,
+            "receiving_tds": 0,
+            "receiving_twopta": 0,
+            "receiving_yac_yds": 41,
+            "receiving_lng": 22,
+            "rushing_twopta": 0,
+            "receiving_rec": 3,
+            "rushing_tds": 2,
+            "rushing_yds": 134,
+            "receiving_lngtd": 0,
+            "receiving_yds": 37,
+            "rushing_att": 15,
+            "receiving_twoptm": 0,
+            "receiving_tar": 4,
+            "rushing_twoptm": 0,
+            "rushing_lng": 60
+        },
+        "4": {
+            "rushing_lngtd": 1,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 23,
+            "receiving_lng": 19,
+            "rushing_yds": 138,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "rushing_tds": 1,
+            "receiving_twopta": 0,
+            "rushing_att": 23,
+            "receiving_yds": 19,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1,
+            "rushing_twoptm": 0,
+            "rushing_lng": 26
+        },
+        "6": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 25,
+            "receiving_lng": 15,
+            "rushing_yds": 157,
+            "rushing_twopta": 0,
+            "receiving_rec": 2,
+            "rushing_tds": 0,
+            "receiving_twopta": 0,
+            "rushing_att": 28,
+            "receiving_yds": 17,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 4,
+            "rushing_twoptm": 0,
+            "rushing_lng": 29
+        },
+        "9": {
+            "fumbles_tot": 1,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 5,
+            "fumbles_rcv": 1,
+            "rushing_yds": 92,
+            "receiving_lngtd": 0,
+            "fumbles_forced": 1,
+            "fumbles_lost": 0,
+            "rushing_tds": 2,
+            "rushing_twopta": 0,
+            "receiving_rec": 1,
+            "receiving_twopta": 0,
+            "receiving_yds": 5,
+            "rushing_att": 18,
+            "receiving_twoptm": 0,
+            "receiving_tar": 1,
+            "rushing_twoptm": 0,
+            "rushing_lng": 15,
+            "rushing_lngtd": 10,
+            "fumbles_yds": 0,
+            "receiving_lng": 5,
+            "fumbles_trcv": 1,
+            "fumbles_rec": 1,
+            "fumbles_rec_yds": 0
+        },
+        "8": {
+            "penalty": 1,
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 52,
+            "penalty_yds": 5,
+            "receiving_lng": 25,
+            "rushing_yds": 96,
+            "rushing_twopta": 0,
+            "receiving_rec": 4,
+            "rushing_tds": 0,
+            "receiving_twopta": 0,
+            "rushing_att": 22,
+            "receiving_yds": 52,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 4,
+            "rushing_twoptm": 0,
+            "rushing_lng": 16
         }
     }
 }

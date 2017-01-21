@@ -1,5 +1,112 @@
 {
+    "2015": {
+        "11": {
+            "BYE": true
+        },
+        "10": {
+            "BYE": true
+        },
+        "13": {
+            "BYE": true
+        },
+        "12": {
+            "BYE": true
+        },
+        "15": {
+            "BYE": true
+        },
+        "14": {
+            "BYE": true
+        },
+        "17": {
+            "BYE": true
+        },
+        "16": {
+            "BYE": true
+        },
+        "1": {
+            "BYE": true
+        },
+        "3": {
+            "BYE": true
+        },
+        "2": {
+            "BYE": true
+        },
+        "5": {
+            "BYE": true
+        },
+        "4": {
+            "BYE": true
+        },
+        "7": {
+            "BYE": true
+        },
+        "6": {
+            "BYE": true
+        },
+        "9": {
+            "BYE": true
+        },
+        "8": {
+            "BYE": true
+        }
+    },
     "2016": {
-        "13": {}
+        "14": {},
+        "1": {
+            "receiving_tar": 7,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 7,
+            "receiving_lng": 19,
+            "penalty": 1,
+            "receiving_rec": 3,
+            "receiving_twopta": 0,
+            "receiving_yds": 34,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "penalty_yds": 5
+        },
+        "3": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 11,
+            "receiving_lng": 32,
+            "receiving_rec": 6,
+            "receiving_twopta": 0,
+            "receiving_yds": 62,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 14
+        },
+        "2": {
+            "rushing_lngtd": 0,
+            "receiving_tds": 0,
+            "receiving_yac_yds": 11,
+            "receiving_lng": 19,
+            "rushing_yds": 9,
+            "rushing_twopta": 0,
+            "receiving_rec": 4,
+            "rushing_tds": 0,
+            "receiving_twopta": 0,
+            "rushing_att": 1,
+            "receiving_yds": 36,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 6,
+            "rushing_twoptm": 0,
+            "rushing_lng": 9
+        },
+        "5": {},
+        "4": {
+            "receiving_tds": 0,
+            "receiving_yac_yds": 25,
+            "receiving_lng": 19,
+            "receiving_rec": 6,
+            "receiving_twopta": 0,
+            "receiving_yds": 55,
+            "receiving_lngtd": 0,
+            "receiving_twoptm": 0,
+            "receiving_tar": 9
+        }
     }
 }

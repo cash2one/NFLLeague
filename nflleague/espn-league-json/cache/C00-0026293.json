@@ -1,5 +1,82 @@
 {
+    "2015": {
+        "11": {
+            "defense_tkl": 1
+        },
+        "10": {
+            "defense_tkl": 2
+        },
+        "13": {
+            "defense_tkl": 2
+        },
+        "12": {},
+        "15": {
+            "defense_tkl": 1
+        },
+        "14": {
+            "defense_tkl": 1
+        },
+        "17": {
+            "defense_tkl": 1
+        },
+        "16": {
+            "defense_tkl": 1
+        },
+        "1": {
+            "penalty": 1,
+            "penalty_yds": 10,
+            "defense_ast": 1
+        },
+        "3": {
+            "defense_ffum": 0,
+            "defense_tkl": 1,
+            "defense_int": 0,
+            "defense_ast": 0,
+            "defense_sk": 0
+        },
+        "2": {},
+        "5": {
+            "defense_tkl": 1,
+            "receiving_tar": 1
+        },
+        "4": {
+            "BYE": true
+        },
+        "7": {},
+        "6": {},
+        "9": {
+            "defense_tkl": 1,
+            "defense_ast": 2
+        },
+        "8": {
+            "defense_tkl": 1
+        }
+    },
     "2016": {
-        "13": {}
+        "1": {},
+        "3": {},
+        "2": {
+            "kickret_lngtd": 0,
+            "kickret_lng": 18,
+            "kickret_yds": 18,
+            "kickret_avg": 18,
+            "defense_tkl": 1,
+            "kickret_tds": 0,
+            "receiving_tar": 1,
+            "kickret_ret": 1
+        },
+        "5": {
+            "rushing_lngtd": 0,
+            "rushing_tds": 0,
+            "rushing_twopta": 0,
+            "rushing_lng": 5,
+            "rushing_yds": 5,
+            "rushing_att": 1,
+            "rushing_twoptm": 0
+        },
+        "4": {
+            "defense_tkl": 1,
+            "defense_ast": 1
+        }
     }
 }

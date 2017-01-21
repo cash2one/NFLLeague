@@ -1,0 +1,24 @@
+{
+    "2015": {
+        "5": {
+            "defense_pass_def": 1,
+            "puntret_yds": 10,
+            "kickret_fair": 1,
+            "defense_int_yds": 40,
+            "penalty": 2,
+            "defense_tkl": 4,
+            "defense_int": 1,
+            "puntret_tot": 1,
+            "puntret_fair": 1,
+            "penalty_yds": 10,
+            "puntret_tds": 0,
+            "puntret_ret": 1,
+            "puntret_avg": 10,
+            "puntret_lngtd": 0,
+            "puntret_lng": 10,
+            "defense_sk": 0,
+            "defense_ffum": 0,
+            "defense_ast": 0
+        }
+    }
+}
