@@ -43,6 +43,7 @@ def _create_week_players(season,week):
         players[pid]=nflleague.player.Player(season,week,pid)
     return players
 
+
 #Could combine Player and Defense classes
 class Player(nflgame.player.Player):
     def __init__(self,season,week,player_id):
@@ -69,19 +70,19 @@ class FreeAgent(Player):
     def __init__(self,league_id,season,week,player_id,games=None):
         super(FreeAgent,self).__init__(season,week,player_id)
         self.league_id=league_id
-
         self._stats=None
         self._projs=None
         self._plays=None
-        
+                
+        self.games=games
         if self.bye:
             self.game='bye'
         else:
             if games==None:
                 self.game=nflgame.game.Game(self.game_eid)
             else:
-                self.game=games.filter(eid=self.game_eid)
-        
+                self.game=list(games.filter(eid=self.game_eid))[0]
+
         self.team_id=0
         self.team_abv='FA'
         self.slot='NA'
@@ -90,7 +91,7 @@ class FreeAgent(Player):
         self.in_lineup=False
         self.condition='NA'
 
-    def statistics(self,system='Custom'):
+    def stats(self,system='Custom'):
         if self._stats==None:
             stats=gen_player_stats(self.season,self.week,self.player_id,self.team,self.game)
             if stats!=False:
@@ -137,6 +138,7 @@ class FreeAgent(Player):
                 stats=gen_player_stats(a,b,c,d)
                 history[year][week]=nflleague.scoring.LeagueScoring(self.league_id,year,self.position,stats)
         return history
+    
     def seasonal_stats(self,inclusive=False):
         seasonal=[]
         for week in range(1,self.week + 1 if inclusive else self.week):
@@ -144,6 +146,12 @@ class FreeAgent(Player):
             stats=gen_player_stats(a,b,c,d)
             seasonal.append(nflleague.scoring.LeagueScoring(self.league_id,self.season,self.position,stats))
         return seasonal
+    
+    def seasonal(self,inclusive=False):
+        plyr=nflleague.seq.SeqPlayer(list)
+        for week in range(1,self.week+1 if inclusive else int(self.week)):
+            plyr.add(FreeAgent(self.league_id,self.season,self.week,self.player_id,games=self.games))
+        return plyr
 
     def combine_plays(self):
         if self._plays==None:
@@ -241,23 +249,14 @@ class FreeAgent(Player):
                 print("\t{}: {} ({} pts)".format(k,v,self.stats().scoring().get(k,0)))
         except Exception as err:
             print('No stats available for {}'.format(self.full_name))
-    """ 
-    def __getattribute__(self,item):
-        print(self.full_name,'in attribute')
-        try:
-            return getattr(self,item)
-        except:
-            return 
-    """
     
-    '''
     def __getattr__(self,item):
         try:
-            #self.stats()._stats.get(item,'NOTHING')
             return getattr(self.stats(),item)
         except Exception as err:
             print(err,item)
-    '''
+
+
 #Class for managing owned players within a league.  Contains league,team, and week metadata
 class PlayerTeam(FreeAgent):
     def __init__(self,data,meta):
@@ -318,7 +317,7 @@ class DefenseWeek(Defense):
 
         #print('DefenseWeek Object Initiated {} {} {}'.format(self.team,self.season,self.week))
             
-    def statistics(self,system='Custom'):
+    def stats(self,system='Custom'):
         #Fastest way to access statistics for current week.
         if self._stats==None:
             stats=gen_defense_stats(self.season,self.week,self.team,self.game)
@@ -379,7 +378,6 @@ class DefenseWeek(Defense):
                 if plyr!='defense':
                     self._players.append(DefensePlayerWeek(self.meta,plyr,stats[plyr],game=self.game))
         return self._players
-    
     def game_status(self):
         return get_game_status(self.game)
     
