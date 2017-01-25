@@ -15,9 +15,17 @@ class GenPlayer(nflgame.seq.Gen):
         def attrget(item):
             return getattr(item,field,0)
         
-        return self.__class__(sorted(self,reverse=descending,key=field if islambda(field) else getattr))
+        return self.__class__(sorted(self,reverse=descending,key=field if islambda(field) else attrget))
     def remove(self,pid):
         return self.__class__(itertools.ifilter(lambda x:x.player_id!=pid,self))
     def add(self,obj):
         return self.__class__(list(self)+[obj])
 
+
+#Class for managing instances of individual player on different season and weeks
+class SeqPlayer(GenPlayer):
+    def __init__(self,iterable):
+        super(GenPlayer,self).__init__(iterable)
+        
+    def add(self,plyr):
+        return self.__class__(list(self)+[plyr])

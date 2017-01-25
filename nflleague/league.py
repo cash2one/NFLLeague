@@ -71,9 +71,9 @@ class League(object):
             except KeyError:
                 divs[team.team_div]=[team]
         return divs
-    
+           
     def all_players(self,week):
-        everyone=self._gen_players(week)
+        everyone=self._week_players(week)
         for team in self.teams():
             for plyr in team.week(week).get_all(IR=True):
                 if plyr!=None:
@@ -87,16 +87,17 @@ class League(object):
           return waiver_wire.filter(position=pos)
         return waiver_wire
     
-    def _gen_players(self,week):
+    def _week_players(self,week):
         def gen():
             for pid,plyr in nflleague.players.iteritems():
                 try:
                     if plyr['schedule'][str(self.season)][str(week)]:
                         yield nflleague.player.FreeAgent(self.league_id,self.season,week,pid,games=self.games)
-                except KeyError:
+                except KeyError as err:
                     continue
-        return nflleague.seq.GenPlayer(gen())
-
+        return nflleague.seq.GenPlayer(gen()) 
+        
+        
 class Seasons(dict):
     def __init__(self,league_id,seasons):
         super(Seasons,self).__init__({season:nflleague.league.League(league_id,season) for season in seasons})
