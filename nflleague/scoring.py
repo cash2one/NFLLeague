@@ -104,9 +104,9 @@ class LeagueScoring(object):
     def _add_stats(self,stats):
         for k,v in stats.iteritems():
             self._stats[k]=self._stats.get(k,0)+v
-
+    
     def __add__(self,other):
-        assert type(self)==type(other)
+        assert type(self)==type(other) or other==0 #other==0 for use of sum() function
 
         new_object=self.__class__(self.league_id,self.season,self.position,{},self.system)
         new_object._add_stats(self._stats)
@@ -114,19 +114,26 @@ class LeagueScoring(object):
         
         return new_object
     
+    def __radd__(self,other):
+        try:
+            return self+other
+        except AttributeError:
+            return self
+    
     def __getattr__(self,item):
         try:
             return self.stats[item]
         except KeyError:
-            return 0
-
+            for cat in nflgame.statmap.categories:
+                if item.startswith(cat):
+                    return 0
+            raise AttributeError
 
 class PlayerStatistics(LeagueScoring):
     def __init__(self,league_id,season,position,stats,game=None,system='Custom'):
         stats=stats if stats!=None else {}
         super(PlayerStatistics,self).__init__(league_id,season,position,stats,system)
         self.game=game
-        #print('PLAYER STATS INITIATIED')    
     
     def projected(self,proj):
         if self.game == 'bye':
@@ -139,9 +146,6 @@ class PlayerStatistics(LeagueScoring):
             return round(self.score()+(int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr))))*(float(proj)/60),1)
         elif self.game.time.is_final():
             return self.score()
-        else:
-            print('PROBLEM IN PROJECTED FUNCTION')
-            return 0
 
 
 class DefenseStatistics(LeagueScoring):
