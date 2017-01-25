@@ -113,51 +113,58 @@ class FreeAgent(Player):
         
         return projections
     
-    def historical_stats(self,years,weeks=None):
-        #BAD. antiintuitive
-        
-        #Returns dictionary of historical and current player stats which can be quickly accessed by [season][week]
-        #Will be cached locally for fast retreival if stats have not been accessed before.
-        #Use self.stats() for current weeks stats when live functionality is important. 
-        #Completely independent of fantasy league
-
-        #For all weeks. Regular season only for now.
-        if weeks==None:
-            weeks=[]
-            for year in years:
-                if str(year) == str(nflleague.c_year):
-                    weeks.append(range(1,int(nflleague.c_week)+1))
-                else:
-                    weeks.append(range(1,18))
-            
-        history={}
-        for i,year in enumerate(years):
-            history[year]={}
-            for week in weeks[0]:
-                a,b,c,d=year,week,self.player_id,self.team
-                stats=gen_player_stats(a,b,c,d)
-                history[year][week]=nflleague.scoring.LeagueScoring(self.league_id,year,self.position,stats)
-        return history
-    
     def seasonal_stats(self,inclusive=False):
-        seasonal=[]
-        for week in range(1,self.week + 1 if inclusive else self.week):
-            a,b,c,d=self.season,week,self.player_id,self.team
-            stats=gen_player_stats(a,b,c,d)
-            seasonal.append(nflleague.scoring.LeagueScoring(self.league_id,self.season,self.position,stats))
-        return seasonal
+        def gen():
+            for week in range(1,int(self.week) + 1 if inclusive else int(self.week)):
+                a,b,c,d=self.season,week,self.player_id,self.team
+                stats=gen_player_stats(a,b,c,d)
+                yield nflleague.scoring.PlayerStatistics(self.league_id,self.season,self.position,stats,game=self.games)
+        return nflleague.seq.SeqPlayer(gen())
     
-    def seasonal(self,inclusive=False):
-        plyr=nflleague.seq.SeqPlayer(list)
-        for week in range(1,self.week+1 if inclusive else int(self.week)):
-            plyr.add(FreeAgent(self.league_id,self.season,self.week,self.player_id,games=self.games))
-        return plyr
-
-    def combine_plays(self):
-        if self._plays==None:
-            self._plays=filter(lambda p: p.has_player(self.player_id),nflgame.combine_plays([self.game]))
-        return self._plays
+    def game_status(self):
+        return get_game_status(self.game)
     
+    def game_info(self,item):
+        if self.bye:
+            return 'BYE'
+        else:
+            return self.schedule.get(item,'')
+    
+    def mins_remaining(self):
+        if self.game_status() in ['NOT PLAYED','PREGAME']:
+            return 60
+        elif self.game_status() == 'HALFTIME':
+            return 30
+        elif self.game_status() in ['BYE','PLAYED']:
+            return 0
+        elif self.game_status() == 'PLAYING':
+            return int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr)))
+    
+    def formatted_stats(self):
+        stats=self.stats()
+        try:
+            print("{} [{}] {} {} {}".format(self.full_name,self.player_id,self.position,self.team,self.game_status()))
+            print("\tScore: {}".format(self.stats().score()))
+            for k,v in self.stats().stats.iteritems():
+                print("\t{}: {} ({} pts)".format(k,v,self.stats().scoring().get(k,0)))
+        except Exception as err:
+            print('No stats available for {}'.format(self.full_name))
+    
+    def __add__(self,other):
+        assert self.player_id==other.player_id,"Player Id's don't match"
+        assert type(self)==type(other)
+        new_player=self 
+        new_player._stats=self.stats()+other.stats()
+        new_player.week=None
+        return new_player
+    
+    #def __getattr__(self,item):
+    #    try:
+    #        return getattr(self.stats(),item)
+    #    except Exception as err:
+    #        print(err,item)
+    """ 
+    Non-essential functions to be added later?
     def RB_success_rate(self):
         rushing_att=self.stats().stats.get('rushing_att',0)
         if self.position == 'RB' and rushing_att != 0:
@@ -212,50 +219,7 @@ class FreeAgent(Player):
             pos=nflgame.game.FieldPosition(team,offset=30)
             return filter(lambda p: p.team==team and p.yardline>=pos,play_gen)
         return filter(lambda p:p.has_player(self.player_id),redzone(self.team,self.game.drives.plays()))
-
-    def game_status(self):
-        return get_game_status(self.game)
-    
-    def game_info(self,item):
-        if self.bye:
-            return 'BYE'
-        else:
-            return self.schedule.get(item,'')
-    
-    def mins_remaining(self):
-        if self.game_status() in ['NOT PLAYED','PREGAME']:
-            return 60
-        elif self.game_status() == 'HALFTIME':
-            return 30
-        elif self.game_status() in ['BYE','PLAYED']:
-            return 0
-        elif self.game_status() == 'PLAYING':
-            return int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr)))
-    
-    def __add__(self,other):
-        assert self.player_id==other.player_id,"Player Id's don't match"
-        assert type(self)==type(other)
-        new_player=self 
-        new_player._stats=self.stats()+other.stats()
-        new_player.week=None
-        return new_player
-    
-    def formatted_stats(self):
-        stats=self.stats()
-        try:
-            print("{} [{}] {} {} {}".format(self.full_name,self.player_id,self.position,self.team,self.game_status()))
-            print("\tScore: {}".format(self.stats().score()))
-            for k,v in self.stats().stats.iteritems():
-                print("\t{}: {} ({} pts)".format(k,v,self.stats().scoring().get(k,0)))
-        except Exception as err:
-            print('No stats available for {}'.format(self.full_name))
-    
-    def __getattr__(self,item):
-        try:
-            return getattr(self.stats(),item)
-        except Exception as err:
-            print(err,item)
-
+    """
 
 #Class for managing owned players within a league.  Contains league,team, and week metadata
 class PlayerTeam(FreeAgent):
@@ -315,8 +279,6 @@ class DefenseWeek(Defense):
         else:
             self.game='bye'
 
-        #print('DefenseWeek Object Initiated {} {} {}'.format(self.team,self.season,self.week))
-            
     def stats(self,system='Custom'):
         #Fastest way to access statistics for current week.
         if self._stats==None:
@@ -330,16 +292,13 @@ class DefenseWeek(Defense):
     def projections(self,sites=['ESPN','FantasyPros','CBS'],system='Custom'):
         projections=nflleague.scoring.Projections()
         for site in sites:
-            #TODO Make separate json access function
             filename='nflleague/espn-league-json/projections/week{}/{}.json'.format(self.week,site.lower())
             projection=json.loads(open(filename).read())
             try:         
-                #TODO make all internal references to defense of standard name type (i.e. NE vs Patriots)
                 proj=projection[self.gsis_name]
             except KeyError as err:
                 print(err)
                 proj={}
-            #DONE make generic LeagueScoring Object 
             a,b,c,d,e=self.league_id,self.season,'D/ST',proj,'Custom'
             projections[site]=nflleague.scoring.LeagueScoring(a,b,c,d,e)
         
