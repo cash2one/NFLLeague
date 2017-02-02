@@ -18,7 +18,7 @@ class GenPlayer(nflgame.seq.Gen):
         return self.__class__(sorted(self,reverse=descending,key=field if islambda(field) else attrget))
     
     def remove(self,pid):
-        return self.__class__(self.filter(player_id=lambda x:x!=pid)) 
+        return self.filter(player_id=lambda x:x!=pid)
     
     def add(self,obj):
         return self.__class__(list(self)+[obj])

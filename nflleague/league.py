@@ -5,8 +5,8 @@ import nflleague.schedule
 import nflgame
 import json
 import numpy as np
-from collections import defaultdict
-
+from collections import defaultdict,OrderedDict
+from copy import deepcopy
 #TODO cache expensive functions which return weekly constants such as record, score etc..
 #TODO change heirarchy to league>SEASON>team>week>player>stats 
 #       >> LEAGUE=nflleague.league.League(league_id)
@@ -16,24 +16,6 @@ from collections import defaultdict
 #   Would make interface more intuitive and eliminate need for confusing 'Seasons' dictionary with different league objects
 #   Might take much longer to initialize Leauge Objet.  Could avoid, though
 
-#Need to create a list type that can be sorted by some passed parameter(i.e. stat/pts scored) as well as return a limited
-#number of items (i.e. obj.sort('receiving_tds').limit(5))
-
-
-def _json_load_owners(league_id,season):
-    return get_json('nflleague/espn-league-json/{}/{}/owner_info.json'.format(league_id,season),{})
-
-def _load_settings(league_id,season,category):
-    settings=get_json('nflleague/espn-league-json/{}/{}/settings.json'.format(league_id,season),{})
-    assert settings!={},'Settings Not Created.'
-    return settings.get(category,{})
-
-def _json_load_schedule(league_id,season):
-    schedule=get_json('nflleague/espn-league-json/{}/{}/schedule.json'.format(league_id,season),{})
-    assert schedule!={},'Schedule Not Created.'
-    return schedule
-
-
 class League(object):
     def __init__(self,league_id,season):
         self.season=int(season)
@@ -41,6 +23,7 @@ class League(object):
         self.team_ids=_json_load_owners(self.league_id,self.season).keys()
         self.settings=Settings(self.league_id,self.season)
         self.games=nflgame.seq.Gen(nflgame.games(self.season))
+        self._players=_json_league_players(self.league_id,self.season)
         self.league_name=self.settings.basic.league_name 
         self._schedule=_json_load_schedule(self.league_id,self.season)       
         self.owner_info=_json_load_owners(self.league_id,self.season)
@@ -73,31 +56,26 @@ class League(object):
         return divs
            
     def all_players(self,week):
-        everyone=self._week_players(week)
-        for team in self.teams():
-            for plyr in team.week(week).get_all(IR=True):
-                if plyr!=None:
-                    everyone=everyone.remove(plyr.player_id)
-                    everyone=everyone.add(plyr)
-        return everyone
+        def gen():
+            for pid,plyr in self._players.iteritems():
+                try:
+                    if plyr['position'][str(self.season)][str(week)] in self.settings.roster.actives:
+                        yield nflleague.player.PlayerWeek(self.league_id,self.season,week,pid,\
+                                                       games=self.games,meta=plyr['lineup'].get(str(week),None))
+                except KeyError:
+                    continue
+                except TypeError:
+                    continue
+        return nflleague.seq.GenPlayer(gen())
     
     def waivers(self,week,pos=None):
         waiver_wire=self.all_players(week).filter(team_abv='FA')
         if pos!=None:
-          return waiver_wire.filter(position=pos)
+            return waiver_wire.filter(position=pos)
         return waiver_wire
     
-    def _week_players(self,week):
-        def gen():
-            for pid,plyr in nflleague.players.iteritems():
-                try:
-                    if plyr['schedule'][str(self.season)][str(week)]:
-                        yield nflleague.player.FreeAgent(self.league_id,self.season,week,pid,games=self.games)
-                except KeyError as err:
-                    continue
-        return nflleague.seq.GenPlayer(gen()) 
-        
-        
+
+
 class Seasons(dict):
     def __init__(self,league_id,seasons):
         super(Seasons,self).__init__({season:nflleague.league.League(league_id,season) for season in seasons})
@@ -151,3 +129,26 @@ class Settings(object):
     
     def n_teams(self):
         return int(self.basic.number_of_teams)
+
+
+def _json_load_owners(league_id,season):
+    return get_json('nflleague/espn-league-json/{}/{}/owner_info.json'.format(league_id,season),{})
+
+def _load_settings(league_id,season,category):
+    settings=get_json('nflleague/espn-league-json/{}/{}/settings.json'.format(league_id,season),{})
+    assert settings!={},'Settings Not Created.'
+    return settings.get(category,{})
+
+def _json_load_schedule(league_id,season):
+    schedule=get_json('nflleague/espn-league-json/{}/{}/schedule.json'.format(league_id,season),{})
+    assert schedule!={},'Schedule Not Created.'
+    return schedule
+
+def _json_league_players(league_id,season):
+    path='nflleague/espn-league-json/{}/{}/lineup_by_player.json'
+    comb=get_json(path.format(league_id,season),{})
+    orig=deepcopy(nflleague.players)
+    
+    for pid in orig.keys():
+        orig[pid]['lineup']=comb[pid]
+    return orig

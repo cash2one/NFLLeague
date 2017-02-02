@@ -826,7 +826,7 @@ udo        scoring={'passing_yds':0.04,
                         return player.player_id
             return None
         elif pos == 'D/ST':
-            return name
+            return nflleague.standard_nfl_abv(name)
         return None
 
 def filter_ptp(ptp):

@@ -1,6 +1,7 @@
 import nflgame
 from nflgame import OrderedDict
 import nflleague
+import nflleague.seq
 from collections import defaultdict,Counter
 import numpy as np
 import json,os
@@ -18,9 +19,11 @@ def _load_scoring(league_id,season,defense=False,system='Custom'):
     else:
         return scoring
 
-#DONE Make more robust and implement in PlayerStatistics and DefenseStatistics classes
-class LeagueScoring(object):
-    def __init__(self,league_id,season,position,stats,system='Custom'):
+
+#Keeps handling of stats uniform to nflgame, but allows scores to be accessed as well
+class LeagueScoring(dict):
+    def __init__(self,league_id,season,position,system='Custom'):
+        super(LeagueScoring,self).__init__()
         self.league_id=league_id
         self.season=season
         self.position=position
@@ -29,17 +32,16 @@ class LeagueScoring(object):
             self.points=_load_scoring(self.league_id,self.season,system=system)
         else:
             self.points=_load_scoring(self.league_id,self.season,defense=True,system=system)
-        self._stats=stats
         
         #Add bonus keys
         bonus=['passing_yds_300','passing_yds_400','rushing_yds_100',
                 'rushing_yds_200','receiving_yds_100','receiving_yds_200']
         for bon in bonus:
             if self.points.get(bon,False):
-                self._stats[bon]=0
+                self[bon]=0
 
     def scoring(self):
-        return {k:round(float(self.__score(k,v)),1) for k,v in self._stats.iteritems()}
+        return {k:round(float(self.__score(k,v)),1) for k,v in self.iteritems()}
     
     def score(self):
         return round(sum(self.scoring().values()),1)
@@ -81,34 +83,54 @@ class LeagueScoring(object):
             elif val <= 549: return self.points.get('defense_YA_549',0)
             elif val > 549: return self.points.get('defense_YA_550',0)
         #Bonus
-        elif key == 'passing_yds_400' and self._stats.get('passing_yds',0) >= 400:
+        elif key == 'passing_yds_400' and self.get('passing_yds',0) >= 400:
             return self.points.get(key,0)
-        elif key == 'passing_yds_300' and self._stats.get('passing_yds',0) >= 300:
+        elif key == 'passing_yds_300' and self.get('passing_yds',0) >= 300:
             return self.points.get(key,0)
-        elif key == 'rushing_yds_200' and self._stats.get('rushing_yds',0) >= 200:
+        elif key == 'rushing_yds_200' and self.get('rushing_yds',0) >= 200:
             return self.points.get(key,0)
-        elif key == 'rushing_yds_100' and self._stats.get('rushing_yds',0) >= 100:
+        elif key == 'rushing_yds_100' and self.get('rushing_yds',0) >= 100:
             return self.points.get(key,0)
-        elif key == 'receiving_yds_200' and self._stats.get('receiving_yds',0) >= 200:
+        elif key == 'receiving_yds_200' and self.get('receiving_yds',0) >= 200:
             return self.points.get(key,0)
-        elif key == 'receiving_yds_100' and self._stats.get('receiving_yds',0) >= 100:
+        elif key == 'receiving_yds_100' and self.get('receiving_yds',0) >= 100:
             return self.points.get(key,0)
         elif key == 'kicking_fgm_proj':
             return float(self.points.get('kicking_fgm_0_39',0))*val
         return float(self.points.get(key,0))*val
 
+
+class PlayerStats(object):
+    def __init__(self,league_id,season,week,position,game=None,system='Custom'):
+        self.league_id=league_id
+        self.season=season
+        self.week=week
+        self.position=position
+        self.game=game
+        self.system=system
+
+        self._stats=LeagueScoring(league_id,season,position,system)
+    
+    def scoring(self):
+        return self._stats.scoring()
+    
+    def score(self):
+        return self._stats.score()
+    
     @property
     def stats(self):
         return self._stats
     
-    def _add_stats(self,stats):
-        for k,v in stats.iteritems():
+    def _add_stats(self,data):
+        for k,v in data.iteritems():
+            #self.__dict__[k]=self.__dict__.get(k,0)+v
+            #self._stats[k]=self.__dict__[k]
             self._stats[k]=self._stats.get(k,0)+v
     
     def __add__(self,other):
-        assert type(self)==type(other) or other==0 #other==0 for use of sum() function
+        assert isinstance(self,type(other)) or other==0 #other==0 to allow use of sum() function
 
-        new_object=self.__class__(self.league_id,self.season,self.position,{},self.system)
+        new_object=self.__class__(self.league_id,self.season,self.week,self.position,self.game,self.system)
         new_object._add_stats(self._stats)
         new_object._add_stats(other._stats)
         
@@ -122,53 +144,19 @@ class LeagueScoring(object):
     
     def __getattr__(self,item):
         try:
-            return self.stats[item]
-        except KeyError:
+            return self._stats[item]
+        except KeyError as err:
             for cat in nflgame.statmap.categories:
                 if item.startswith(cat):
                     return 0
+            print(err)
             raise AttributeError
-
-class PlayerStatistics(LeagueScoring):
-    def __init__(self,league_id,season,position,stats,game=None,system='Custom'):
-        stats=stats if stats!=None else {}
-        super(PlayerStatistics,self).__init__(league_id,season,position,stats,system)
-        self.game=game
     
-    def projected(self,proj):
-        if self.game == 'bye':
-            return 0
-        elif self.game == None or self.game.time.is_pregame():
-            return proj
-        elif self.game.time.is_halftime():
-            return round(self.score() + float(proj)/2,1)
-        elif self.game.playing():
-            return round(self.score()+(int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr))))*(float(proj)/60),1)
-        elif self.game.time.is_final():
-            return self.score()
+    def __str__(self):
+        return str(self.score())
 
 
-class DefenseStatistics(LeagueScoring):
-    def __init__(self,league_id,season,team,stats,game=None,system='Custom'):
-        super(DefenseStatistics,self).__init__(league_id,season,'D/ST',stats,system=system)
-        self.team=team
-        self.game=game
-    
-    def projected(self,proj):
-        if self.game == 'bye':
-            return 0
-        elif self.game == None or self.game.time.is_pregame():
-            return proj
-        elif self.game.time.is_halftime():
-            return round(self.score() + float(proj)/2,1)
-        elif self.game.playing():
-            return round(self.score()+(int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr))))*(float(proj)/60),1)
-        elif self.game.time.is_final():
-            return self.score()
-        else:
-            print('PROBLEM IN PROJECTED FUNCTION')
-            return 0
-    
+class DefenseStats(PlayerStats):
     def yardage_breakdown(self):
         if self.game!=None:
             self._stats=defaultdict(int,self._stats)
@@ -184,46 +172,65 @@ class DefenseStatistics(LeagueScoring):
                        self._stats['yds_allowed_rec_{}'.format(pos.lower())]+=plyr.receiving_yds
         return self._stats
 
-#deprecated
-class PlayPlayerStatistics(PlayerStatistics):
-    #for use in the case the game hasn't been played yet, create class with no statistics
-    def __init__(self,player_id,game,name,home,team):
-        self.__dict__=nflgame.player.PlayPlayerStats(player_id,name,home,team).__dict__
-        self.game=game
 
-
-#deprecated
-class PlayerProjections(PlayerStatistics):
-    def __init__(self,projection_stats,player,system):
-        self.team=player.team 
-        self.game=player.game
-        self.points=_load_scoring(player.league_id,player.season,system)
-        self._stats=projection_stats
-
-#deprecated
-class DefenseProjections(DefenseStatistics):
-    def __init__(self,projection_stats,defense,system):
-        self.team=defense.team
-        self.game=defense.game
-        self.points=_load_scoring(defense.league_id,defense.season,defense=True,system=system)
-        self._stats=projection_stats
-        
-class Projections(dict):
-#collection of PlayerProjections or DefenseProjections objects each with key corresponding to website it was scraped from. 
-    def __init__(self):
-        super(Projections,self).__init__()
+class PlayerProjs(PlayerStats):
+    def __init__(self,league_id,season,week,position,site,game,system='Custom'):
+        super(PlayerProjs,self).__init__(league_id,season,week,position,game,system)
+        self.site=site
+    
+        self._projs=LeagueScoring(league_id,season,position,system)
+    
     def scoring(self):
-        return {k:v.scoring() for k, v in self.iteritems()}
-    def scores(self,rnd=2):
-        return {k:round(sum(v.scoring()),2) for k,v in self.iteritems()}
-    def max_score(self,rnd=2):
-        return round(max([v.score() for v in self.values()]),rnd)
-    def min_score(self,rnd=2):
-        return round(min([v.score() for v in self.values()]),rnd)
-    def mean_score(self,rnd=2):
-        return round(np.mean([v.score() for v in self.values()]),rnd)
-    def std_dev(self,rnd=2):
-        return round(np.std([v.score() for v in self.values()]),rnd)
+        return self._projs.scoring()
+    
+    def score(self):
+        return self._projs.score()
+    
+    def projected(self):
+        if self.game == 'bye':
+            return 0
+        elif self.game == None or self.game.time.is_pregame():
+            return self._stats.score()
+        elif self.game.time.is_halftime():
+            return round(self._stats.score() + float(self._projs.score())/2,1)
+        elif self.game.playing():
+            return round(self._stats.score()+(int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr))))*\
+                                                                            (float(self._projs.score())/60),1)
+        elif self.game.time.is_final():
+            return self._stats.score()
+    
+    def _add_projs(self,data):
+        for k,v in data.iteritems():
+            self._projs[k]=self._projs.get(k,0)+v
+    
+    def __str__(self):
+        return str(self._projs.score())
+
+
+class GenPlayerStats(nflleague.seq.GenPlayer):
+    def __init__(self,iterable):
+        super(GenPlayerStats,self).__init__(iterable)
+    
+    def max_score(self):
+        return list(self.sort(lambda x:x.score()))[0]
+    
+    def min_score(self):
+        return list(self.sort(lambda x:x.score(),descending=False))[0]
+    
+    @property
+    def mean(self,rnd=2):
+        return round(np.mean([x.score() for x in list(self)]),rnd)
+
+class GenPlayerProjs(GenPlayerStats):
     def sites(self):
-        return self.keys()
+        return [x.site for x in self]
+    
+    def __getattr__(self,item):
+        if item in self.sites():
+            return list(self.filter(site=item))[0]
+        raise AttributeError
+        
+def _json_projections(week,site,pid):
+    filename='nflleague/espn-league-json/projections/week{}/{}.json'.format(week,site.lower())
+    return json.loads(open(filename).read()).get(pid,{})
 

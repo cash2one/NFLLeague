@@ -13,42 +13,9 @@ from collections import Counter,defaultdict
 #DONE fix DST yardage allowed (HIGH)
 #DONE add game status function
 
-allPlayers=nflgame.player._create_players()#needed?
-playerData=json.loads(open(nflgame.player._player_json_file).read())#needed?
-
-gsis_sched=nflleague.schedule.build_gsis_sched(nflleague.c_year,nflleague.c_week+5)
-
-def get_game_status(game):
-    if game == 'bye':
-        return 'BYE'
-    elif game == None:
-        return 'NOT PLAYED'
-    elif game.time.is_pregame():
-        return 'PREGAME'
-    elif game.time.is_halftime():
-        return 'HALFTIME'
-    elif game.playing():
-        return 'PLAYING'
-    elif game.game_over():
-        return 'PLAYED'
-    else:
-        assert "game does not fall into any predefined categories (FUNCTION)" 
-
-def _json_week_players():
-    return get_json('nflleague/players.json',{})
-
-def _create_week_players(season,week):
-    players={}
-    for pid,plyr in nflleague.players:
-        players[pid]=nflleague.player.Player(season,week,pid)
-    return players
-
-
-#Could combine Player and Defense classes
 class Player(nflgame.player.Player):
     def __init__(self,season,week,player_id):
         data=nflleague.players.get(player_id,nflleague.players['00-0000000'])
-        #data=nflleague.players.get(player_id)
         super(Player,self).__init__(data)
         self.season=season
         self.week=week
@@ -57,24 +24,42 @@ class Player(nflgame.player.Player):
             self.team=self.team.get(str(season),{}).get(str(week),'UNK')
         if type(self.position)==dict:
             self.position=self.position.get(str(season),{}).get(str(week),'UNK')
+        
         self.game_eid=data['schedule'].get(str(season),{}).get(str(week),'bye')
         self.bye=True if self.game_eid=='bye' else False
         if not self.bye:
             self.schedule=nflgame.sched.games.get(self.game_eid,{})
         else:
             self.schedule={}
+    
     def __str__(self):
         return '{}, {} {}'.format(self.full_name,self.team,self.position)
-        
-class FreeAgent(Player):
-    def __init__(self,league_id,season,week,player_id,games=None):
-        super(FreeAgent,self).__init__(season,week,player_id)
+
+class PlayerWeek(Player):
+    #team_id temporary until I have time to restructure teamweeklineups json data by player
+    def __init__(self,league_id,season,week,player_id,games=None,meta=None):
+        super(PlayerWeek,self).__init__(season,week,player_id)
         self.league_id=league_id
+        self.games=games 
+        
         self._stats=None
         self._projs=None
         self._plays=None
                 
-        self.games=games
+        if meta==None:
+            self.meta=_json_lineup_by_player(self.league_id,self.season,self.week,self.player_id)
+        else:
+            self.meta=meta
+        
+        self.team_id=self.meta.get('team_id',0)
+        self.team_abv=nflleague.league._json_load_owners(self.league_id,self.season).get(self.team_id,{}).get('team_abv','FA')
+        self.position=self.meta.get('position',self.position)
+        self.slot=self.meta.get('slot','NA')
+        self.gsis_slot=self.meta.get('gsis_slot','NA')
+        self.score=round(float(self.meta.get('score',0)),1)
+        self.in_lineup=bool(self.meta.get('in_lineup',False))
+        self.condition=self.meta.get('condition','NA')
+        
         if self.bye:
             self.game='bye'
         else:
@@ -82,44 +67,40 @@ class FreeAgent(Player):
                 self.game=nflgame.game.Game(self.game_eid)
             else:
                 self.game=list(games.filter(eid=self.game_eid))[0]
-
-        self.team_id=0
-        self.team_abv='FA'
-        self.slot='NA'
-        self.gsis_slot='NA'
-        self.score='NA'
-        self.in_lineup=False
-        self.condition='NA'
-
+        
+        #print('PlayerWeek Initialized {} {} {} {}'.format(self.season,self.week,str(self),self.team_abv))
+         
     def stats(self,system='Custom'):
         if self._stats==None:
-            stats=gen_player_stats(self.season,self.week,self.player_id,self.team,self.game)
-            if stats!=False:
-                a,b,c,d,e=self.league_id,self.season,self.position,stats,self.game
-                self._stats=nflleague.scoring.PlayerStatistics(a,b,c,d,e)
+            self._stats=nflleague.scoring.PlayerStats(self.league_id,self.season,self.week,self.position,game=self.game)
+            self._stats._add_stats(gen_player_stats(self.season,self.week,self.player_id,self.team,self.game))
         return self._stats
+
+    def projs(self,system='Custom'):
+        def projections():
+            sites=[]
+            for site in nflleague.sites:
+                p=nflleague.scoring.PlayerProjs(self.league_id,self.season,self.week,self.position,site,self.game,system)
+                p._add_stats(self.stats().stats)
+                p._add_projs(nflleague.scoring._json_projections(self.week,site,self.player_id))
+                
+                sites.append(p)
+            return sites
+
+        if self._projs==None:
+            self._projs=nflleague.scoring.GenPlayerProjs(projections())
+        return self._projs
     
-    def projections(self,sites=['ESPN','FantasyPros','CBS'],system='Custom'):
-        projections=nflleague.scoring.Projections()
-        for site in sites:
-            filename='nflleague/espn-league-json/projections/week{}/{}.json'.format(self.week,site.lower())
-            projection=json.loads(open(filename).read())
-            try:         
-                proj=projection[self.player_id]
-            except KeyError:
-                proj={}
-            a,b,c,d,e=self.league_id,self.season,self.position,proj,self.game
-            projections[site]=nflleague.scoring.PlayerStatistics(a,b,c,d,e)
+    def seasonal(self,inclusive=False):
+        def __seasonal():
+            weeks=[]
+            for week in range(1,int(self.week)+1 if inclusive else int(self.week)):
+                a,b,c,d,e=self.league_id,self.season,week,self.position,self.games
+                weeks.append(nflleague.scoring.PlayerStats(a,b,c,d,e))
+                weeks[-1]._add_stats(gen_player_stats(b,c,self.player_id,self.team,self.game))
+            return weeks
         
-        return projections
-    
-    def seasonal_stats(self,inclusive=False):
-        def gen():
-            for week in range(1,int(self.week) + 1 if inclusive else int(self.week)):
-                a,b,c,d=self.season,week,self.player_id,self.team
-                stats=gen_player_stats(a,b,c,d)
-                yield nflleague.scoring.PlayerStatistics(self.league_id,self.season,self.position,stats,game=self.games)
-        return nflleague.seq.SeqPlayer(gen())
+        return nflleague.scoring.GenPlayerStats(__seasonal())
     
     def game_status(self):
         return get_game_status(self.game)
@@ -158,276 +139,77 @@ class FreeAgent(Player):
         new_player.week=None
         return new_player
     
-    #def __getattr__(self,item):
-    #    try:
-    #        return getattr(self.stats(),item)
-    #    except Exception as err:
-    #        print(err,item)
-    """ 
-    Non-essential functions to be added later?
-    def RB_success_rate(self):
-        rushing_att=self.stats().stats.get('rushing_att',0)
-        if self.position == 'RB' and rushing_att != 0:
-            success=0
-            for play in self.combine_plays():
-                n=play.down
-                x=play.yards_togo
-                if 4-n == 0:
-                    if play._stats.get('rushing_yds',0) >= x:
-                        success+=1
-                elif play._stats.get('rushing_yds',0) >= float(x)/(4-n):
-                    success+=1
-            return float(success)/rushing_att
-        return 0
-   
-    def points_added_per_play(self):
-        critical_plays=0
-        for play in self.combine_plays():
-            if play._stats.get('rushing_att',0) or play._stats.get('receiving_tar',0):
-                critical_plays+=1
-        return float(self.score)/critical_plays if critical_plays!=0 else 0
-    
-    def redzone_usage(self):
-        def redzone(team,play_gen):
-            pos=nflgame.game.FieldPosition(team,offset=30)
-            return filter(lambda p: p.team==team and p.yardline>=pos,list(play_gen))
-        
-        rz_plays=redzone(self.team,self.game.drives.plays())
-        rz_play_count=0
-        for play in list(rz_plays):
-            if play._stats.get('receiving_tar',0) or play._stats.get('rushing_att',0):
-                rz_play_count+=1
-        rz_player_count=len(filter(lambda p: p.has_player(self.player_id),rz_plays))
-        
-        return float(rz_player_count)/rz_play_count if rz_play_count!=0 else 0
-    
-    def redzone_td_rate(self):
-        def redzone(team,play_gen):
-            pos=nflgame.game.FieldPosition(team,offset=30)
-            return filter(lambda p: p.team==team and p.yardline>=pos,play_gen)
-        
-        rz_plays=redzone(self.team,self.game.drives.plays())
-        rz_indv_all=filter(lambda p:p.has_player(self.player_id),rz_plays)
-        rz_indv_td=filter(lambda p:p.touchdown==True,rz_indv_all)
-        if len(rz_indv_all)!=0:
-            return float(len(rz_indv_td))/len(rz_indv_all)
-        else:
-            return 0
-    
-    def redzone_plays(self):
-        def redzone(team,play_gen):
-            pos=nflgame.game.FieldPosition(team,offset=30)
-            return filter(lambda p: p.team==team and p.yardline>=pos,play_gen)
-        return filter(lambda p:p.has_player(self.player_id),redzone(self.team,self.game.drives.plays()))
-    """
 
-#Class for managing owned players within a league.  Contains league,team, and week metadata
-class PlayerTeam(FreeAgent):
-    def __init__(self,data,meta):
-        #pass leagueid,season,week, player_id, and the list of games inheirited from league
-        super(PlayerTeam,self).__init__(meta.league_id,meta.season,meta.week,data.get('player_id'),games=meta.games)
-        self.team_id=meta.team_id
-        self.team_abv=meta.owner_info[self.team_id]['team_abv']
-        
-        self.position=data.get('position',self.position)
-        self.slot=data.get('slot','')
-        self.gsis_slot=data.get('gsis_slot','')
-        self.score=round(float(data.get('score',0)),1)
-        self.in_lineup=bool(data.get('in_lineup',False))
-        self.condition=data.get('condition','')
-    
-
-class Defense(Player):
-    def __init__(self,season,week,team):
-        super(Defense,self).__init__(season,week,nflgame.standard_team(team))
-
-#TODO Clunky.  Needs work. Defense Classes need restructuring in line with structure of 'Player' class/subclasses
-class DefensePlayerWeek(Player):
-    def __init__(self,meta,player_id,stats,game=None):
-        super(DefensePlayerWeek,self).__init__(meta.season,meta.week,player_id)
-        self.league_id=meta.league_id
-        self.team_id=meta.team_id
-        
-        self.position=self.position if self.position=='' else 'DEF'
-        self.game=game
-        if not self.bye and self.game==None:
-            self.game=nflgame.game.Game(self.game_eid)
-
-        self._stats=nflleague.scoring.LeagueScoring(self.league_id,self.season,self.position,stats,'Custom')
-    def statistics(self,system='Custom'):
-        return self._stats
-
-#metadata is week/team/league data. data is lineup data from ESPN
-class DefenseWeek(Defense):
-    def __init__(self,data,meta):
-        super(DefenseWeek,self).__init__(meta.season,meta.week,data.get('player_id').split()[0])
-        self.league_id=meta.league_id
-        self.team_id=meta.team_id
-        self.meta=meta
-
-        self.slot=data.get('slot')
-        self.gsis_slot=data.get('gsis_slot')
-        self.score=round(float(data.get('score')),2)
-        self.in_lineup=bool(data.get('in_lineup'))
-        self.condition=''
-
-        self._stats=None
-        self._projs=None
-        self._players=None
-        if not self.bye:
-            self.game=nflgame.game.Game(self.game_eid)
-        else:
-            self.game='bye'
+class DefenseWeek(PlayerWeek):
+    def __init__(self,league_id,season,week,player_id,games=None,meta=None):
+        super(DefenseWeek,self).__init__(league_id,season,week,nflleague.standard_nfl_abv(player_id),games=games,meta=meta)
+        self.__players=None
 
     def stats(self,system='Custom'):
-        #Fastest way to access statistics for current week.
         if self._stats==None:
-            stats=gen_defense_stats(self.season,self.week,self.team,self.game)
-            if stats!=False:
-                stats=stats.get('defense',{})
-                self._stats=nflleague.scoring.DefenseStatistics(self.league_id,self.season,self.team,stats,self.game)
-        
+            self._stats=nflleague.scoring.PlayerStats(self.league_id,self.season,self.week,'D/ST',self.game,system)
+            self._stats._add_stats(gen_defense_stats(self.season,self.week,self.team,self.game).get('defense',{}))
         return self._stats
-
-    def projections(self,sites=['ESPN','FantasyPros','CBS'],system='Custom'):
-        projections=nflleague.scoring.Projections()
-        for site in sites:
-            filename='nflleague/espn-league-json/projections/week{}/{}.json'.format(self.week,site.lower())
-            projection=json.loads(open(filename).read())
-            try:         
-                proj=projection[self.gsis_name]
-            except KeyError as err:
-                print(err)
-                proj={}
-            a,b,c,d,e=self.league_id,self.season,'D/ST',proj,'Custom'
-            projections[site]=nflleague.scoring.LeagueScoring(a,b,c,d,e)
-        
-        return projections
     
-    def historical_stats(self,years,weeks=None):
-        #Returns dictionary of historical and current player stats which can be quickly accessed by [season][week]
-        #Will be cached locally for fast retreival if stats have not been accessed before.
-        #Use self.stats() when live functionality is important. 
-        
-        #For all weeks. Regular season only for now.
-        if weeks==None:
+    def seasonal(self,inclusive=False):
+        def __seasonal():
             weeks=[]
-            for year in years:
-                if str(year) == str(nflleague.c_year):
-                    weeks.append(range(1,int(nflleague.c_week)+1))
-                else:
-                    weeks.append(range(1,18))
-            
-        history={}
-        for i,year in enumerate(years):
-            history[year]={}
-            for week in weeks[i]:
-                a,b,c=year,week,self.team
-                stats=gen_defense_stats(a,b,c)
-                stats=stats.get('defense',{})
-                history[year][week]=nflleague.scoring.LeagueScoring(self.league_id,year,'D/ST',stats)
-        return history
+            for week in range(1,int(self.week)+1 if inclusive else int(self.week)):
+                a,b,c,d,e=self.league_id,self.season,week,self.position,self.games
+                weeks.append(nflleague.scoring.PlayerStats(a,b,c,d,e))
+                weeks[-1]._add_stats(gen_defense_stats(self.season,week,self.team,self.game).get('defense',{}))
+            return weeks
         
+        return nflleague.scoring.GenPlayerStats(__seasonal())
+    
     def players(self):
         #Returns list of DefensePlayerWeek objects of players who contributed to defensive stats
-        if self._players==None:
-            stats=gen_defense_stats(self.season,self.week,self.team,game=self.game)
-            self._players=[]
-            for plyr in stats:
-                if plyr!='defense':
-                    self._players.append(DefensePlayerWeek(self.meta,plyr,stats[plyr],game=self.game))
-        return self._players
-    def game_status(self):
-        return get_game_status(self.game)
-    
-    def game_info(self,item):
-        if self.bye:
-            return 'BYE'
-        else:
-            return self.schedule.get(item,'')
-    
-    def mins_remaining(self):
-        if self.game_status() in ['NOT PLAYED','PREGAME']:
-            return 60
-        elif self.game_status() == 'HALFTIME':
-            return 30
-        elif self.game_status() in ['BYE','PLAYED']:
-            return 0
-        elif self.game_status() == 'PLAYING':
-            return int(self.game.time._minutes)+(15*(4-int(self.game.time.qtr)))
-    
-    def formatted_stats(self):
-        try:
-            print("{} {} {} {}".format(self.full_name,self.position,self.team,self.game_status()))
-            print("\tScore: {}".format(self.stats().score()))
-            for k,v in self.stats().stats.iteritems():
-                print("\t{}: {} ({} pts)".format(k,v,self.stats().scoring().get(k,0)))
-        except Exception as err:
-            print('No stats available for {}'.format(self.team))
+        #NEED TO FIX OFFENSIVE PLAYERS BEING COUNTED AS DEFENSIVE PLAYERS
+        def def_players():
+            players=[]
+            defstats=gen_defense_stats(self.season,self.week,self.team,game=self.game)
+            for pid,stats in defstats.iteritems():
+                if pid!='defense':
+                    players.append(DefPlayerWeek(self.league_id,self.season,self.week,pid,games=self.games))
+            return players
+        if self.__players==None:
+            self.__players=nflleague.seq.GenPlayer(def_players())
+        return self.__players
+        
 
-#TODO Clean these up or eliminate.  To be deprecated soon
-class PlayerWeekEmpty(FreeAgent):
-    def __init__(self,data,meta):
-        self.player_id=None
-        self.league_id=meta.league_id
-        self.season=meta.season
-        self.team_id=meta.team_id
-        self.week=meta.week
-        self.slot=data
-        self.gsis_slot=data
-        self.gsis_id=None
-        self.gsis_name=None
-        self.score=0
-        self.bye=True
-        self.team=None
-        self.in_lineup=True
-        self.gsis_name=None
-        self.game='bye'
-        self.full_name=None
-        self.position=None
-         
-    def statistics(self,system='Custom'):
-        #return empty player object
-        return nflleague.scoring.PlayPlayerStatistics(self.player_id,self.game,self.gsis_id,False,self.team)
-    
-    def projections(self, sites=['ESPN','FantasyPros','CBS'],system='Custom'):
-        #return empty projection object
-        projections=nflleague.scoring.Projections()
-        for site in sites:
-            projections[site]=nflleague.scoring.PlayerProjections({},self,system)
-        return projections
+class DefPlayerWeek(PlayerWeek):
+    def projs(self,system='Custom'):
+        assert False, 'Cannot be Called on Individul Defensive Players'
 
 
-class DefenseWeekEmpty(DefenseWeek):
-    def __init__(self,data,meta):
-        self.player_id=None
-        self.league_id=meta.league_id
-        self.season=meta.season
-        self.team_id=meta.team_id
-        self.week=meta.week
-        self.slot=data
-        self.gsis_slot=data
-        self.gsis_id=None
-        self.gsis_name=None
-        self.score=0
-        self.bye=True
-        self.team=None
-        self.in_lineup=True
-        self.gsis_name=None
-        self.game='bye'
-        self.full_name=None    
-        self.position='D/ST'
-    def statistics(self,system='Custom'):
-        #return empty player object
-        return nflleague.scoring.PlayPlayerStatistics(self.player_id,self.game,self.gsis_id,False,self.team)
-    
-    def projections(self, sites=['ESPN','FantasyPros','CBS'],system='Custom'):
-        #return empty projection object
-        projections=nflleague.scoring.Projections()
-        for site in sites:
-            projections[site]=nflleague.scoring.PlayerProjections({},self,system)
-        return projections
+def get_game_status(game):
+    if game == 'bye':
+        return 'BYE'
+    elif game == None:
+        return 'NOT PLAYED'
+    elif game.time.is_pregame():
+        return 'PREGAME'
+    elif game.time.is_halftime():
+        return 'HALFTIME'
+    elif game.playing():
+        return 'PLAYING'
+    elif game.game_over():
+        return 'PLAYED'
+    else:
+        assert "game does not fall into any predefined categories (FUNCTION)" 
 
+def _json_week_players():
+    return get_json('nflleague/players.json',{})
+
+def _json_lineup_by_player(league_id,season,week,player_id):
+    path='nflleague/espn-league-json/{}/{}/lineup_by_player.json'
+    data=get_json(path.format(league_id,season),{})
+    return data.get(player_id,{}).get(str(season),{}).get(str(week),{})
+
+def _json_lineup_by_team(league_id,season,week,team_id):
+    path='nflleague/espn-league-json/{}/{}/lineup_by_week.json'
+    data=get_json(path.format(league_id,season),{})
+    return data.get(str(team_id),{}).get(str(week),{})
 
 def gen_player_stats(season,week,player_id,team,game=None):
     fp='nflleague/espn-league-json/cache/C{}.json'

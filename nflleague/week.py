@@ -1,7 +1,6 @@
 from __future__ import print_function
 import json
 import nflgame
-from nflleague.player import PlayerTeam,DefenseWeek,DefensePlayerWeek,PlayerWeekEmpty,DefenseWeekEmpty
 import nflleague
 import nflleague.update 
 import nflleague.league
@@ -24,33 +23,27 @@ class Week(object):
         self.__opponent_obj=None
         self.home=bool(self.schedule.get('Home',False))
         
-        #TODO Reorganize.  I don't like this complex init.  _load_week function for json?
-        data=json.loads(open('nflleague/espn-league-json/{}/{}/lineup_by_week.json'.format(self.league_id,self.season)).read()) 
-        data=data.get(self.team_id,{}).get(self.week,{}) 
-        
-        #sIs:slot/playerId or name/score
+        data=nflleague.player._json_lineup_by_team(self.league_id,self.season,self.week,self.team_id)
         self.lineup=[]
-        for slt in self.settings.gsis_positions():
-            if slt in data.keys():
-                if slt != 'D/ST':
-                    self.lineup.extend([PlayerTeam(data[slt],self)])
-                elif slt == 'D/ST':
-                    self.lineup.extend([DefenseWeek(data[slt],self)])
+        for slot in self.settings.gsis_positions():
+            a,b,c,pid,e=self.league_id,self.season,self.week,data[slot].get('player_id',''),self.games
+            if data[slot].get('position')!='D/ST':
+                self.lineup.append(nflleague.player.PlayerWeek(a,b,c,pid,e,meta=self._players[pid]['lineup'].get(self.week)))
             else:
-                if slt != 'D/ST':
-                    self.lineup.extend([PlayerWeekEmpty(slt,self)])
-                elif slt == 'D/ST':
-                    self.lineup.extend([DefenseWeekEmpty(slt,self)])
-        
+                pid=nflleague.standard_nfl_abv(pid)
+                self.lineup.append(nflleague.player.DefenseWeek(a,b,c,pid,e,meta=self._players[pid]['lineup'].get(self.week)))
+
         self.bench=[]
-        for sIs in data.get('Bench',{}):
-            if sIs['player_id'].split(" ")[-1]!='D/ST':
-                self.bench.extend([PlayerTeam(sIs,self)])
+        for plyr in data.get('Bench',[]):
+            a,b,c,pid,e=self.league_id,self.season,self.week,plyr.get('player_id',''),self.games
+            if plyr.get('position')!='D/ST':
+                self.bench.append(nflleague.player.PlayerWeek(a,b,c,pid,e,meta=self._players[pid]['lineup'].get(self.week)))
             else:
-                self.bench.extend([DefenseWeek(sIs,self)])
-        
-        if 'IR' in data: 
-            self.IR=PlayerTeam(data.get('IR'),self)
+                pid=nflleague.standard_nfl_abv(pid)
+                self.bench.append(nflleague.player.DefenseWeek(a,b,c,pid,e,meta=self._players[pid]['lineup'].get(self.week)))
+        if 'IR' in data:
+            a,b,c,d,e=self.league_id,self.season,self.week,data['IR'].get('player_id'),self.games
+            self.IR=nflleague.player.PlayerWeek(a,b,c,d,e)
         else:
             self.IR=None
     
@@ -90,9 +83,9 @@ class Week(object):
         optimized=[]
         for p in self.get_all():
             if p.game_status() in ['NOT PLAYED','PREGAME']:
-                optimized.append((p,float(p.projections().mean_score())))
+                optimized.append((p,float(p.projs().mean_score())))
             elif p.game_status() in ['PLAYING','HALFTIME']:
-                optimized.append((p,float(p.stats().projected(p.projections().mean_score()))))
+                optimized.append((p,float(p.stats().projected(p.projs().mean_score()))))
             elif p.game_status() == 'PLAYED':
                 optimized.append((p,float(p.stats().score())))
         
@@ -122,11 +115,11 @@ class Week(object):
         #Demo Basic Win Expectancy Alg (Cauchy Model)
         cum_exp,cum_std=0,0
         for plyr in self.lineup:
-            cum_exp+=plyr.stats().projected(plyr.projections().mean_score())
+            cum_exp+=plyr.stats().projected(plyr.projs().mean_score())
             if plyr.game_status() in ['NOT PLAYED','PREGAME']:
-                cum_std+=plyr.projections().std_dev()
+                cum_std+=plyr.projs().std_dev()
             elif plyr.game_status() in ['PLAYING','HALFTIME']:
-                cum_std+=plyr.projections().std_dev()*(float(plyr.mins_remaining())/60)
+                cum_std+=plyr.projs().std_dev()*(float(plyr.mins_remaining())/60)
             elif plyr.game_status() in ['PLAYED']:
                 cum_std+=0
         

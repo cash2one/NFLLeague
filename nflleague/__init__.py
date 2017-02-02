@@ -13,6 +13,8 @@ import nflleague.schedule
 import nflleague.seq
 from nflleague.league import Category
 
+sites=['ESPN','CBS','FantasyPros']
+
 players=nflleague.player._json_week_players()
 
 def standard_team_id(league_id,season,team_iden):
@@ -21,4 +23,8 @@ def standard_team_id(league_id,season,team_iden):
         if str(team_iden).lower() in map(lambda x:str(x).lower(),v.values()):
             return str(k)
 
+def standard_nfl_abv(team):
+    if 'D/ST' in team.split():
+        team=team.split()[0]
+    return nflgame.standard_team(team)
 
