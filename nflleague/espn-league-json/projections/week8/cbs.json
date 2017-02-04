@@ -1,2658 +1,2658 @@
 {
-    "null": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.7
-    },
-    "00-0016919": {
-        "kicking_fga": 1.9,
-        "kicking_fgm": 1.9,
-        "kicking_xpmade": 2.3
-    },
-    "00-0019596": {
-        "passing_att": 35.4,
-        "passing_cmp": 22.6,
-        "passing_int": 0.5,
-        "passing_tds": 1.6,
-        "passing_yds": 272.0,
-        "rushing_att": 2.7,
-        "rushing_tds": 0.1,
-        "rushing_yds": 6.4
-    },
-    "00-0019646": {
-        "kicking_fga": 2.4,
-        "kicking_fgm": 1.9,
-        "kicking_xpmade": 3.0
-    },
-    "00-0020531": {
-        "passing_att": 40.8,
-        "passing_cmp": 27.3,
-        "passing_int": 0.9,
-        "passing_tds": 1.5,
-        "passing_yds": 275.0,
-        "rushing_att": 1.4,
-        "rushing_tds": 0.0,
-        "rushing_yds": 1.8
-    },
-    "00-0020578": {
-        "kicking_fga": 2.3,
-        "kicking_fgm": 2.0,
-        "kicking_xpmade": 2.6
-    },
-    "00-0020679": {
-        "passing_att": 0.5,
-        "passing_cmp": 0.4,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 3.7,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.1
-    },
-    "00-0021206": {
-        "passing_att": 34.3,
-        "passing_cmp": 20.5,
-        "passing_int": 1.0,
-        "passing_tds": 1.2,
-        "passing_yds": 244.0,
-        "rushing_att": 1.2,
-        "rushing_tds": 0.0,
-        "rushing_yds": 4.1
-    },
-    "00-0021429": {
-        "passing_att": 37.5,
-        "passing_cmp": 22.6,
-        "passing_int": 1.0,
-        "passing_tds": 1.6,
-        "passing_yds": 270.0,
-        "rushing_att": 1.2,
-        "rushing_tds": 0.0,
-        "rushing_yds": 2.1
-    },
-    "00-0021547": {
-        "receiving_rec": 3.6,
-        "receiving_tds": 0.3,
-        "receiving_yds": 32.7
-    },
-    "00-0022044": {
-        "receiving_rec": 2.8,
-        "receiving_tds": 0.3,
-        "receiving_yds": 29.9
-    },
-    "00-0022084": {
-        "receiving_rec": 3.9,
-        "receiving_tds": 0.3,
-        "receiving_yds": 37.6
-    },
-    "00-0022127": {
-        "receiving_rec": 3.7,
-        "receiving_tds": 0.2,
-        "receiving_yds": 31.2
-    },
-    "00-0022787": {
-        "passing_att": 0.2,
-        "passing_cmp": 0.1,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 1.9,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0022864": {
-        "passing_att": 0.1,
-        "passing_cmp": 0.1,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 1.0,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0022921": {
-        "receiving_rec": 5.8,
-        "receiving_tds": 0.6,
-        "receiving_yds": 63.6
-    },
-    "00-0022942": {
-        "passing_att": 37.3,
-        "passing_cmp": 23.0,
-        "passing_int": 1.1,
-        "passing_tds": 1.2,
-        "passing_yds": 228.0,
-        "rushing_att": 1.2,
-        "rushing_tds": 0.0,
-        "rushing_yds": 3.0
-    },
-    "00-0022999": {
-        "receiving_rec": 0.7,
-        "receiving_tds": 0.1,
-        "receiving_yds": 3.4,
-        "rushing_att": 1.3,
-        "rushing_tds": 0.3,
-        "rushing_yds": 2.8
-    },
-    "00-0023096": {
-        "kicking_fga": 2.2,
-        "kicking_fgm": 1.9,
-        "kicking_xpmade": 2.0
-    },
-    "00-0023436": {
-        "passing_att": 31.6,
-        "passing_cmp": 21.5,
-        "passing_int": 0.5,
-        "passing_tds": 1.6,
-        "passing_yds": 219.0,
-        "rushing_att": 3.7,
-        "rushing_tds": 0.1,
-        "rushing_yds": 16.4
-    },
-    "00-0023459": {
-        "passing_att": 41.3,
-        "passing_cmp": 26.3,
-        "passing_int": 0.7,
-        "passing_tds": 1.8,
-        "passing_yds": 254.0,
-        "rushing_att": 2.8,
-        "rushing_tds": 0.3,
-        "rushing_yds": 13.7
-    },
-    "00-0023482": {
-        "kicking_fga": 2.2,
-        "kicking_fgm": 1.8,
-        "kicking_xpmade": 2.4
-    },
-    "00-0023500": {
-        "receiving_rec": 2.3,
-        "receiving_tds": 0.2,
-        "receiving_yds": 12.6,
-        "rushing_att": 14.1,
-        "rushing_tds": 0.3,
-        "rushing_yds": 62.9
-    },
-    "00-0023564": {
-        "receiving_rec": 3.3,
-        "receiving_tds": 0.1,
-        "receiving_yds": 29.5,
-        "rushing_att": 5.4,
-        "rushing_tds": 0.1,
-        "rushing_yds": 22.6
-    },
-    "00-0023578": {
-        "passing_att": 0.1,
-        "passing_cmp": 0.1,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 0.6,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0023645": {
-        "passing_att": 0.3,
-        "passing_cmp": 0.2,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 2.0,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0023662": {
-        "passing_att": 0.3,
-        "passing_cmp": 0.2,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 2.2,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.1
-    },
-    "00-0023682": {
-        "passing_att": 35.4,
-        "passing_cmp": 20.6,
-        "passing_int": 1.3,
-        "passing_tds": 1.5,
-        "passing_yds": 256.0,
-        "rushing_att": 3.0,
-        "rushing_tds": 0.1,
-        "rushing_yds": 14.2
-    },
-    "00-0023853": {
-        "kicking_fga": 1.7,
-        "kicking_fgm": 1.4,
-        "kicking_xpmade": 2.0
-    },
-    "00-0024217": {
-        "receiving_rec": 0.7,
-        "receiving_tds": 0.0,
-        "receiving_yds": 4.8,
-        "rushing_att": 2.2,
-        "rushing_tds": 0.1,
-        "rushing_yds": 9.3
-    },
-    "00-0024221": {
-        "receiving_rec": 2.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 24.8
-    },
-    "00-0024226": {
-        "passing_att": 34.3,
-        "passing_cmp": 21.0,
-        "passing_int": 1.5,
-        "passing_tds": 1.0,
-        "passing_yds": 209.0,
-        "rushing_att": 2.2,
-        "rushing_tds": 0.0,
-        "rushing_yds": 12.2
-    },
-    "00-0024243": {
-        "receiving_rec": 1.8,
-        "receiving_tds": 0.1,
-        "receiving_yds": 21.2
-    },
-    "00-0024264": {
-        "passing_att": 0.0,
-        "passing_cmp": 0.0,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 0.2,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0024268": {
-        "receiving_rec": 1.1,
-        "receiving_tds": 0.2,
-        "receiving_yds": 10.4
-    },
-    "00-0024333": {
-        "kicking_fga": 2.1,
-        "kicking_fgm": 1.8,
-        "kicking_xpmade": 2.4
-    },
-    "00-0024334": {
-        "receiving_rec": 4.8,
-        "receiving_tds": 0.5,
-        "receiving_yds": 71.6
-    },
-    "00-0024389": {
-        "receiving_rec": 4.5,
-        "receiving_tds": 0.5,
-        "receiving_yds": 53.4
-    },
-    "00-0024535": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.6
-    },
-    "00-0025396": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.1,
-        "receiving_yds": 16.8
-    },
-    "00-0025418": {
-        "receiving_rec": 5.0,
-        "receiving_tds": 0.3,
-        "receiving_yds": 70.0
-    },
-    "00-0025430": {
-        "passing_att": 0.3,
-        "passing_cmp": 0.2,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 1.7,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0025549": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 15.9
-    },
-    "00-0025565": {
-        "kicking_fga": 1.7,
-        "kicking_fgm": 1.4,
-        "kicking_xpmade": 2.2
-    },
-    "00-0025580": {
-        "kicking_fga": 1.9,
-        "kicking_fgm": 1.7,
-        "kicking_xpmade": 2.6
-    },
-    "00-0025944": {
-        "kicking_fga": 2.2,
-        "kicking_fgm": 1.9,
-        "kicking_xpmade": 2.6
-    },
-    "00-0026003": {
-        "kicking_fga": 1.5,
-        "kicking_fgm": 1.3,
-        "kicking_xpmade": 1.8
-    },
-    "00-0026035": {
-        "receiving_rec": 2.1,
-        "receiving_tds": 0.2,
-        "receiving_yds": 23.4
-    },
-    "00-0026069": {
-        "receiving_rec": 0.8,
-        "receiving_tds": 0.1,
-        "receiving_yds": 4.9,
-        "rushing_att": 3.5,
-        "rushing_tds": 0.0,
-        "rushing_yds": 10.2
-    },
-    "00-0026138": {
-        "kicking_fga": 1.6,
-        "kicking_fgm": 1.2,
-        "kicking_xpmade": 1.5
-    },
-    "00-0026143": {
-        "passing_att": 36.3,
-        "passing_cmp": 23.0,
-        "passing_int": 1.0,
-        "passing_tds": 1.8,
-        "passing_yds": 310.0,
-        "rushing_att": 2.3,
-        "rushing_tds": 0.0,
-        "rushing_yds": 6.8
-    },
-    "00-0026153": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 7.1,
-        "rushing_att": 14.5,
-        "rushing_tds": 0.3,
-        "rushing_yds": 59.8
-    },
-    "00-0026176": {
-        "receiving_rec": 5.4,
-        "receiving_tds": 0.6,
-        "receiving_yds": 65.3
-    },
-    "00-0026184": {
-        "receiving_rec": 2.3,
-        "receiving_tds": 0.1,
-        "receiving_yds": 21.2,
-        "rushing_att": 15.6,
-        "rushing_tds": 0.5,
-        "rushing_yds": 68.7
-    },
-    "00-0026189": {
-        "receiving_rec": 3.5,
-        "receiving_tds": 0.2,
-        "receiving_yds": 47.1
-    },
-    "00-0026197": {
-        "passing_att": 0.2,
-        "passing_cmp": 0.1,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 1.5,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.1
-    },
-    "00-0026201": {
-        "receiving_rec": 3.8,
-        "receiving_tds": 0.4,
-        "receiving_yds": 36.3
-    },
-    "00-0026267": {
-        "receiving_rec": 2.4,
-        "receiving_tds": 0.2,
-        "receiving_yds": 25.9
-    },
-    "00-0026281": {
-        "receiving_rec": 3.5,
-        "receiving_tds": 0.2,
-        "receiving_yds": 46.3
-    },
-    "00-0026286": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.6,
-        "rushing_att": 0.2,
-        "rushing_tds": 0.0,
-        "rushing_yds": 1.0
-    },
-    "00-0026289": {
-        "receiving_rec": 0.9,
-        "receiving_tds": 0.0,
-        "receiving_yds": 5.2,
-        "rushing_att": 1.2,
-        "rushing_tds": 0.1,
-        "rushing_yds": 4.3
-    },
-    "00-0026298": {
-        "receiving_rec": 0.0,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.1
-    },
     "00-0026345": {
+        "receiving_yds": 42.9,
         "receiving_rec": 4.0,
-        "receiving_tds": 0.2,
-        "receiving_yds": 42.9
-    },
-    "00-0026373": {
-        "receiving_rec": 1.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 5.9,
-        "rushing_att": 3.0,
-        "rushing_tds": 0.1,
-        "rushing_yds": 10.6
+        "receiving_tds": 0.2
     },
     "00-0026498": {
         "passing_att": 34.8,
-        "passing_cmp": 22.7,
         "passing_int": 0.8,
-        "passing_tds": 1.5,
+        "rushing_tds": 0.1,
         "passing_yds": 245.0,
-        "rushing_att": 2.8,
-        "rushing_tds": 0.1,
-        "rushing_yds": 14.0
+        "passing_cmp": 22.7,
+        "rushing_yds": 14.0,
+        "passing_tds": 1.5,
+        "rushing_att": 2.8
     },
-    "00-0026544": {
-        "passing_att": 0.1,
-        "passing_cmp": 0.1,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 0.6,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0026739": {
-        "receiving_rec": 2.3,
-        "receiving_tds": 0.1,
-        "receiving_yds": 20.6
-    },
-    "00-0026855": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.8,
-        "rushing_att": 0.3,
-        "rushing_tds": 0.0,
-        "rushing_yds": 1.5
-    },
-    "00-0026858": {
-        "kicking_fga": 2.0,
-        "kicking_fgm": 1.6,
-        "kicking_xpmade": 2.2
-    },
-    "00-0026898": {
-        "passing_att": 0.6,
-        "passing_cmp": 0.4,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 4.5,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.2
-    },
-    "00-0026968": {
-        "kicking_fga": 2.0,
-        "kicking_fgm": 1.7,
-        "kicking_xpmade": 2.5
-    },
-    "00-0026986": {
-        "receiving_rec": 5.6,
-        "receiving_tds": 0.8,
-        "receiving_yds": 61.8
-    },
-    "00-0026995": {
-        "receiving_rec": 4.6,
-        "receiving_tds": 0.4,
-        "receiving_yds": 56.7
-    },
-    "00-0027057": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 17.3
-    },
-    "00-0027125": {
-        "receiving_rec": 3.8,
-        "receiving_tds": 0.3,
-        "receiving_yds": 34.4
-    },
-    "00-0027135": {
-        "receiving_rec": 2.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 24.5
-    },
-    "00-0027139": {
-        "receiving_rec": 1.5,
-        "receiving_tds": 0.2,
-        "receiving_yds": 13.8
-    },
-    "00-0027150": {
-        "receiving_rec": 5.6,
-        "receiving_tds": 0.3,
-        "receiving_yds": 61.1
-    },
-    "00-0027325": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.1,
-        "receiving_yds": 8.9,
-        "rushing_att": 16.4,
-        "rushing_tds": 0.7,
-        "rushing_yds": 70.8
-    },
-    "00-0027531": {
-        "receiving_rec": 1.6,
-        "receiving_tds": 0.1,
-        "receiving_yds": 9.6,
-        "rushing_att": 8.9,
-        "rushing_tds": 0.3,
-        "rushing_yds": 33.4
-    },
-    "00-0027595": {
-        "receiving_rec": 0.6,
-        "receiving_tds": 0.0,
-        "receiving_yds": 6.5
-    },
-    "00-0027651": {
-        "receiving_rec": 1.6,
-        "receiving_tds": 0.0,
-        "receiving_yds": 8.8,
-        "rushing_att": 3.0,
-        "rushing_tds": 0.1,
-        "rushing_yds": 8.3
-    },
-    "00-0027654": {
-        "receiving_rec": 1.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 14.5
-    },
-    "00-0027656": {
-        "receiving_rec": 3.9,
-        "receiving_tds": 0.4,
-        "receiving_yds": 58.8
-    },
-    "00-0027675": {
-        "receiving_rec": 1.5,
-        "receiving_tds": 0.1,
-        "receiving_yds": 16.0
-    },
-    "00-0027681": {
-        "receiving_rec": 2.9,
-        "receiving_tds": 0.3,
-        "receiving_yds": 37.8
-    },
-    "00-0027685": {
-        "receiving_rec": 5.7,
-        "receiving_tds": 0.5,
-        "receiving_yds": 71.5
-    },
-    "00-0027688": {
-        "passing_att": 0.4,
-        "passing_cmp": 0.3,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 3.0,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.4
+    "NYJ": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 315.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.8,
+        "defense_sk": 2.8,
+        "defense_int": 1.1,
+        "defense_ffum": 1.0,
+        "defense_TPA": 17.2
     },
     "00-0027691": {
+        "receiving_yds": 18.8,
         "receiving_rec": 1.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 18.8
+        "receiving_tds": 0.1
     },
     "00-0027696": {
+        "receiving_yds": 59.8,
         "receiving_rec": 4.4,
-        "receiving_tds": 0.4,
-        "receiving_yds": 59.8
-    },
-    "00-0027725": {
-        "receiving_rec": 0.6,
-        "receiving_tds": 0.0,
-        "receiving_yds": 4.8
-    },
-    "00-0027753": {
-        "receiving_rec": 0.6,
-        "receiving_tds": 0.0,
-        "receiving_yds": 5.1
-    },
-    "00-0027854": {
-        "passing_att": 30.6,
-        "passing_cmp": 20.8,
-        "passing_int": 0.7,
-        "passing_tds": 1.4,
-        "passing_yds": 209.0,
-        "rushing_att": 1.9,
-        "rushing_tds": 0.0,
-        "rushing_yds": 2.0
-    },
-    "00-0027864": {
-        "receiving_rec": 1.6,
-        "receiving_tds": 0.2,
-        "receiving_yds": 11.8,
-        "rushing_att": 11.5,
-        "rushing_tds": 0.4,
-        "rushing_yds": 54.0
-    },
-    "00-0027873": {
-        "receiving_rec": 2.7,
-        "receiving_tds": 0.2,
-        "receiving_yds": 24.8
-    },
-    "00-0027874": {
-        "receiving_rec": 5.8,
-        "receiving_tds": 0.6,
-        "receiving_yds": 69.9
-    },
-    "00-0027891": {
-        "receiving_rec": 5.0,
-        "receiving_tds": 0.2,
-        "receiving_yds": 56.2
-    },
-    "00-0027902": {
-        "receiving_rec": 4.3,
-        "receiving_tds": 0.6,
-        "receiving_yds": 60.5
-    },
-    "00-0027918": {
-        "receiving_rec": 3.0,
-        "receiving_tds": 0.1,
-        "receiving_yds": 36.4
-    },
-    "00-0027925": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.9,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.2
-    },
-    "00-0027939": {
-        "passing_att": 32.2,
-        "passing_cmp": 18.5,
-        "passing_int": 1.5,
-        "passing_tds": 1.4,
-        "passing_yds": 221.0,
-        "rushing_att": 4.3,
-        "rushing_tds": 0.3,
-        "rushing_yds": 19.8
-    },
-    "00-0027942": {
-        "receiving_rec": 6.2,
-        "receiving_tds": 0.6,
-        "receiving_yds": 89.2
-    },
-    "00-0027944": {
-        "receiving_rec": 6.2,
-        "receiving_tds": 0.5,
-        "receiving_yds": 101.0
-    },
-    "00-0027966": {
-        "receiving_rec": 3.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 21.4,
-        "rushing_att": 14.7,
-        "rushing_tds": 0.3,
-        "rushing_yds": 49.7
-    },
-    "00-0027973": {
-        "passing_att": 31.5,
-        "passing_cmp": 21.2,
-        "passing_int": 0.5,
-        "passing_tds": 1.6,
-        "passing_yds": 252.0,
-        "rushing_att": 3.7,
-        "rushing_tds": 0.2,
-        "rushing_yds": 13.7
-    },
-    "00-0027981": {
-        "receiving_rec": 4.0,
-        "receiving_tds": 0.4,
-        "receiving_yds": 38.8
-    },
-    "00-0028009": {
-        "receiving_rec": 3.4,
-        "receiving_tds": 0.2,
-        "receiving_yds": 22.1,
-        "rushing_att": 17.3,
-        "rushing_tds": 0.6,
-        "rushing_yds": 68.9
-    },
-    "00-0028042": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.7
-    },
-    "00-0028052": {
-        "receiving_rec": 0.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 5.5
-    },
-    "00-0028063": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.2,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.1
-    },
-    "00-0028064": {
-        "receiving_rec": 3.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 25.3,
-        "rushing_att": 6.0,
-        "rushing_tds": 0.1,
-        "rushing_yds": 25.0
-    },
-    "00-0028067": {
-        "receiving_rec": 2.8,
-        "receiving_tds": 0.3,
-        "receiving_yds": 33.0
-    },
-    "00-0028074": {
-        "receiving_rec": 0.7,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.5,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.2
-    },
-    "00-0028083": {
-        "receiving_rec": 2.0,
-        "receiving_tds": 0.1,
-        "receiving_yds": 13.7,
-        "rushing_att": 16.4,
-        "rushing_tds": 0.2,
-        "rushing_yds": 81.2
-    },
-    "00-0028093": {
-        "receiving_rec": 0.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 4.4
-    },
-    "00-0028112": {
-        "receiving_rec": 3.6,
-        "receiving_tds": 0.2,
-        "receiving_yds": 33.7
-    },
-    "00-0028116": {
-        "receiving_rec": 1.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 17.8
-    },
-    "00-0028118": {
-        "passing_att": 28.3,
-        "passing_cmp": 17.1,
-        "passing_int": 0.5,
-        "passing_tds": 1.1,
-        "passing_yds": 181.0,
-        "rushing_att": 5.5,
-        "rushing_tds": 0.2,
-        "rushing_yds": 30.6
-    },
-    "00-0028121": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.8,
-        "rushing_att": 0.2,
-        "rushing_tds": 0.0,
-        "rushing_yds": 1.2
-    },
-    "00-0028142": {
-        "receiving_rec": 2.5,
-        "receiving_tds": 0.2,
-        "receiving_yds": 23.3
-    },
-    "00-0028198": {
-        "receiving_rec": 4.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 29.4,
-        "rushing_att": 16.4,
-        "rushing_tds": 0.6,
-        "rushing_yds": 59.8
-    },
-    "00-0028237": {
-        "receiving_rec": 2.6,
-        "receiving_tds": 0.1,
-        "receiving_yds": 38.8
-    },
-    "00-0028263": {
-        "receiving_rec": 1.9,
-        "receiving_tds": 0.3,
-        "receiving_yds": 23.5
-    },
-    "00-0028411": {
-        "receiving_rec": 2.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 27.5
-    },
-    "00-0028434": {
-        "receiving_rec": 5.7,
-        "receiving_tds": 0.6,
-        "receiving_yds": 74.1
-    },
-    "00-0028581": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.2,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0028595": {
-        "passing_att": 0.0,
-        "passing_cmp": 0.0,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 0.2,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0028660": {
-        "kicking_fga": 1.9,
-        "kicking_fgm": 1.6,
-        "kicking_xpmade": 2.6
-    },
-    "00-0028825": {
-        "receiving_rec": 4.8,
-        "receiving_tds": 0.5,
-        "receiving_yds": 66.9
-    },
-    "00-0029000": {
-        "receiving_rec": 4.7,
-        "receiving_tds": 0.5,
-        "receiving_yds": 54.0
-    },
-    "00-0029004": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 13.4,
-        "rushing_att": 2.4,
-        "rushing_tds": 0.1,
-        "rushing_yds": 11.1
-    },
-    "00-0029033": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.8
-    },
-    "00-0029137": {
-        "receiving_rec": 4.5,
-        "receiving_tds": 0.2,
-        "receiving_yds": 53.5
-    },
-    "00-0029141": {
-        "receiving_rec": 0.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.8,
-        "rushing_att": 4.2,
-        "rushing_tds": 0.2,
-        "rushing_yds": 19.1
-    },
-    "00-0029159": {
-        "receiving_rec": 3.3,
-        "receiving_tds": 0.2,
-        "receiving_yds": 40.9
-    },
-    "00-0029205": {
-        "receiving_rec": 2.8,
-        "receiving_tds": 0.1,
-        "receiving_yds": 17.5,
-        "rushing_att": 3.6,
-        "rushing_tds": 0.1,
-        "rushing_yds": 10.6
-    },
-    "00-0029239": {
-        "receiving_rec": 1.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 8.7,
-        "rushing_att": 2.4,
-        "rushing_tds": 0.1,
-        "rushing_yds": 9.4
-    },
-    "00-0029263": {
-        "passing_att": 33.7,
-        "passing_cmp": 23.6,
-        "passing_int": 0.7,
-        "passing_tds": 1.9,
-        "passing_yds": 284.0,
-        "rushing_att": 4.1,
-        "rushing_tds": 0.1,
-        "rushing_yds": 23.4
-    },
-    "00-0029269": {
-        "receiving_rec": 4.1,
-        "receiving_tds": 0.2,
-        "receiving_yds": 45.6
-    },
-    "00-0029273": {
-        "receiving_rec": 1.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 8.6,
-        "rushing_att": 3.9,
-        "rushing_tds": 0.1,
-        "rushing_yds": 15.7
-    },
-    "00-0029293": {
-        "receiving_rec": 3.9,
-        "receiving_tds": 0.3,
-        "receiving_yds": 54.7
-    },
-    "00-0029319": {
-        "receiving_rec": 2.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 22.9
-    },
-    "00-0029336": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.7
-    },
-    "00-0029388": {
-        "receiving_rec": 1.8,
-        "receiving_tds": 0.1,
-        "receiving_yds": 20.6
-    },
-    "00-0029394": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.8
-    },
-    "00-0029492": {
-        "receiving_rec": 0.7,
-        "receiving_tds": 0.1,
-        "receiving_yds": 6.1,
-        "rushing_att": 1.8,
-        "rushing_tds": 0.3,
-        "rushing_yds": 7.0
-    },
-    "00-0029567": {
-        "passing_att": 0.6,
-        "passing_cmp": 0.4,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 4.1,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.1
-    },
-    "00-0029572": {
-        "receiving_rec": 0.8,
-        "receiving_tds": 0.0,
-        "receiving_yds": 8.5
-    },
-    "00-0029576": {
-        "kicking_fga": 2.5,
-        "kicking_fgm": 2.0,
-        "kicking_xpmade": 2.0
-    },
-    "00-0029580": {
-        "receiving_rec": 2.1,
-        "receiving_tds": 0.2,
-        "receiving_yds": 28.2
-    },
-    "00-0029587": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.4
-    },
-    "00-0029601": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.3
-    },
-    "00-0029604": {
-        "passing_att": 36.3,
-        "passing_cmp": 24.8,
-        "passing_int": 1.2,
-        "passing_tds": 1.4,
-        "passing_yds": 269.0,
-        "rushing_att": 1.7,
-        "rushing_tds": 0.2,
-        "rushing_yds": 6.3
-    },
-    "00-0029608": {
-        "receiving_rec": 6.2,
-        "receiving_tds": 0.4,
-        "receiving_yds": 86.3
-    },
-    "00-0029615": {
-        "receiving_rec": 2.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 13.5,
-        "rushing_att": 10.1,
-        "rushing_tds": 0.3,
-        "rushing_yds": 44.1
-    },
-    "00-0029632": {
-        "receiving_rec": 3.1,
-        "receiving_tds": 0.2,
-        "receiving_yds": 41.2
-    },
-    "00-0029668": {
-        "passing_att": 40.2,
-        "passing_cmp": 23.7,
-        "passing_int": 1.4,
-        "passing_tds": 1.5,
-        "passing_yds": 258.0,
-        "rushing_att": 3.9,
-        "rushing_tds": 0.1,
-        "rushing_yds": 22.4
-    },
-    "00-0029682": {
-        "passing_att": 35.7,
-        "passing_cmp": 23.8,
-        "passing_int": 0.8,
-        "passing_tds": 1.5,
-        "passing_yds": 232.0,
-        "rushing_att": 2.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 7.2
-    },
-    "00-0029683": {
-        "receiving_rec": 0.8,
-        "receiving_tds": 0.0,
-        "receiving_yds": 5.1,
-        "rushing_att": 3.6,
-        "rushing_tds": 0.1,
-        "rushing_yds": 13.3
-    },
-    "00-0029697": {
-        "receiving_rec": 2.8,
-        "receiving_tds": 0.2,
-        "receiving_yds": 32.6
-    },
-    "00-0029708": {
-        "receiving_rec": 3.1,
-        "receiving_tds": 0.3,
-        "receiving_yds": 33.8
-    },
-    "00-0029731": {
-        "receiving_rec": 1.8,
-        "receiving_tds": 0.0,
-        "receiving_yds": 14.6,
-        "rushing_att": 5.0,
-        "rushing_tds": 0.1,
-        "rushing_yds": 19.1
-    },
-    "00-0029740": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 14.6
-    },
-    "00-0029822": {
-        "kicking_fga": 2.6,
-        "kicking_fgm": 2.3,
-        "kicking_xpmade": 2.7
-    },
-    "00-0029931": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.9,
-        "rushing_att": 0.3,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.5
-    },
-    "00-0030035": {
-        "receiving_rec": 2.7,
-        "receiving_tds": 0.1,
-        "receiving_yds": 35.5
-    },
-    "00-0030061": {
-        "receiving_rec": 3.1,
-        "receiving_tds": 0.2,
-        "receiving_yds": 32.6
-    },
-    "00-0030098": {
-        "kicking_fga": 1.9,
-        "kicking_fgm": 1.7,
-        "kicking_xpmade": 2.1
-    },
-    "00-0030107": {
-        "receiving_rec": 4.0,
-        "receiving_tds": 0.3,
-        "receiving_yds": 31.3,
-        "rushing_att": 7.4,
-        "rushing_tds": 0.1,
-        "rushing_yds": 29.2
-    },
-    "00-0030108": {
-        "receiving_rec": 2.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 20.5
-    },
-    "00-0030113": {
-        "receiving_rec": 1.9,
-        "receiving_tds": 0.1,
-        "receiving_yds": 25.2
-    },
-    "00-0030147": {
-        "receiving_rec": 1.9,
-        "receiving_tds": 0.1,
-        "receiving_yds": 27.5
-    },
-    "00-0030154": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.3
-    },
-    "00-0030155": {
-        "receiving_rec": 1.8,
-        "receiving_tds": 0.1,
-        "receiving_yds": 15.6
-    },
-    "00-0030181": {
-        "receiving_rec": 4.4,
-        "receiving_tds": 0.4,
-        "receiving_yds": 39.8
-    },
-    "00-0030216": {
-        "receiving_rec": 2.0,
-        "receiving_tds": 0.2,
-        "receiving_yds": 18.9
-    },
-    "00-0030280": {
-        "receiving_rec": 1.7,
-        "receiving_tds": 0.1,
-        "receiving_yds": 11.0,
-        "rushing_att": 6.0,
-        "rushing_tds": 0.2,
-        "rushing_yds": 23.6
-    },
-    "00-0030282": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.5,
-        "rushing_att": 0.5,
-        "rushing_tds": 0.0,
-        "rushing_yds": 1.3
-    },
-    "00-0030287": {
-        "receiving_rec": 1.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 8.6,
-        "rushing_att": 5.6,
-        "rushing_tds": 0.2,
-        "rushing_yds": 19.6
-    },
-    "00-0030288": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.9,
-        "rushing_att": 0.2,
-        "rushing_tds": 0.0,
-        "rushing_yds": 1.0
-    },
-    "00-0030390": {
-        "kicking_fga": 2.0,
-        "kicking_fgm": 1.8,
-        "kicking_xpmade": 2.1
-    },
-    "00-0030404": {
-        "receiving_rec": 3.5,
-        "receiving_tds": 0.2,
-        "receiving_yds": 26.8,
-        "rushing_att": 9.7,
-        "rushing_tds": 0.2,
-        "rushing_yds": 50.8
-    },
-    "00-0030414": {
-        "receiving_rec": 2.1,
-        "receiving_tds": 0.2,
-        "receiving_yds": 36.4,
-        "rushing_att": 16.4,
-        "rushing_tds": 0.7,
-        "rushing_yds": 86.0
-    },
-    "00-0030419": {
-        "passing_att": 0.1,
-        "passing_cmp": 0.1,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 1.0,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0030431": {
-        "receiving_rec": 3.6,
-        "receiving_tds": 0.2,
-        "receiving_yds": 34.0
-    },
-    "00-0030432": {
-        "receiving_rec": 2.7,
-        "receiving_tds": 0.2,
-        "receiving_yds": 14.5,
-        "rushing_att": 16.3,
-        "rushing_tds": 0.6,
-        "rushing_yds": 80.9
-    },
-    "00-0030433": {
-        "receiving_rec": 1.8,
-        "receiving_tds": 0.2,
-        "receiving_yds": 11.4,
-        "rushing_att": 14.0,
-        "rushing_tds": 0.4,
-        "rushing_yds": 58.3
-    },
-    "00-0030443": {
-        "receiving_rec": 1.9,
-        "receiving_tds": 0.1,
-        "receiving_yds": 23.5
-    },
-    "00-0030456": {
-        "receiving_rec": 3.9,
-        "receiving_tds": 0.1,
-        "receiving_yds": 33.6,
-        "rushing_att": 11.2,
-        "rushing_tds": 0.3,
-        "rushing_yds": 54.3
-    },
-    "00-0030465": {
-        "receiving_rec": 0.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.5,
-        "rushing_att": 2.2,
-        "rushing_tds": 0.1,
-        "rushing_yds": 10.8
-    },
-    "00-0030472": {
-        "receiving_rec": 6.3,
-        "receiving_tds": 0.4,
-        "receiving_yds": 61.3
-    },
-    "00-0030506": {
-        "receiving_rec": 4.4,
-        "receiving_tds": 0.4,
-        "receiving_yds": 47.9
-    },
-    "00-0030513": {
-        "receiving_rec": 2.3,
-        "receiving_tds": 0.1,
-        "receiving_yds": 14.5,
-        "rushing_att": 10.7,
-        "rushing_tds": 0.6,
-        "rushing_yds": 40.7
-    },
-    "00-0030514": {
-        "receiving_rec": 0.6,
-        "receiving_tds": 0.0,
-        "receiving_yds": 6.6
-    },
-    "00-0030516": {
-        "receiving_rec": 1.6,
-        "receiving_tds": 0.2,
-        "receiving_yds": 23.0
-    },
-    "00-0030520": {
-        "passing_att": 0.5,
-        "passing_cmp": 0.3,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 3.9,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.2
-    },
-    "00-0030521": {
-        "receiving_rec": 2.1,
-        "receiving_tds": 0.3,
-        "receiving_yds": 29.2
-    },
-    "00-0030526": {
-        "passing_att": 0.2,
-        "passing_cmp": 0.1,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 1.3,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.2
-    },
-    "00-0030533": {
-        "passing_att": 0.1,
-        "passing_cmp": 0.1,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 0.5,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0030542": {
-        "receiving_rec": 2.8,
-        "receiving_tds": 0.2,
-        "receiving_yds": 39.5
-    },
-    "00-0030544": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.1,
-        "receiving_yds": 2.5
-    },
-    "00-0030547": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.1,
-        "rushing_att": 0.8,
-        "rushing_tds": 0.0,
-        "rushing_yds": 3.3
-    },
-    "00-0030549": {
-        "receiving_rec": 2.8,
-        "receiving_tds": 0.3,
-        "receiving_yds": 30.1
-    },
-    "00-0030564": {
-        "receiving_rec": 6.2,
-        "receiving_tds": 0.5,
-        "receiving_yds": 73.2
-    },
-    "00-0030578": {
-        "receiving_rec": 2.6,
-        "receiving_tds": 0.3,
-        "receiving_yds": 22.2
-    },
-    "00-0030656": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 13.0,
-        "rushing_att": 13.8,
-        "rushing_tds": 0.4,
-        "rushing_yds": 53.3
-    },
-    "00-0030663": {
-        "receiving_rec": 4.0,
-        "receiving_tds": 0.2,
-        "receiving_yds": 50.7
-    },
-    "00-0030668": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 6.9,
-        "rushing_att": 3.2,
-        "rushing_tds": 0.2,
-        "rushing_yds": 15.4
-    },
-    "00-0030669": {
-        "receiving_rec": 2.3,
-        "receiving_tds": 0.1,
-        "receiving_yds": 21.8
-    },
-    "00-0030670": {
-        "receiving_rec": 1.7,
-        "receiving_tds": 0.2,
-        "receiving_yds": 19.4
-    },
-    "00-0030710": {
-        "receiving_rec": 1.7,
-        "receiving_tds": 0.1,
-        "receiving_yds": 15.0
-    },
-    "00-0030780": {
-        "receiving_rec": 0.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 4.5
-    },
-    "00-0030789": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.0,
-        "rushing_att": 0.9,
-        "rushing_tds": 0.0,
-        "rushing_yds": 3.4
-    },
-    "00-0030801": {
-        "receiving_rec": 0.9,
-        "receiving_tds": 0.1,
-        "receiving_yds": 10.6
-    },
-    "00-0030821": {
-        "receiving_rec": 3.4,
-        "receiving_tds": 0.3,
-        "receiving_yds": 49.4
-    },
-    "00-0030850": {
-        "kicking_fga": 1.7,
-        "kicking_fgm": 1.3,
-        "kicking_xpmade": 1.8
-    },
-    "00-0030854": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.8
-    },
-    "00-0030896": {
-        "kicking_fga": 2.0,
-        "kicking_fgm": 1.6,
-        "kicking_xpmade": 2.4
-    },
-    "00-0030990": {
-        "receiving_rec": 0.8,
-        "receiving_tds": 0.1,
-        "receiving_yds": 8.4
-    },
-    "00-0031001": {
-        "receiving_rec": 3.6,
-        "receiving_tds": 0.2,
-        "receiving_yds": 38.5
-    },
-    "00-0031023": {
-        "receiving_rec": 4.7,
-        "receiving_tds": 0.3,
-        "receiving_yds": 69.1
-    },
-    "00-0031051": {
-        "receiving_rec": 4.2,
-        "receiving_tds": 0.3,
-        "receiving_yds": 57.5
-    },
-    "00-0031057": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 8.6,
-        "rushing_att": 5.9,
-        "rushing_tds": 0.1,
-        "rushing_yds": 25.7
-    },
-    "00-0031060": {
-        "receiving_rec": 0.5,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.3
-    },
-    "00-0031062": {
-        "receiving_rec": 3.9,
-        "receiving_tds": 0.3,
-        "receiving_yds": 35.6,
-        "rushing_att": 5.4,
-        "rushing_tds": 0.1,
-        "rushing_yds": 20.6
-    },
-    "00-0031064": {
-        "passing_att": 0.1,
-        "passing_cmp": 0.1,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 0.5,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0031068": {
-        "receiving_rec": 1.8,
-        "receiving_tds": 0.1,
-        "receiving_yds": 22.9
-    },
-    "00-0031075": {
-        "receiving_rec": 1.7,
-        "receiving_tds": 0.1,
-        "receiving_yds": 9.7,
-        "rushing_att": 8.7,
-        "rushing_tds": 0.2,
-        "rushing_yds": 37.6
-    },
-    "00-0031085": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.7,
-        "rushing_att": 0.5,
-        "rushing_tds": 0.0,
-        "rushing_yds": 1.3
-    },
-    "00-0031102": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.1,
-        "receiving_yds": 8.7,
-        "rushing_att": 5.9,
-        "rushing_tds": 0.2,
-        "rushing_yds": 24.4
-    },
-    "00-0031118": {
-        "receiving_rec": 2.0,
-        "receiving_tds": 0.1,
-        "receiving_yds": 23.3
-    },
-    "00-0031166": {
-        "receiving_rec": 2.6,
-        "receiving_tds": 0.4,
-        "receiving_yds": 28.5
-    },
-    "00-0031203": {
-        "kicking_fga": 2.2,
-        "kicking_fgm": 1.9,
-        "kicking_xpmade": 2.6
-    },
-    "00-0031236": {
-        "receiving_rec": 4.0,
-        "receiving_tds": 0.3,
-        "receiving_yds": 49.9
-    },
-    "00-0031257": {
-        "receiving_rec": 0.9,
-        "receiving_tds": 0.1,
-        "receiving_yds": 11.6
-    },
-    "00-0031268": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.1,
-        "receiving_yds": 13.2
-    },
-    "00-0031273": {
-        "receiving_rec": 4.0,
-        "receiving_tds": 0.4,
-        "receiving_yds": 51.6
-    },
-    "00-0031280": {
-        "passing_att": 37.5,
-        "passing_cmp": 24.6,
-        "passing_int": 0.6,
-        "passing_tds": 2.2,
-        "passing_yds": 261.0,
-        "rushing_att": 2.2,
-        "rushing_tds": 0.0,
-        "rushing_yds": 6.5
-    },
-    "00-0031285": {
-        "receiving_rec": 3.3,
-        "receiving_tds": 0.1,
-        "receiving_yds": 27.2,
-        "rushing_att": 17.0,
-        "rushing_tds": 0.6,
-        "rushing_yds": 71.0
-    },
-    "00-0031288": {
-        "passing_att": 0.4,
-        "passing_cmp": 0.3,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 3.1,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.1
-    },
-    "00-0031291": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 18.5
-    },
-    "00-0031299": {
-        "receiving_rec": 4.5,
-        "receiving_tds": 0.4,
-        "receiving_yds": 53.0
-    },
-    "00-0031301": {
-        "receiving_rec": 1.0,
-        "receiving_tds": 0.0,
-        "receiving_yds": 8.2,
-        "rushing_att": 10.6,
-        "rushing_tds": 0.5,
-        "rushing_yds": 57.4
-    },
-    "00-0031302": {
-        "receiving_rec": 3.0,
-        "receiving_tds": 0.2,
-        "receiving_yds": 29.9
-    },
-    "00-0031310": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 4.0
-    },
-    "00-0031339": {
-        "receiving_rec": 4.0,
-        "receiving_tds": 0.3,
-        "receiving_yds": 48.3
-    },
-    "00-0031344": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.0
-    },
-    "00-0031345": {
-        "passing_att": 0.3,
-        "passing_cmp": 0.2,
-        "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 1.9,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0031359": {
-        "receiving_rec": 4.5,
-        "receiving_tds": 0.6,
-        "receiving_yds": 59.4
-    },
-    "00-0031381": {
-        "receiving_rec": 5.7,
-        "receiving_tds": 0.5,
-        "receiving_yds": 62.4
-    },
-    "00-0031384": {
-        "receiving_rec": 2.8,
-        "receiving_tds": 0.2,
-        "receiving_yds": 23.6
-    },
-    "00-0031387": {
-        "receiving_rec": 3.0,
-        "receiving_tds": 0.2,
-        "receiving_yds": 34.8
-    },
-    "00-0031407": {
-        "passing_att": 36.5,
-        "passing_cmp": 21.6,
-        "passing_int": 1.4,
-        "passing_tds": 1.6,
-        "passing_yds": 257.0,
-        "rushing_att": 3.6,
-        "rushing_tds": 0.2,
-        "rushing_yds": 21.5
-    },
-    "00-0031408": {
-        "receiving_rec": 6.4,
-        "receiving_tds": 0.8,
-        "receiving_yds": 98.6
-    },
-    "00-0031428": {
-        "receiving_rec": 4.5,
-        "receiving_tds": 0.6,
-        "receiving_yds": 61.3
-    },
-    "00-0031431": {
-        "receiving_rec": 3.4,
-        "receiving_tds": 0.2,
-        "receiving_yds": 42.6
-    },
-    "00-0031492": {
-        "kicking_fga": 2.2,
-        "kicking_fgm": 1.9,
-        "kicking_xpmade": 2.1
-    },
-    "00-0031503": {
-        "passing_att": 36.2,
-        "passing_cmp": 21.7,
-        "passing_int": 1.3,
-        "passing_tds": 1.6,
-        "passing_yds": 268.0,
-        "rushing_att": 3.3,
-        "rushing_tds": 0.3,
-        "rushing_yds": 10.5
+        "receiving_tds": 0.4
     },
     "00-0031533": {
+        "receiving_yds": 2.5,
         "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.5
+        "receiving_tds": 0.0
     },
-    "00-0031544": {
-        "receiving_rec": 6.3,
-        "receiving_tds": 0.4,
-        "receiving_yds": 81.9
-    },
-    "00-0031549": {
-        "receiving_rec": 3.0,
+    "00-0023500": {
         "receiving_tds": 0.2,
-        "receiving_yds": 30.2
-    },
-    "00-0031560": {
+        "rushing_tds": 0.3,
         "receiving_rec": 2.3,
+        "rushing_yds": 62.9,
+        "receiving_yds": 12.6,
+        "rushing_att": 14.1
+    },
+    "00-0032377": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.9,
+        "rushing_yds": 13.0,
+        "receiving_yds": 12.6,
+        "rushing_att": 3.0
+    },
+    "00-0028263": {
+        "receiving_yds": 23.5,
+        "receiving_rec": 1.9,
+        "receiving_tds": 0.3
+    },
+    "WAS": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 370.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.9,
+        "defense_sk": 2.8,
+        "defense_int": 0.5,
+        "defense_ffum": 1.3,
+        "defense_TPA": 23.4
+    },
+    "00-0027325": {
         "receiving_tds": 0.1,
-        "receiving_yds": 24.1
+        "rushing_tds": 0.7,
+        "receiving_rec": 1.2,
+        "rushing_yds": 70.8,
+        "receiving_yds": 8.9,
+        "rushing_att": 16.4
     },
-    "00-0031568": {
-        "passing_att": 0.0,
-        "passing_cmp": 0.0,
+    "00-0023645": {
+        "passing_att": 0.3,
         "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 0.3,
-        "rushing_att": 0.0,
         "rushing_tds": 0.0,
-        "rushing_yds": 0.0
+        "passing_yds": 2.0,
+        "passing_cmp": 0.2,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
     },
-    "00-0031569": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 10.4,
-        "rushing_att": 6.6,
-        "rushing_tds": 0.2,
-        "rushing_yds": 26.5
-    },
-    "00-0031570": {
-        "receiving_rec": 2.2,
-        "receiving_tds": 0.3,
-        "receiving_yds": 33.0
-    },
-    "00-0031585": {
+    "00-0028042": {
+        "receiving_yds": 1.7,
         "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.5
+        "receiving_tds": 0.0
+    },
+    "00-0031075": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.7,
+        "rushing_yds": 37.6,
+        "receiving_yds": 9.7,
+        "rushing_att": 8.7
+    },
+    "00-0028093": {
+        "receiving_yds": 4.4,
+        "receiving_rec": 0.4,
+        "receiving_tds": 0.0
+    },
+    "GB": {
+        "defense_tds": 0.2,
+        "defense_TYDA": 407.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.5,
+        "defense_sk": 2.8,
+        "defense_int": 0.9,
+        "defense_ffum": 0.8,
+        "defense_TPA": 26.4
+    },
+    "00-0032144": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.5,
+        "receiving_rec": 2.6,
+        "rushing_yds": 52.1,
+        "receiving_yds": 17.2,
+        "rushing_att": 17.3
+    },
+    "00-0032141": {
+        "receiving_yds": 16.8,
+        "receiving_rec": 1.6,
+        "receiving_tds": 0.1
     },
     "00-0031588": {
+        "receiving_yds": 60.9,
         "receiving_rec": 5.1,
-        "receiving_tds": 0.3,
-        "receiving_yds": 60.9
+        "receiving_tds": 0.3
     },
     "00-0031589": {
         "passing_att": 0.0,
-        "passing_cmp": 0.0,
         "passing_int": 0.0,
-        "passing_tds": 0.0,
+        "rushing_tds": 0.0,
         "passing_yds": 0.3,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0031595": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.6,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
-    },
-    "00-0031599": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.7,
-        "rushing_att": 1.9,
-        "rushing_tds": 0.1,
-        "rushing_yds": 7.6
-    },
-    "00-0031600": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.1
-    },
-    "00-0031612": {
-        "receiving_rec": 0.6,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.5,
-        "rushing_att": 1.3,
-        "rushing_tds": 0.0,
-        "rushing_yds": 5.5
-    },
-    "00-0031665": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.7,
-        "rushing_att": 3.1,
-        "rushing_tds": 0.2,
-        "rushing_yds": 11.5
-    },
-    "00-0031682": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 12.8,
-        "rushing_att": 4.4,
-        "rushing_tds": 0.2,
-        "rushing_yds": 16.0
-    },
-    "00-0031687": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.6,
-        "rushing_att": 0.4,
-        "rushing_tds": 0.0,
-        "rushing_yds": 1.5
-    },
-    "00-0031706": {
-        "receiving_rec": 0.0,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.3,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.4
-    },
-    "00-0031731": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.7,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.2
-    },
-    "00-0031732": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.1,
-        "receiving_yds": 12.3
-    },
-    "00-0031757": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.8
-    },
-    "00-0031912": {
-        "receiving_rec": 4.8,
-        "receiving_tds": 0.2,
-        "receiving_yds": 48.0
-    },
-    "00-0031922": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.1
-    },
-    "00-0031941": {
-        "receiving_rec": 3.8,
-        "receiving_tds": 0.3,
-        "receiving_yds": 44.3
-    },
-    "00-0031951": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.2
-    },
-    "00-0031959": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.6,
-        "rushing_att": 0.3,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.9
-    },
-    "00-0032009": {
-        "receiving_rec": 4.4,
-        "receiving_tds": 0.3,
-        "receiving_yds": 50.7
-    },
-    "00-0032048": {
-        "receiving_rec": 0.0,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.2,
-        "rushing_att": 0.6,
-        "rushing_tds": 0.0,
-        "rushing_yds": 2.4
-    },
-    "00-0032055": {
-        "receiving_rec": 1.8,
-        "receiving_tds": 0.3,
-        "receiving_yds": 26.6
-    },
-    "00-0032068": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.6,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.1
-    },
-    "00-0032087": {
-        "kicking_fga": 1.7,
-        "kicking_fgm": 1.5,
-        "kicking_xpmade": 1.7
-    },
-    "00-0032098": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.1
-    },
-    "00-0032112": {
-        "receiving_rec": 2.4,
-        "receiving_tds": 0.2,
-        "receiving_yds": 45.4
-    },
-    "00-0032117": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.1,
-        "receiving_yds": 14.8
-    },
-    "00-0032128": {
-        "receiving_rec": 2.5,
-        "receiving_tds": 0.1,
-        "receiving_yds": 25.8
-    },
-    "00-0032130": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.1,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.1
-    },
-    "00-0032134": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.1,
-        "receiving_yds": 14.1
-    },
-    "00-0032141": {
-        "receiving_rec": 1.6,
-        "receiving_tds": 0.1,
-        "receiving_yds": 16.8
-    },
-    "00-0032144": {
-        "receiving_rec": 2.6,
-        "receiving_tds": 0.1,
-        "receiving_yds": 17.2,
-        "rushing_att": 17.3,
-        "rushing_tds": 0.5,
-        "rushing_yds": 52.1
-    },
-    "00-0032156": {
-        "passing_att": 35.0,
-        "passing_cmp": 21.7,
-        "passing_int": 0.9,
-        "passing_tds": 1.8,
-        "passing_yds": 229.0,
-        "rushing_att": 1.9,
-        "rushing_tds": 0.0,
-        "rushing_yds": 6.0
-    },
-    "00-0032160": {
-        "receiving_rec": 3.7,
-        "receiving_tds": 0.2,
-        "receiving_yds": 44.6
-    },
-    "00-0032170": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.0
-    },
-    "00-0032187": {
-        "receiving_rec": 3.9,
-        "receiving_tds": 0.1,
-        "receiving_yds": 42.7,
-        "rushing_att": 20.3,
-        "rushing_tds": 0.8,
-        "rushing_yds": 78.1
-    },
-    "00-0032200": {
-        "receiving_rec": 6.8,
-        "receiving_tds": 0.1,
-        "receiving_yds": 52.5
-    },
-    "00-0032208": {
-        "receiving_rec": 3.4,
-        "receiving_tds": 0.2,
-        "receiving_yds": 63.0
-    },
-    "00-0032209": {
-        "receiving_rec": 2.9,
-        "receiving_tds": 0.0,
-        "receiving_yds": 18.0,
-        "rushing_att": 9.0,
-        "rushing_tds": 0.2,
-        "rushing_yds": 35.0
-    },
-    "00-0032211": {
-        "receiving_rec": 2.8,
-        "receiving_tds": 0.2,
-        "receiving_yds": 38.5
-    },
-    "00-0032214": {
-        "receiving_rec": 1.6,
-        "receiving_tds": 0.1,
-        "receiving_yds": 16.4
-    },
-    "00-0032218": {
-        "receiving_rec": 2.2,
-        "receiving_tds": 0.2,
-        "receiving_yds": 24.5
-    },
-    "00-0032227": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.5
-    },
-    "00-0032256": {
-        "receiving_rec": 3.0,
-        "receiving_tds": 0.2,
-        "receiving_yds": 32.5
-    },
-    "00-0032257": {
-        "receiving_rec": 3.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 27.8,
-        "rushing_att": 6.2,
-        "rushing_tds": 0.1,
-        "rushing_yds": 22.3
-    },
-    "00-0032268": {
-        "passing_att": 30.4,
-        "passing_cmp": 19.3,
-        "passing_int": 0.9,
-        "passing_tds": 1.8,
-        "passing_yds": 203.0,
-        "rushing_att": 3.4,
-        "rushing_tds": 0.2,
-        "rushing_yds": 22.5
-    },
-    "00-0032358": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.8
-    },
-    "00-0032371": {
-        "receiving_rec": 1.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 8.2,
-        "rushing_att": 14.3,
-        "rushing_tds": 0.3,
-        "rushing_yds": 73.5
-    },
-    "00-0032377": {
-        "receiving_rec": 1.9,
-        "receiving_tds": 0.0,
-        "receiving_yds": 12.6,
-        "rushing_att": 3.0,
-        "rushing_tds": 0.1,
-        "rushing_yds": 13.0
-    },
-    "00-0032392": {
-        "receiving_rec": 1.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 14.6
-    },
-    "00-0032393": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 12.6,
-        "rushing_att": 7.3,
-        "rushing_tds": 0.3,
-        "rushing_yds": 34.9
-    },
-    "00-0032394": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.9
-    },
-    "00-0032400": {
-        "receiving_rec": 1.0,
-        "receiving_tds": 0.1,
-        "receiving_yds": 14.2
-    },
-    "00-0032404": {
-        "receiving_rec": 0.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.4,
-        "rushing_att": 1.6,
-        "rushing_tds": 0.1,
-        "rushing_yds": 6.5
-    },
-    "00-0032423": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.7
-    },
-    "00-0032426": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.1,
-        "rushing_att": 0.5,
-        "rushing_tds": 0.0,
-        "rushing_yds": 2.0
-    },
-    "00-0032430": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.1
-    },
-    "00-0032450": {
-        "receiving_rec": 1.7,
-        "receiving_tds": 0.1,
-        "receiving_yds": 12.5,
-        "rushing_att": 6.3,
-        "rushing_tds": 0.2,
-        "rushing_yds": 26.4
-    },
-    "00-0032462": {
-        "passing_att": 0.1,
         "passing_cmp": 0.0,
-        "passing_int": 0.0,
+        "rushing_yds": 0.0,
         "passing_tds": 0.0,
-        "passing_yds": 0.4,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.0
+        "rushing_att": 0.0
     },
-    "00-0032475": {
-        "receiving_rec": 2.5,
-        "receiving_tds": 0.3,
-        "receiving_yds": 33.9
-    },
-    "00-0032543": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.2
-    },
-    "00-0032562": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.3
-    },
-    "00-0032569": {
-        "kicking_fga": 1.9,
-        "kicking_fgm": 1.3,
-        "kicking_xpmade": 2.2
-    },
-    "00-0032636": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.8,
-        "rushing_att": 0.5,
-        "rushing_tds": 0.0,
-        "rushing_yds": 1.7
-    },
-    "00-0032688": {
-        "receiving_rec": 2.5,
-        "receiving_tds": 0.2,
-        "receiving_yds": 31.5
-    },
-    "00-0032694": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 4.8
-    },
-    "00-0032725": {
-        "receiving_rec": 1.7,
+    "00-0028198": {
         "receiving_tds": 0.1,
-        "receiving_yds": 14.6
-    },
-    "00-0032741": {
-        "receiving_rec": 1.6,
-        "receiving_tds": 0.1,
-        "receiving_yds": 13.8,
-        "rushing_att": 9.0,
-        "rushing_tds": 0.3,
-        "rushing_yds": 43.0
-    },
-    "00-0032764": {
-        "receiving_rec": 0.8,
-        "receiving_tds": 0.0,
-        "receiving_yds": 7.2,
-        "rushing_att": 4.9,
-        "rushing_tds": 0.2,
-        "rushing_yds": 18.3
-    },
-    "00-0032765": {
-        "receiving_rec": 4.1,
-        "receiving_tds": 0.2,
-        "receiving_yds": 47.1
-    },
-    "00-0032775": {
-        "receiving_rec": 0.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 2.4
-    },
-    "00-0032778": {
-        "receiving_rec": 2.6,
-        "receiving_tds": 0.2,
-        "receiving_yds": 27.2
-    },
-    "00-0032780": {
-        "receiving_rec": 1.6,
-        "receiving_tds": 0.1,
-        "receiving_yds": 12.6,
-        "rushing_att": 8.5,
-        "rushing_tds": 0.2,
-        "rushing_yds": 36.7
-    },
-    "00-0032782": {
-        "receiving_rec": 0.5,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.2,
-        "rushing_att": 5.6,
-        "rushing_tds": 0.2,
-        "rushing_yds": 25.9
+        "rushing_tds": 0.6,
+        "receiving_rec": 4.4,
+        "rushing_yds": 59.8,
+        "receiving_yds": 29.4,
+        "rushing_att": 16.4
     },
     "00-0032784": {
         "passing_att": 0.1,
-        "passing_cmp": 0.0,
         "passing_int": 0.0,
-        "passing_tds": 0.0,
+        "rushing_tds": 0.0,
         "passing_yds": 0.5,
-        "rushing_att": 0.0,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.2
+        "passing_cmp": 0.0,
+        "rushing_yds": 0.2,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
     },
-    "00-0032795": {
-        "receiving_rec": 0.2,
+    "00-0032782": {
         "receiving_tds": 0.0,
-        "receiving_yds": 3.2
-    },
-    "00-0032804": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.0,
-        "receiving_yds": 9.5,
-        "rushing_att": 1.7,
-        "rushing_tds": 0.1,
-        "rushing_yds": 5.6
-    },
-    "00-0032881": {
-        "receiving_rec": 0.3,
-        "receiving_tds": 0.0,
-        "receiving_yds": 3.5
-    },
-    "00-0032897": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.6,
-        "rushing_att": 0.1,
-        "rushing_tds": 0.0,
-        "rushing_yds": 0.3
-    },
-    "00-0032902": {
-        "receiving_rec": 1.2,
-        "receiving_tds": 0.0,
-        "receiving_yds": 8.3,
-        "rushing_att": 2.7,
-        "rushing_tds": 0.1,
-        "rushing_yds": 8.2
-    },
-    "00-0032935": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 1.5
-    },
-    "00-0032940": {
-        "receiving_rec": 1.7,
-        "receiving_tds": 0.1,
-        "receiving_yds": 10.8,
-        "rushing_att": 5.2,
         "rushing_tds": 0.2,
-        "rushing_yds": 22.1
+        "receiving_rec": 0.5,
+        "rushing_yds": 25.9,
+        "receiving_yds": 3.2,
+        "rushing_att": 5.6
     },
-    "00-0032950": {
-        "passing_att": 34.3,
-        "passing_cmp": 21.9,
-        "passing_int": 0.6,
-        "passing_tds": 1.4,
-        "passing_yds": 218.0,
-        "rushing_att": 2.9,
-        "rushing_tds": 0.0,
-        "rushing_yds": 8.7
+    "00-0032780": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.6,
+        "rushing_yds": 36.7,
+        "receiving_yds": 12.6,
+        "rushing_att": 8.5
     },
-    "00-0032951": {
-        "receiving_rec": 0.2,
+    "00-0029336": {
+        "receiving_yds": 0.7,
+        "receiving_rec": 0.1,
+        "receiving_tds": 0.0
+    },
+    "00-0031387": {
+        "receiving_yds": 34.8,
+        "receiving_rec": 3.0,
+        "receiving_tds": 0.2
+    },
+    "00-0031384": {
+        "receiving_yds": 23.6,
+        "receiving_rec": 2.8,
+        "receiving_tds": 0.2
+    },
+    "00-0031381": {
+        "receiving_yds": 62.4,
+        "receiving_rec": 5.7,
+        "receiving_tds": 0.5
+    },
+    "00-0030465": {
         "receiving_tds": 0.0,
-        "receiving_yds": 2.5
-    },
-    "00-0032956": {
-        "receiving_rec": 0.6,
-        "receiving_tds": 0.0,
-        "receiving_yds": 5.9,
-        "rushing_att": 0.8,
         "rushing_tds": 0.1,
-        "rushing_yds": 5.8
+        "receiving_rec": 0.4,
+        "rushing_yds": 10.8,
+        "receiving_yds": 2.5,
+        "rushing_att": 2.2
     },
-    "00-0032959": {
+    "00-0030506": {
+        "receiving_yds": 47.9,
+        "receiving_rec": 4.4,
+        "receiving_tds": 0.4
+    },
+    "00-0030663": {
+        "receiving_yds": 50.7,
+        "receiving_rec": 4.0,
+        "receiving_tds": 0.2
+    },
+    "00-0030668": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.4,
+        "rushing_yds": 15.4,
+        "receiving_yds": 6.9,
+        "rushing_att": 3.2
+    },
+    "00-0030669": {
+        "receiving_yds": 21.8,
         "receiving_rec": 2.3,
-        "receiving_tds": 0.2,
-        "receiving_yds": 28.2
+        "receiving_tds": 0.1
     },
-    "00-0032972": {
-        "receiving_rec": 2.6,
-        "receiving_tds": 0.1,
-        "receiving_yds": 19.3,
-        "rushing_att": 18.9,
-        "rushing_tds": 0.6,
-        "rushing_yds": 85.9
-    },
-    "00-0032974": {
-        "receiving_rec": 0.3,
+    "00-0028121": {
         "receiving_tds": 0.0,
-        "receiving_yds": 3.6
-    },
-    "00-0032975": {
-        "receiving_rec": 1.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 7.8,
-        "rushing_att": 5.9,
-        "rushing_tds": 0.2,
-        "rushing_yds": 27.2
-    },
-    "00-0032977": {
-        "receiving_rec": 1.3,
-        "receiving_tds": 0.1,
-        "receiving_yds": 17.5
-    },
-    "00-0033009": {
-        "receiving_rec": 2.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 25.8
-    },
-    "00-0033025": {
-        "receiving_rec": 1.9,
-        "receiving_tds": 0.1,
-        "receiving_yds": 15.4,
-        "rushing_att": 4.1,
-        "rushing_tds": 0.2,
-        "rushing_yds": 18.3
-    },
-    "00-0033040": {
-        "receiving_rec": 2.2,
-        "receiving_tds": 0.4,
-        "receiving_yds": 21.7
-    },
-    "00-0033045": {
-        "receiving_rec": 2.0,
-        "receiving_tds": 0.1,
-        "receiving_yds": 17.6,
-        "rushing_att": 19.7,
-        "rushing_tds": 0.5,
-        "rushing_yds": 101.0
-    },
-    "00-0033049": {
-        "receiving_rec": 0.1,
-        "receiving_tds": 0.0,
-        "receiving_yds": 0.9,
-        "rushing_att": 0.7,
         "rushing_tds": 0.0,
-        "rushing_yds": 2.9
+        "receiving_rec": 0.1,
+        "rushing_yds": 1.2,
+        "receiving_yds": 0.8,
+        "rushing_att": 0.2
     },
-    "00-0033069": {
-        "receiving_rec": 1.1,
-        "receiving_tds": 0.1,
-        "receiving_yds": 12.3
+    "00-0030521": {
+        "receiving_yds": 29.2,
+        "receiving_rec": 2.1,
+        "receiving_tds": 0.3
     },
-    "00-0033077": {
-        "passing_att": 30.7,
-        "passing_cmp": 20.6,
-        "passing_int": 0.5,
-        "passing_tds": 1.6,
-        "passing_yds": 240.0,
-        "rushing_att": 2.9,
-        "rushing_tds": 0.2,
-        "rushing_yds": 11.2
+    "00-0029159": {
+        "receiving_yds": 40.9,
+        "receiving_rec": 3.3,
+        "receiving_tds": 0.2
     },
-    "00-0033079": {
-        "receiving_rec": 1.4,
-        "receiving_tds": 0.1,
-        "receiving_yds": 17.5
+    "00-0031492": {
+        "kicking_xpmade": 2.1,
+        "kicking_fgm": 1.9,
+        "kicking_fga": 2.2
     },
-    "00-0033080": {
-        "receiving_rec": 0.2,
+    "00-0029931": {
         "receiving_tds": 0.0,
-        "receiving_yds": 2.5
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 0.5,
+        "receiving_yds": 0.9,
+        "rushing_att": 0.3
     },
-    "00-0033090": {
-        "receiving_rec": 2.6,
-        "receiving_tds": 0.3,
-        "receiving_yds": 31.7
+    "00-0027966": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.3,
+        "receiving_rec": 3.4,
+        "rushing_yds": 49.7,
+        "receiving_yds": 21.4,
+        "rushing_att": 14.7
     },
-    "00-0033102": {
-        "kicking_fga": 2.3,
-        "kicking_fgm": 1.6,
-        "kicking_xpmade": 2.2
+    "00-0031310": {
+        "receiving_yds": 4.0,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0023682": {
+        "passing_att": 35.4,
+        "passing_int": 1.3,
+        "rushing_tds": 0.1,
+        "passing_yds": 256.0,
+        "passing_cmp": 20.6,
+        "rushing_yds": 14.2,
+        "passing_tds": 1.5,
+        "rushing_att": 3.0
+    },
+    "00-0030526": {
+        "passing_att": 0.2,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 1.3,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.2,
+        "passing_tds": 0.0,
+        "rushing_att": 0.1
+    },
+    "00-0029239": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.1,
+        "rushing_yds": 9.4,
+        "receiving_yds": 8.7,
+        "rushing_att": 2.4
+    },
+    "00-0032048": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.0,
+        "rushing_yds": 2.4,
+        "receiving_yds": 0.2,
+        "rushing_att": 0.6
+    },
+    "00-0025418": {
+        "receiving_yds": 70.0,
+        "receiving_rec": 5.0,
+        "receiving_tds": 0.3
+    },
+    "IND": {
+        "defense_tds": 0.3,
+        "defense_TYDA": 337.0,
+        "defense_safe": 0.0,
+        "defense_frec": 1.0,
+        "defense_sk": 2.3,
+        "defense_int": 0.5,
+        "defense_ffum": 1.4,
+        "defense_TPA": 25.5
+    },
+    "00-0022044": {
+        "receiving_yds": 29.9,
+        "receiving_rec": 2.8,
+        "receiving_tds": 0.3
+    },
+    "00-0026267": {
+        "receiving_yds": 25.9,
+        "receiving_rec": 2.4,
+        "receiving_tds": 0.2
+    },
+    "00-0026143": {
+        "passing_att": 36.3,
+        "passing_int": 1.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 310.0,
+        "passing_cmp": 23.0,
+        "rushing_yds": 6.8,
+        "passing_tds": 1.8,
+        "rushing_att": 2.3
+    },
+    "00-0026739": {
+        "receiving_yds": 20.6,
+        "receiving_rec": 2.3,
+        "receiving_tds": 0.1
     },
     "00-0033108": {
         "passing_att": 0.2,
-        "passing_cmp": 0.1,
         "passing_int": 0.0,
-        "passing_tds": 0.0,
-        "passing_yds": 1.3,
-        "rushing_att": 0.0,
         "rushing_tds": 0.0,
-        "rushing_yds": 0.1
+        "passing_yds": 1.3,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.1,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
     },
-    "00-0033127": {
+    "00-0030035": {
+        "receiving_yds": 35.5,
+        "receiving_rec": 2.7,
+        "receiving_tds": 0.1
+    },
+    "00-0033102": {
+        "kicking_xpmade": 2.2,
+        "kicking_fgm": 1.6,
+        "kicking_fga": 2.3
+    },
+    "00-0031408": {
+        "receiving_yds": 98.6,
+        "receiving_rec": 6.4,
+        "receiving_tds": 0.8
+    },
+    "00-0032404": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 0.4,
+        "rushing_yds": 6.5,
+        "receiving_yds": 2.4,
+        "rushing_att": 1.6
+    },
+    "00-0026544": {
+        "passing_att": 0.1,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 0.6,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0031407": {
+        "passing_att": 36.5,
+        "passing_int": 1.4,
+        "rushing_tds": 0.2,
+        "passing_yds": 257.0,
+        "passing_cmp": 21.6,
+        "rushing_yds": 21.5,
+        "passing_tds": 1.6,
+        "rushing_att": 3.6
+    },
+    "00-0032218": {
+        "receiving_yds": 24.5,
+        "receiving_rec": 2.2,
+        "receiving_tds": 0.2
+    },
+    "00-0027057": {
+        "receiving_yds": 17.3,
+        "receiving_rec": 1.4,
+        "receiving_tds": 0.1
+    },
+    "00-0032211": {
+        "receiving_yds": 38.5,
+        "receiving_rec": 2.8,
+        "receiving_tds": 0.2
+    },
+    "00-0032214": {
+        "receiving_yds": 16.4,
+        "receiving_rec": 1.6,
+        "receiving_tds": 0.1
+    },
+    "00-0028411": {
+        "receiving_yds": 27.5,
+        "receiving_rec": 2.4,
+        "receiving_tds": 0.1
+    },
+    "00-0028825": {
+        "receiving_yds": 66.9,
         "receiving_rec": 4.8,
-        "receiving_tds": 0.5,
-        "receiving_yds": 67.4
+        "receiving_tds": 0.5
+    },
+    "00-0031665": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.2,
+        "receiving_rec": 0.3,
+        "rushing_yds": 11.5,
+        "receiving_yds": 3.7,
+        "rushing_att": 3.1
+    },
+    "00-0032741": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.3,
+        "receiving_rec": 1.6,
+        "rushing_yds": 43.0,
+        "receiving_yds": 13.8,
+        "rushing_att": 9.0
+    },
+    "00-0031544": {
+        "receiving_yds": 81.9,
+        "receiving_rec": 6.3,
+        "receiving_tds": 0.4
+    },
+    "00-0021429": {
+        "passing_att": 37.5,
+        "passing_int": 1.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 270.0,
+        "passing_cmp": 22.6,
+        "rushing_yds": 2.1,
+        "passing_tds": 1.6,
+        "rushing_att": 1.2
+    },
+    "00-0031549": {
+        "receiving_yds": 30.2,
+        "receiving_rec": 3.0,
+        "receiving_tds": 0.2
+    },
+    "SD": {
+        "defense_tds": 0.3,
+        "defense_TYDA": 339.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.7,
+        "defense_sk": 2.2,
+        "defense_int": 0.9,
+        "defense_ffum": 1.0,
+        "defense_TPA": 27.0
+    },
+    "00-0027139": {
+        "receiving_yds": 13.8,
+        "receiving_rec": 1.5,
+        "receiving_tds": 0.2
+    },
+    "CAR": {
+        "defense_tds": 0.2,
+        "defense_TYDA": 366.0,
+        "defense_safe": 0.2,
+        "defense_frec": 1.0,
+        "defense_sk": 2.4,
+        "defense_int": 1.0,
+        "defense_ffum": 1.4,
+        "defense_TPA": 23.2
+    },
+    "00-0028074": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.7,
+        "rushing_yds": 0.2,
+        "receiving_yds": 3.5,
+        "rushing_att": 0.1
+    },
+    "00-0027135": {
+        "receiving_yds": 24.5,
+        "receiving_rec": 2.1,
+        "receiving_tds": 0.1
+    },
+    "00-0030547": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.2,
+        "rushing_yds": 3.3,
+        "receiving_yds": 1.1,
+        "rushing_att": 0.8
+    },
+    "00-0030544": {
+        "receiving_yds": 2.5,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.1
+    },
+    "00-0030542": {
+        "receiving_yds": 39.5,
+        "receiving_rec": 2.8,
+        "receiving_tds": 0.2
+    },
+    "00-0031102": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.2,
+        "rushing_yds": 24.4,
+        "receiving_yds": 8.7,
+        "rushing_att": 5.9
+    },
+    "00-0024535": {
+        "receiving_yds": 0.6,
+        "receiving_rec": 0.1,
+        "receiving_tds": 0.0
+    },
+    "00-0030549": {
+        "receiving_yds": 30.1,
+        "receiving_rec": 2.8,
+        "receiving_tds": 0.3
+    },
+    "00-0032134": {
+        "receiving_yds": 14.1,
+        "receiving_rec": 1.2,
+        "receiving_tds": 0.1
+    },
+    "00-0025565": {
+        "kicking_xpmade": 2.2,
+        "kicking_fgm": 1.4,
+        "kicking_fga": 1.7
+    },
+    "00-0033040": {
+        "receiving_yds": 21.7,
+        "receiving_rec": 2.2,
+        "receiving_tds": 0.4
+    },
+    "00-0032130": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 0.1,
+        "receiving_yds": 1.1,
+        "rushing_att": 0.1
+    },
+    "00-0029576": {
+        "kicking_xpmade": 2.0,
+        "kicking_fgm": 2.0,
+        "kicking_fga": 2.5
+    },
+    "00-0032209": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.2,
+        "receiving_rec": 2.9,
+        "rushing_yds": 35.0,
+        "receiving_yds": 18.0,
+        "rushing_att": 9.0
+    },
+    "00-0028009": {
+        "receiving_tds": 0.2,
+        "rushing_tds": 0.6,
+        "receiving_rec": 3.4,
+        "rushing_yds": 68.9,
+        "receiving_yds": 22.1,
+        "rushing_att": 17.3
+    },
+    "00-0029615": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.3,
+        "receiving_rec": 2.1,
+        "rushing_yds": 44.1,
+        "receiving_yds": 13.5,
+        "rushing_att": 10.1
+    },
+    "00-0030181": {
+        "receiving_yds": 39.8,
+        "receiving_rec": 4.4,
+        "receiving_tds": 0.4
+    },
+    "00-0029205": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.1,
+        "receiving_rec": 2.8,
+        "rushing_yds": 10.6,
+        "receiving_yds": 17.5,
+        "rushing_att": 3.6
+    },
+    "00-0025580": {
+        "kicking_xpmade": 2.6,
+        "kicking_fgm": 1.7,
+        "kicking_fga": 1.9
+    },
+    "00-0022127": {
+        "receiving_yds": 31.2,
+        "receiving_rec": 3.7,
+        "receiving_tds": 0.2
+    },
+    "00-0030433": {
+        "receiving_tds": 0.2,
+        "rushing_tds": 0.4,
+        "receiving_rec": 1.8,
+        "rushing_yds": 58.3,
+        "receiving_yds": 11.4,
+        "rushing_att": 14.0
+    },
+    "00-0023564": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.1,
+        "receiving_rec": 3.3,
+        "rushing_yds": 22.6,
+        "receiving_yds": 29.5,
+        "rushing_att": 5.4
+    },
+    "00-0030431": {
+        "receiving_yds": 34.0,
+        "receiving_rec": 3.6,
+        "receiving_tds": 0.2
+    },
+    "00-0032009": {
+        "receiving_yds": 50.7,
+        "receiving_rec": 4.4,
+        "receiving_tds": 0.3
+    },
+    "00-0024221": {
+        "receiving_yds": 24.8,
+        "receiving_rec": 2.1,
+        "receiving_tds": 0.1
+    },
+    "00-0024226": {
+        "passing_att": 34.3,
+        "passing_int": 1.5,
+        "rushing_tds": 0.0,
+        "passing_yds": 209.0,
+        "passing_cmp": 21.0,
+        "rushing_yds": 12.2,
+        "passing_tds": 1.0,
+        "rushing_att": 2.2
+    },
+    "00-0029682": {
+        "passing_att": 35.7,
+        "passing_int": 0.8,
+        "rushing_tds": 0.0,
+        "passing_yds": 232.0,
+        "passing_cmp": 23.8,
+        "rushing_yds": 7.2,
+        "passing_tds": 1.5,
+        "rushing_att": 2.1
+    },
+    "00-0029683": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 0.8,
+        "rushing_yds": 13.3,
+        "receiving_yds": 5.1,
+        "rushing_att": 3.6
+    },
+    "00-0029273": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.3,
+        "rushing_yds": 15.7,
+        "receiving_yds": 8.6,
+        "rushing_att": 3.9
+    },
+    "00-0025396": {
+        "receiving_yds": 16.8,
+        "receiving_rec": 1.2,
+        "receiving_tds": 0.1
+    },
+    "00-0027939": {
+        "passing_att": 32.2,
+        "passing_int": 1.5,
+        "rushing_tds": 0.3,
+        "passing_yds": 221.0,
+        "passing_cmp": 18.5,
+        "rushing_yds": 19.8,
+        "passing_tds": 1.4,
+        "rushing_att": 4.3
+    },
+    "MIN": {
+        "defense_tds": 0.2,
+        "defense_TYDA": 299.0,
+        "defense_safe": 0.0,
+        "defense_frec": 1.0,
+        "defense_sk": 2.8,
+        "defense_int": 1.5,
+        "defense_ffum": 1.4,
+        "defense_TPA": 14.7
+    },
+    "00-0027902": {
+        "receiving_yds": 60.5,
+        "receiving_rec": 4.3,
+        "receiving_tds": 0.6
+    },
+    "00-0033025": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.9,
+        "rushing_yds": 18.3,
+        "receiving_yds": 15.4,
+        "rushing_att": 4.1
+    },
+    "00-0027854": {
+        "passing_att": 30.6,
+        "passing_int": 0.7,
+        "rushing_tds": 0.0,
+        "passing_yds": 209.0,
+        "passing_cmp": 20.8,
+        "rushing_yds": 2.0,
+        "passing_tds": 1.4,
+        "rushing_att": 1.9
+    },
+    "00-0029293": {
+        "receiving_yds": 54.7,
+        "receiving_rec": 3.9,
+        "receiving_tds": 0.3
+    },
+    "00-0032562": {
+        "receiving_yds": 2.3,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0022942": {
+        "passing_att": 37.3,
+        "passing_int": 1.1,
+        "rushing_tds": 0.0,
+        "passing_yds": 228.0,
+        "passing_cmp": 23.0,
+        "rushing_yds": 3.0,
+        "passing_tds": 1.2,
+        "rushing_att": 1.2
+    },
+    "00-0027918": {
+        "receiving_yds": 36.4,
+        "receiving_rec": 3.0,
+        "receiving_tds": 0.1
+    },
+    "00-0026035": {
+        "receiving_yds": 23.4,
+        "receiving_rec": 2.1,
+        "receiving_tds": 0.2
+    },
+    "00-0032257": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 3.4,
+        "rushing_yds": 22.3,
+        "receiving_yds": 27.8,
+        "rushing_att": 6.2
+    },
+    "00-0032256": {
+        "receiving_yds": 32.5,
+        "receiving_rec": 3.0,
+        "receiving_tds": 0.2
+    },
+    "00-0022864": {
+        "passing_att": 0.1,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 1.0,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0022787": {
+        "passing_att": 0.2,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 1.9,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0029572": {
+        "receiving_yds": 8.5,
+        "receiving_rec": 0.8,
+        "receiving_tds": 0.0
+    },
+    "JAX": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 298.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.8,
+        "defense_sk": 2.4,
+        "defense_int": 0.9,
+        "defense_ffum": 1.1,
+        "defense_TPA": 24.6
+    },
+    "CHI": {
+        "defense_tds": 0.2,
+        "defense_TYDA": 294.0,
+        "defense_safe": 0.1,
+        "defense_frec": 0.7,
+        "defense_sk": 2.7,
+        "defense_int": 0.7,
+        "defense_ffum": 0.9,
+        "defense_TPA": 22.1
+    },
+    "00-0031503": {
+        "passing_att": 36.2,
+        "passing_int": 1.3,
+        "rushing_tds": 0.3,
+        "passing_yds": 268.0,
+        "passing_cmp": 21.7,
+        "rushing_yds": 10.5,
+        "passing_tds": 1.6,
+        "rushing_att": 3.3
+    },
+    "00-0033090": {
+        "receiving_yds": 31.7,
+        "receiving_rec": 2.6,
+        "receiving_tds": 0.3
+    },
+    "00-0021547": {
+        "receiving_yds": 32.7,
+        "receiving_rec": 3.6,
+        "receiving_tds": 0.3
+    },
+    "00-0027981": {
+        "receiving_yds": 38.8,
+        "receiving_rec": 4.0,
+        "receiving_tds": 0.4
+    },
+    "00-0026189": {
+        "receiving_yds": 47.1,
+        "receiving_rec": 3.5,
+        "receiving_tds": 0.2
+    },
+    "00-0027595": {
+        "receiving_yds": 6.5,
+        "receiving_rec": 0.6,
+        "receiving_tds": 0.0
+    },
+    "00-0031068": {
+        "receiving_yds": 22.9,
+        "receiving_rec": 1.8,
+        "receiving_tds": 0.1
+    },
+    "00-0031062": {
+        "receiving_tds": 0.3,
+        "rushing_tds": 0.1,
+        "receiving_rec": 3.9,
+        "rushing_yds": 20.6,
+        "receiving_yds": 35.6,
+        "rushing_att": 5.4
+    },
+    "00-0031060": {
+        "receiving_yds": 3.3,
+        "receiving_rec": 0.5,
+        "receiving_tds": 0.0
+    },
+    "00-0031585": {
+        "receiving_yds": 2.5,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0032170": {
+        "receiving_yds": 2.0,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0031757": {
+        "receiving_yds": 1.8,
+        "receiving_rec": 0.1,
+        "receiving_tds": 0.0
+    },
+    "00-0031599": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 0.1,
+        "rushing_yds": 7.6,
+        "receiving_yds": 0.7,
+        "rushing_att": 1.9
+    },
+    "00-0032775": {
+        "receiving_yds": 2.4,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.0
+    },
+    "00-0030710": {
+        "receiving_yds": 15.0,
+        "receiving_rec": 1.7,
+        "receiving_tds": 0.1
+    },
+    "00-0027675": {
+        "receiving_yds": 16.0,
+        "receiving_rec": 1.5,
+        "receiving_tds": 0.1
+    },
+    "00-0029492": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.3,
+        "receiving_rec": 0.7,
+        "rushing_yds": 7.0,
+        "receiving_yds": 6.1,
+        "rushing_att": 1.8
+    },
+    "00-0031570": {
+        "receiving_yds": 33.0,
+        "receiving_rec": 2.2,
+        "receiving_tds": 0.3
+    },
+    "00-0028142": {
+        "receiving_yds": 23.3,
+        "receiving_rec": 2.5,
+        "receiving_tds": 0.2
+    },
+    "00-0030472": {
+        "receiving_yds": 61.3,
+        "receiving_rec": 6.3,
+        "receiving_tds": 0.4
+    },
+    "00-0030578": {
+        "receiving_yds": 22.2,
+        "receiving_rec": 2.6,
+        "receiving_tds": 0.3
+    },
+    "00-0024268": {
+        "receiving_yds": 10.4,
+        "receiving_rec": 1.1,
+        "receiving_tds": 0.2
+    },
+    "00-0024264": {
+        "passing_att": 0.0,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 0.2,
+        "passing_cmp": 0.0,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0030670": {
+        "receiving_yds": 19.4,
+        "receiving_rec": 1.7,
+        "receiving_tds": 0.2
+    },
+    "TEN": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 319.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.5,
+        "defense_sk": 3.9,
+        "defense_int": 1.4,
+        "defense_ffum": 0.7,
+        "defense_TPA": 22.3
+    },
+    "00-0031682": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.4,
+        "rushing_yds": 16.0,
+        "receiving_yds": 12.8,
+        "rushing_att": 4.4
+    },
+    "00-0031687": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 1.5,
+        "receiving_yds": 0.6,
+        "rushing_att": 0.4
+    },
+    "00-0029033": {
+        "receiving_yds": 2.8,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0029668": {
+        "passing_att": 40.2,
+        "passing_int": 1.4,
+        "rushing_tds": 0.1,
+        "passing_yds": 258.0,
+        "passing_cmp": 23.7,
+        "rushing_yds": 22.4,
+        "passing_tds": 1.5,
+        "rushing_att": 3.9
+    },
+    "ATL": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 333.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.8,
+        "defense_sk": 2.0,
+        "defense_int": 0.7,
+        "defense_ffum": 1.0,
+        "defense_TPA": 23.4
+    },
+    "00-0032956": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 0.6,
+        "rushing_yds": 5.8,
+        "receiving_yds": 5.9,
+        "rushing_att": 0.8
+    },
+    "00-0023459": {
+        "passing_att": 41.3,
+        "passing_int": 0.7,
+        "rushing_tds": 0.3,
+        "passing_yds": 254.0,
+        "passing_cmp": 26.3,
+        "rushing_yds": 13.7,
+        "passing_tds": 1.8,
+        "rushing_att": 2.8
+    },
+    "00-0032950": {
+        "passing_att": 34.3,
+        "passing_int": 0.6,
+        "rushing_tds": 0.0,
+        "passing_yds": 218.0,
+        "passing_cmp": 21.9,
+        "rushing_yds": 8.7,
+        "passing_tds": 1.4,
+        "rushing_att": 2.9
+    },
+    "00-0032951": {
+        "receiving_yds": 2.5,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.0
+    },
+    "00-0029394": {
+        "receiving_yds": 3.8,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0032959": {
+        "receiving_yds": 28.2,
+        "receiving_rec": 2.3,
+        "receiving_tds": 0.2
+    },
+    "00-0032358": {
+        "receiving_yds": 3.8,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0030404": {
+        "receiving_tds": 0.2,
+        "rushing_tds": 0.2,
+        "receiving_rec": 3.5,
+        "rushing_yds": 50.8,
+        "receiving_yds": 26.8,
+        "rushing_att": 9.7
+    },
+    "00-0024217": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 0.7,
+        "rushing_yds": 9.3,
+        "receiving_yds": 4.8,
+        "rushing_att": 2.2
+    },
+    "00-0031595": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 0.0,
+        "receiving_yds": 0.6,
+        "rushing_att": 0.1
+    },
+    "BUF": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 367.0,
+        "defense_safe": 0.1,
+        "defense_frec": 0.8,
+        "defense_sk": 2.1,
+        "defense_int": 0.5,
+        "defense_ffum": 1.2,
+        "defense_TPA": 22.8
+    },
+    "00-0032055": {
+        "receiving_yds": 26.6,
+        "receiving_rec": 1.8,
+        "receiving_tds": 0.3
+    },
+    "00-0026153": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.3,
+        "receiving_rec": 1.2,
+        "rushing_yds": 59.8,
+        "receiving_yds": 7.1,
+        "rushing_att": 14.5
+    },
+    "SEA": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 331.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.6,
+        "defense_sk": 2.5,
+        "defense_int": 0.9,
+        "defense_ffum": 0.8,
+        "defense_TPA": 19.8
+    },
+    "00-0030821": {
+        "receiving_yds": 49.4,
+        "receiving_rec": 3.4,
+        "receiving_tds": 0.3
+    },
+    "CLE": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 374.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.7,
+        "defense_sk": 2.0,
+        "defense_int": 1.4,
+        "defense_ffum": 0.9,
+        "defense_TPA": 20.8
+    },
+    "KC": {
+        "defense_tds": 0.2,
+        "defense_TYDA": 355.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.7,
+        "defense_sk": 2.5,
+        "defense_int": 1.4,
+        "defense_ffum": 1.0,
+        "defense_TPA": 21.9
+    },
+    "00-0030288": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 1.0,
+        "receiving_yds": 0.9,
+        "rushing_att": 0.2
+    },
+    "00-0030287": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.1,
+        "rushing_yds": 19.6,
+        "receiving_yds": 8.6,
+        "rushing_att": 5.6
+    },
+    "00-0030280": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.7,
+        "rushing_yds": 23.6,
+        "receiving_yds": 11.0,
+        "rushing_att": 6.0
+    },
+    "00-0031431": {
+        "receiving_yds": 42.6,
+        "receiving_rec": 3.4,
+        "receiving_tds": 0.2
+    },
+    "00-0030282": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 1.3,
+        "receiving_yds": 0.5,
+        "rushing_att": 0.5
+    },
+    "00-0023853": {
+        "kicking_xpmade": 2.0,
+        "kicking_fgm": 1.4,
+        "kicking_fga": 1.7
+    },
+    "00-0032227": {
+        "receiving_yds": 1.5,
+        "receiving_rec": 0.1,
+        "receiving_tds": 0.0
+    },
+    "00-0031023": {
+        "receiving_yds": 69.1,
+        "receiving_rec": 4.7,
+        "receiving_tds": 0.3
+    },
+    "CIN": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 379.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.8,
+        "defense_sk": 2.3,
+        "defense_int": 1.2,
+        "defense_ffum": 1.1,
+        "defense_TPA": 20.3
+    },
+    "00-0032636": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 1.7,
+        "receiving_yds": 0.8,
+        "rushing_att": 0.5
+    },
+    "00-0020679": {
+        "passing_att": 0.5,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 3.7,
+        "passing_cmp": 0.4,
+        "rushing_yds": 0.1,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "null": {
+        "receiving_yds": 0.7,
+        "receiving_rec": 0.1,
+        "receiving_tds": 0.0
+    },
+    "00-0026855": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.2,
+        "rushing_yds": 1.5,
+        "receiving_yds": 3.8,
+        "rushing_att": 0.3
+    },
+    "00-0028083": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.2,
+        "receiving_rec": 2.0,
+        "rushing_yds": 81.2,
+        "receiving_yds": 13.7,
+        "rushing_att": 16.4
+    },
+    "00-0026858": {
+        "kicking_xpmade": 2.2,
+        "kicking_fgm": 1.6,
+        "kicking_fga": 2.0
+    },
+    "00-0021206": {
+        "passing_att": 34.3,
+        "passing_int": 1.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 244.0,
+        "passing_cmp": 20.5,
+        "rushing_yds": 4.1,
+        "passing_tds": 1.2,
+        "rushing_att": 1.2
+    },
+    "00-0031291": {
+        "receiving_yds": 18.5,
+        "receiving_rec": 1.4,
+        "receiving_tds": 0.1
+    },
+    "00-0031118": {
+        "receiving_yds": 23.3,
+        "receiving_rec": 2.0,
+        "receiving_tds": 0.1
+    },
+    "00-0031299": {
+        "receiving_yds": 53.0,
+        "receiving_rec": 4.5,
+        "receiving_tds": 0.4
+    },
+    "00-0028063": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 0.1,
+        "receiving_yds": 1.2,
+        "rushing_att": 0.1
+    },
+    "00-0019596": {
+        "passing_att": 35.4,
+        "passing_int": 0.5,
+        "rushing_tds": 0.1,
+        "passing_yds": 272.0,
+        "passing_cmp": 22.6,
+        "rushing_yds": 6.4,
+        "passing_tds": 1.6,
+        "rushing_att": 2.7
+    },
+    "00-0027125": {
+        "receiving_yds": 34.4,
+        "receiving_rec": 3.8,
+        "receiving_tds": 0.3
+    },
+    "00-0028064": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 3.3,
+        "rushing_yds": 25.0,
+        "receiving_yds": 25.3,
+        "rushing_att": 6.0
+    },
+    "00-0028067": {
+        "receiving_yds": 33.0,
+        "receiving_rec": 2.8,
+        "receiving_tds": 0.3
+    },
+    "00-0032128": {
+        "receiving_yds": 25.8,
+        "receiving_rec": 2.5,
+        "receiving_tds": 0.1
+    },
+    "00-0031057": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.4,
+        "rushing_yds": 25.7,
+        "receiving_yds": 8.6,
+        "rushing_att": 5.9
+    },
+    "00-0032087": {
+        "kicking_xpmade": 1.7,
+        "kicking_fgm": 1.5,
+        "kicking_fga": 1.7
+    },
+    "00-0029567": {
+        "passing_att": 0.6,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 4.1,
+        "passing_cmp": 0.4,
+        "rushing_yds": 0.1,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0030155": {
+        "receiving_yds": 15.6,
+        "receiving_rec": 1.8,
+        "receiving_tds": 0.1
+    },
+    "00-0026968": {
+        "kicking_xpmade": 2.5,
+        "kicking_fgm": 1.7,
+        "kicking_fga": 2.0
+    },
+    "00-0029740": {
+        "receiving_yds": 14.6,
+        "receiving_rec": 1.4,
+        "receiving_tds": 0.1
+    },
+    "00-0025430": {
+        "passing_att": 0.3,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 1.7,
+        "passing_cmp": 0.2,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0029587": {
+        "receiving_yds": 3.4,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0028581": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.2,
+        "rushing_yds": 0.0,
+        "receiving_yds": 2.2,
+        "rushing_att": 0.0
+    },
+    "00-0031203": {
+        "kicking_xpmade": 2.6,
+        "kicking_fgm": 1.9,
+        "kicking_fga": 2.2
+    },
+    "00-0030443": {
+        "receiving_yds": 23.5,
+        "receiving_rec": 1.9,
+        "receiving_tds": 0.1
+    },
+    "00-0029580": {
+        "receiving_yds": 28.2,
+        "receiving_rec": 2.1,
+        "receiving_tds": 0.2
+    },
+    "00-0032394": {
+        "receiving_yds": 2.9,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0030520": {
+        "passing_att": 0.5,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 3.9,
+        "passing_cmp": 0.3,
+        "rushing_yds": 0.2,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0032392": {
+        "receiving_yds": 14.6,
+        "receiving_rec": 1.1,
+        "receiving_tds": 0.1
+    },
+    "00-0032393": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.3,
+        "receiving_rec": 1.4,
+        "rushing_yds": 34.9,
+        "receiving_yds": 12.6,
+        "rushing_att": 7.3
+    },
+    "00-0029697": {
+        "receiving_yds": 32.6,
+        "receiving_rec": 2.8,
+        "receiving_tds": 0.2
+    },
+    "00-0028112": {
+        "receiving_yds": 33.7,
+        "receiving_rec": 3.6,
+        "receiving_tds": 0.2
+    },
+    "00-0026986": {
+        "receiving_yds": 61.8,
+        "receiving_rec": 5.6,
+        "receiving_tds": 0.8
+    },
+    "00-0028660": {
+        "kicking_xpmade": 2.6,
+        "kicking_fgm": 1.6,
+        "kicking_fga": 1.9
+    },
+    "00-0029137": {
+        "receiving_yds": 53.5,
+        "receiving_rec": 4.5,
+        "receiving_tds": 0.2
+    },
+    "00-0027864": {
+        "receiving_tds": 0.2,
+        "rushing_tds": 0.4,
+        "receiving_rec": 1.6,
+        "rushing_yds": 54.0,
+        "receiving_yds": 11.8,
+        "rushing_att": 11.5
+    },
+    "00-0024334": {
+        "receiving_yds": 71.6,
+        "receiving_rec": 4.8,
+        "receiving_tds": 0.5
+    },
+    "00-0032902": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.2,
+        "rushing_yds": 8.2,
+        "receiving_yds": 8.3,
+        "rushing_att": 2.7
+    },
+    "00-0024333": {
+        "kicking_xpmade": 2.4,
+        "kicking_fgm": 1.8,
+        "kicking_fga": 2.1
+    },
+    "00-0032450": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.7,
+        "rushing_yds": 26.4,
+        "receiving_yds": 12.5,
+        "rushing_att": 6.3
+    },
+    "00-0032268": {
+        "passing_att": 30.4,
+        "passing_int": 0.9,
+        "rushing_tds": 0.2,
+        "passing_yds": 203.0,
+        "passing_cmp": 19.3,
+        "rushing_yds": 22.5,
+        "passing_tds": 1.8,
+        "rushing_att": 3.4
+    },
+    "PHI": {
+        "defense_tds": 0.2,
+        "defense_TYDA": 379.0,
+        "defense_safe": 0.0,
+        "defense_frec": 1.2,
+        "defense_sk": 2.5,
+        "defense_int": 0.5,
+        "defense_ffum": 1.6,
+        "defense_TPA": 24.3
+    },
+    "00-0026184": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.5,
+        "receiving_rec": 2.3,
+        "rushing_yds": 68.7,
+        "receiving_yds": 21.2,
+        "rushing_att": 15.6
+    },
+    "00-0031273": {
+        "receiving_yds": 51.6,
+        "receiving_rec": 4.0,
+        "receiving_tds": 0.4
+    },
+    "00-0032688": {
+        "receiving_yds": 31.5,
+        "receiving_rec": 2.5,
+        "receiving_tds": 0.2
+    },
+    "00-0032068": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.3,
+        "rushing_yds": 0.1,
+        "receiving_yds": 2.6,
+        "rushing_att": 0.1
+    },
+    "00-0026201": {
+        "receiving_yds": 36.3,
+        "receiving_rec": 3.8,
+        "receiving_tds": 0.4
+    },
+    "00-0026898": {
+        "passing_att": 0.6,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 4.5,
+        "passing_cmp": 0.4,
+        "rushing_yds": 0.2,
+        "passing_tds": 0.0,
+        "rushing_att": 0.1
     },
     "00-0033164": {
-        "receiving_rec": 0.1,
         "receiving_tds": 0.0,
-        "receiving_yds": 0.8,
-        "rushing_att": 0.6,
         "rushing_tds": 0.0,
-        "rushing_yds": 2.1
+        "receiving_rec": 0.1,
+        "rushing_yds": 2.1,
+        "receiving_yds": 0.8,
+        "rushing_att": 0.6
     },
-    "Bears D/ST": {
-        "defense_TPA": 22.1,
-        "defense_TYDA": 294.0,
-        "defense_ffum": 0.9,
-        "defense_frec": 0.7,
-        "defense_int": 0.7,
-        "defense_safe": 0.1,
-        "defense_sk": 2.7,
-        "defense_tds": 0.2
+    "00-0024389": {
+        "receiving_yds": 53.4,
+        "receiving_rec": 4.5,
+        "receiving_tds": 0.5
     },
-    "Bengals D/ST": {
-        "defense_TPA": 20.3,
-        "defense_TYDA": 379.0,
-        "defense_ffum": 1.1,
-        "defense_frec": 0.8,
-        "defense_int": 1.2,
-        "defense_safe": 0.0,
-        "defense_sk": 2.3,
-        "defense_tds": 0.1
+    "00-0029822": {
+        "kicking_xpmade": 2.7,
+        "kicking_fgm": 2.3,
+        "kicking_fga": 2.6
     },
-    "Bills D/ST": {
-        "defense_TPA": 22.8,
-        "defense_TYDA": 367.0,
-        "defense_ffum": 1.2,
-        "defense_frec": 0.8,
-        "defense_int": 0.5,
-        "defense_safe": 0.1,
-        "defense_sk": 2.1,
-        "defense_tds": 0.1
+    "00-0030154": {
+        "receiving_yds": 1.3,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.0
     },
-    "Broncos D/ST": {
-        "defense_TPA": 17.3,
-        "defense_TYDA": 280.0,
-        "defense_ffum": 2.1,
-        "defense_frec": 1.5,
-        "defense_int": 1.2,
-        "defense_safe": 0.0,
-        "defense_sk": 3.3,
-        "defense_tds": 0.1
+    "00-0032423": {
+        "receiving_yds": 3.7,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
     },
-    "Browns D/ST": {
-        "defense_TPA": 20.8,
-        "defense_TYDA": 374.0,
-        "defense_ffum": 0.9,
-        "defense_frec": 0.7,
-        "defense_int": 1.4,
-        "defense_safe": 0.0,
-        "defense_sk": 2.0,
-        "defense_tds": 0.1
+    "00-0032426": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 2.0,
+        "receiving_yds": 1.1,
+        "rushing_att": 0.5
     },
-    "Buccaneers D/ST": {
-        "defense_TPA": 28.0,
-        "defense_TYDA": 343.0,
-        "defense_ffum": 1.2,
-        "defense_frec": 0.9,
-        "defense_int": 0.6,
-        "defense_safe": 0.1,
-        "defense_sk": 1.8,
-        "defense_tds": 0.1
+    "00-0033080": {
+        "receiving_yds": 2.5,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.0
     },
-    "Cardinals D/ST": {
-        "defense_TPA": 21.0,
+    "00-0022921": {
+        "receiving_yds": 63.6,
+        "receiving_rec": 5.8,
+        "receiving_tds": 0.6
+    },
+    "00-0026298": {
+        "receiving_yds": 0.1,
+        "receiving_rec": 0.0,
+        "receiving_tds": 0.0
+    },
+    "00-0028434": {
+        "receiving_yds": 74.1,
+        "receiving_rec": 5.7,
+        "receiving_tds": 0.6
+    },
+    "00-0029141": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.2,
+        "receiving_rec": 0.4,
+        "rushing_yds": 19.1,
+        "receiving_yds": 2.8,
+        "rushing_att": 4.2
+    },
+    "00-0032160": {
+        "receiving_yds": 44.6,
+        "receiving_rec": 3.7,
+        "receiving_tds": 0.2
+    },
+    "00-0031600": {
+        "receiving_yds": 2.1,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0031560": {
+        "receiving_yds": 24.1,
+        "receiving_rec": 2.3,
+        "receiving_tds": 0.1
+    },
+    "00-0032765": {
+        "receiving_yds": 47.1,
+        "receiving_rec": 4.1,
+        "receiving_tds": 0.2
+    },
+    "00-0032764": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.2,
+        "receiving_rec": 0.8,
+        "rushing_yds": 18.3,
+        "receiving_yds": 7.2,
+        "rushing_att": 4.9
+    },
+    "00-0031568": {
+        "passing_att": 0.0,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 0.3,
+        "passing_cmp": 0.0,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0031569": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.4,
+        "rushing_yds": 26.5,
+        "receiving_yds": 10.4,
+        "rushing_att": 6.6
+    },
+    "00-0023662": {
+        "passing_att": 0.3,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 2.2,
+        "passing_cmp": 0.2,
+        "rushing_yds": 0.1,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0022084": {
+        "receiving_yds": 37.6,
+        "receiving_rec": 3.9,
+        "receiving_tds": 0.3
+    },
+    "00-0032569": {
+        "kicking_xpmade": 2.2,
+        "kicking_fgm": 1.3,
+        "kicking_fga": 1.9
+    },
+    "00-0029319": {
+        "receiving_yds": 22.9,
+        "receiving_rec": 2.1,
+        "receiving_tds": 0.1
+    },
+    "00-0032881": {
+        "receiving_yds": 3.5,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0031085": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.2,
+        "rushing_yds": 1.3,
+        "receiving_yds": 1.7,
+        "rushing_att": 0.5
+    },
+    "00-0025549": {
+        "receiving_yds": 15.9,
+        "receiving_rec": 1.4,
+        "receiving_tds": 0.1
+    },
+    "00-0032117": {
+        "receiving_yds": 14.8,
+        "receiving_rec": 1.2,
+        "receiving_tds": 0.1
+    },
+    "00-0029000": {
+        "receiving_yds": 54.0,
+        "receiving_rec": 4.7,
+        "receiving_tds": 0.5
+    },
+    "00-0032694": {
+        "receiving_yds": 4.8,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0029004": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.2,
+        "rushing_yds": 11.1,
+        "receiving_yds": 13.4,
+        "rushing_att": 2.4
+    },
+    "00-0030896": {
+        "kicking_xpmade": 2.4,
+        "kicking_fgm": 1.6,
+        "kicking_fga": 2.0
+    },
+    "00-0030216": {
+        "receiving_yds": 18.9,
+        "receiving_rec": 2.0,
+        "receiving_tds": 0.2
+    },
+    "00-0022999": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.3,
+        "receiving_rec": 0.7,
+        "rushing_yds": 2.8,
+        "receiving_yds": 3.4,
+        "rushing_att": 1.3
+    },
+    "00-0027944": {
+        "receiving_yds": 101.0,
+        "receiving_rec": 6.2,
+        "receiving_tds": 0.5
+    },
+    "00-0027942": {
+        "receiving_yds": 89.2,
+        "receiving_rec": 6.2,
+        "receiving_tds": 0.6
+    },
+    "00-0031339": {
+        "receiving_yds": 48.3,
+        "receiving_rec": 4.0,
+        "receiving_tds": 0.3
+    },
+    "00-0029388": {
+        "receiving_yds": 20.6,
+        "receiving_rec": 1.8,
+        "receiving_tds": 0.1
+    },
+    "00-0031236": {
+        "receiving_yds": 49.9,
+        "receiving_rec": 4.0,
+        "receiving_tds": 0.3
+    },
+    "00-0030414": {
+        "receiving_tds": 0.2,
+        "rushing_tds": 0.7,
+        "receiving_rec": 2.1,
+        "rushing_yds": 86.0,
+        "receiving_yds": 36.4,
+        "rushing_att": 16.4
+    },
+    "00-0030419": {
+        "passing_att": 0.1,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 1.0,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0031941": {
+        "receiving_yds": 44.3,
+        "receiving_rec": 3.8,
+        "receiving_tds": 0.3
+    },
+    "00-0026069": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.8,
+        "rushing_yds": 10.2,
+        "receiving_yds": 4.9,
+        "rushing_att": 3.5
+    },
+    "00-0030801": {
+        "receiving_yds": 10.6,
+        "receiving_rec": 0.9,
+        "receiving_tds": 0.1
+    },
+    "00-0029708": {
+        "receiving_yds": 33.8,
+        "receiving_rec": 3.1,
+        "receiving_tds": 0.3
+    },
+    "00-0032187": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.8,
+        "receiving_rec": 3.9,
+        "rushing_yds": 78.1,
+        "receiving_yds": 42.7,
+        "rushing_att": 20.3
+    },
+    "00-0031257": {
+        "receiving_yds": 11.6,
+        "receiving_rec": 0.9,
+        "receiving_tds": 0.1
+    },
+    "00-0033049": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 2.9,
+        "receiving_yds": 0.9,
+        "rushing_att": 0.7
+    },
+    "00-0033127": {
+        "receiving_yds": 67.4,
+        "receiving_rec": 4.8,
+        "receiving_tds": 0.5
+    },
+    "00-0030113": {
+        "receiving_yds": 25.2,
+        "receiving_rec": 1.9,
+        "receiving_tds": 0.1
+    },
+    "00-0033045": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.5,
+        "receiving_rec": 2.0,
+        "rushing_yds": 101.0,
+        "receiving_yds": 17.6,
+        "rushing_att": 19.7
+    },
+    "00-0032462": {
+        "passing_att": 0.1,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 0.4,
+        "passing_cmp": 0.0,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0032543": {
+        "receiving_yds": 3.2,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.0
+    },
+    "00-0031428": {
+        "receiving_yds": 61.3,
+        "receiving_rec": 4.5,
+        "receiving_tds": 0.6
+    },
+    "00-0031344": {
+        "receiving_yds": 2.0,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0031345": {
+        "passing_att": 0.3,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 1.9,
+        "passing_cmp": 0.2,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0032725": {
+        "receiving_yds": 14.6,
+        "receiving_rec": 1.7,
+        "receiving_tds": 0.1
+    },
+    "00-0027685": {
+        "receiving_yds": 71.5,
+        "receiving_rec": 5.7,
+        "receiving_tds": 0.5
+    },
+    "00-0027681": {
+        "receiving_yds": 37.8,
+        "receiving_rec": 2.9,
+        "receiving_tds": 0.3
+    },
+    "00-0027725": {
+        "receiving_yds": 4.8,
+        "receiving_rec": 0.6,
+        "receiving_tds": 0.0
+    },
+    "00-0020578": {
+        "kicking_xpmade": 2.6,
+        "kicking_fgm": 2.0,
+        "kicking_fga": 2.3
+    },
+    "00-0027688": {
+        "passing_att": 0.4,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 3.0,
+        "passing_cmp": 0.3,
+        "rushing_yds": 0.4,
+        "passing_tds": 0.0,
+        "rushing_att": 0.1
+    },
+    "00-0030061": {
+        "receiving_yds": 32.6,
+        "receiving_rec": 3.1,
+        "receiving_tds": 0.2
+    },
+    "00-0023482": {
+        "kicking_xpmade": 2.4,
+        "kicking_fgm": 1.8,
+        "kicking_fga": 2.2
+    },
+    "ARI": {
+        "defense_tds": 0.2,
         "defense_TYDA": 328.0,
-        "defense_ffum": 1.5,
+        "defense_safe": 0.0,
         "defense_frec": 1.1,
+        "defense_sk": 2.5,
         "defense_int": 1.5,
-        "defense_safe": 0.0,
-        "defense_sk": 2.5,
-        "defense_tds": 0.2
+        "defense_ffum": 1.5,
+        "defense_TPA": 21.0
     },
-    "Chargers D/ST": {
-        "defense_TPA": 27.0,
-        "defense_TYDA": 339.0,
-        "defense_ffum": 1.0,
-        "defense_frec": 0.7,
-        "defense_int": 0.9,
-        "defense_safe": 0.0,
-        "defense_sk": 2.2,
-        "defense_tds": 0.3
+    "00-0031285": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.6,
+        "receiving_rec": 3.3,
+        "rushing_yds": 71.0,
+        "receiving_yds": 27.2,
+        "rushing_att": 17.0
     },
-    "Chiefs D/ST": {
-        "defense_TPA": 21.9,
-        "defense_TYDA": 355.0,
-        "defense_ffum": 1.0,
-        "defense_frec": 0.7,
-        "defense_int": 1.4,
-        "defense_safe": 0.0,
-        "defense_sk": 2.5,
-        "defense_tds": 0.2
+    "00-0028116": {
+        "receiving_yds": 17.8,
+        "receiving_rec": 1.1,
+        "receiving_tds": 0.1
     },
-    "Colts D/ST": {
-        "defense_TPA": 25.5,
-        "defense_TYDA": 337.0,
-        "defense_ffum": 1.4,
-        "defense_frec": 1.0,
-        "defense_int": 0.5,
-        "defense_safe": 0.0,
-        "defense_sk": 2.3,
-        "defense_tds": 0.3
+    "00-0031280": {
+        "passing_att": 37.5,
+        "passing_int": 0.6,
+        "rushing_tds": 0.0,
+        "passing_yds": 261.0,
+        "passing_cmp": 24.6,
+        "rushing_yds": 6.5,
+        "passing_tds": 2.2,
+        "rushing_att": 2.2
     },
-    "Cowboys D/ST": {
-        "defense_TPA": 21.6,
-        "defense_TYDA": 332.0,
-        "defense_ffum": 1.3,
-        "defense_frec": 0.9,
-        "defense_int": 0.6,
-        "defense_safe": 0.0,
-        "defense_sk": 2.1,
-        "defense_tds": 0.2
+    "00-0031166": {
+        "receiving_yds": 28.5,
+        "receiving_rec": 2.6,
+        "receiving_tds": 0.4
     },
-    "Eagles D/ST": {
-        "defense_TPA": 24.3,
-        "defense_TYDA": 379.0,
-        "defense_ffum": 1.6,
-        "defense_frec": 1.2,
-        "defense_int": 0.5,
-        "defense_safe": 0.0,
-        "defense_sk": 2.5,
-        "defense_tds": 0.2
-    },
-    "Falcons D/ST": {
-        "defense_TPA": 23.4,
-        "defense_TYDA": 333.0,
-        "defense_ffum": 1.0,
-        "defense_frec": 0.8,
-        "defense_int": 0.7,
-        "defense_safe": 0.0,
-        "defense_sk": 2.0,
-        "defense_tds": 0.1
-    },
-    "Jaguars D/ST": {
-        "defense_TPA": 24.6,
-        "defense_TYDA": 298.0,
-        "defense_ffum": 1.1,
-        "defense_frec": 0.8,
-        "defense_int": 0.9,
-        "defense_safe": 0.0,
-        "defense_sk": 2.4,
-        "defense_tds": 0.1
-    },
-    "Jets D/ST": {
-        "defense_TPA": 17.2,
-        "defense_TYDA": 315.0,
-        "defense_ffum": 1.0,
-        "defense_frec": 0.8,
-        "defense_int": 1.1,
-        "defense_safe": 0.0,
-        "defense_sk": 2.8,
-        "defense_tds": 0.1
-    },
-    "Lions D/ST": {
-        "defense_TPA": 21.5,
-        "defense_TYDA": 343.0,
-        "defense_ffum": 1.0,
-        "defense_frec": 0.7,
-        "defense_int": 0.8,
-        "defense_safe": 0.0,
-        "defense_sk": 2.4,
-        "defense_tds": 0.1
-    },
-    "Packers D/ST": {
-        "defense_TPA": 26.4,
-        "defense_TYDA": 407.0,
-        "defense_ffum": 0.8,
-        "defense_frec": 0.5,
-        "defense_int": 0.9,
-        "defense_safe": 0.0,
-        "defense_sk": 2.8,
-        "defense_tds": 0.2
-    },
-    "Panthers D/ST": {
-        "defense_TPA": 23.2,
-        "defense_TYDA": 366.0,
-        "defense_ffum": 1.4,
-        "defense_frec": 1.0,
-        "defense_int": 1.0,
-        "defense_safe": 0.2,
-        "defense_sk": 2.4,
-        "defense_tds": 0.2
-    },
-    "Patriots D/ST": {
-        "defense_TPA": 18.3,
-        "defense_TYDA": 305.0,
-        "defense_ffum": 0.8,
-        "defense_frec": 0.6,
-        "defense_int": 0.5,
-        "defense_safe": 0.0,
-        "defense_sk": 2.6,
-        "defense_tds": 0.2
-    },
-    "Raiders D/ST": {
-        "defense_TPA": 21.6,
+    "OAK": {
+        "defense_tds": 0.1,
         "defense_TYDA": 385.0,
-        "defense_ffum": 1.3,
-        "defense_frec": 1.0,
-        "defense_int": 1.3,
         "defense_safe": 0.0,
+        "defense_frec": 1.0,
         "defense_sk": 1.9,
-        "defense_tds": 0.1
-    },
-    "Redskins D/ST": {
-        "defense_TPA": 23.4,
-        "defense_TYDA": 370.0,
+        "defense_int": 1.3,
         "defense_ffum": 1.3,
-        "defense_frec": 0.9,
-        "defense_int": 0.5,
-        "defense_safe": 0.0,
-        "defense_sk": 2.8,
-        "defense_tds": 0.1
+        "defense_TPA": 21.6
     },
-    "Saints D/ST": {
-        "defense_TPA": 26.8,
+    "00-0028118": {
+        "passing_att": 28.3,
+        "passing_int": 0.5,
+        "rushing_tds": 0.2,
+        "passing_yds": 181.0,
+        "passing_cmp": 17.1,
+        "rushing_yds": 30.6,
+        "passing_tds": 1.1,
+        "rushing_att": 5.5
+    },
+    "00-0028052": {
+        "receiving_yds": 5.5,
+        "receiving_rec": 0.4,
+        "receiving_tds": 0.0
+    },
+    "00-0031288": {
+        "passing_att": 0.4,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 3.1,
+        "passing_cmp": 0.3,
+        "rushing_yds": 0.1,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0025944": {
+        "kicking_xpmade": 2.6,
+        "kicking_fgm": 1.9,
+        "kicking_fga": 2.2
+    },
+    "00-0032156": {
+        "passing_att": 35.0,
+        "passing_int": 0.9,
+        "rushing_tds": 0.0,
+        "passing_yds": 229.0,
+        "passing_cmp": 21.7,
+        "rushing_yds": 6.0,
+        "passing_tds": 1.8,
+        "rushing_att": 1.9
+    },
+    "00-0031732": {
+        "receiving_yds": 12.3,
+        "receiving_rec": 1.2,
+        "receiving_tds": 0.1
+    },
+    "00-0031731": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 0.2,
+        "receiving_yds": 0.7,
+        "rushing_att": 0.1
+    },
+    "00-0032098": {
+        "receiving_yds": 3.1,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0023096": {
+        "kicking_xpmade": 2.0,
+        "kicking_fgm": 1.9,
+        "kicking_fga": 2.2
+    },
+    "00-0032795": {
+        "receiving_yds": 3.2,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.0
+    },
+    "00-0027753": {
+        "receiving_yds": 5.1,
+        "receiving_rec": 0.6,
+        "receiving_tds": 0.0
+    },
+    "00-0029731": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.8,
+        "rushing_yds": 19.1,
+        "receiving_yds": 14.6,
+        "rushing_att": 5.0
+    },
+    "00-0030456": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.3,
+        "receiving_rec": 3.9,
+        "rushing_yds": 54.3,
+        "receiving_yds": 33.6,
+        "rushing_att": 11.2
+    },
+    "00-0028595": {
+        "passing_att": 0.0,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 0.2,
+        "passing_cmp": 0.0,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0030514": {
+        "receiving_yds": 6.6,
+        "receiving_rec": 0.6,
+        "receiving_tds": 0.0
+    },
+    "00-0030516": {
+        "receiving_yds": 23.0,
+        "receiving_rec": 1.6,
+        "receiving_tds": 0.2
+    },
+    "00-0024243": {
+        "receiving_yds": 21.2,
+        "receiving_rec": 1.8,
+        "receiving_tds": 0.1
+    },
+    "00-0030513": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.6,
+        "receiving_rec": 2.3,
+        "rushing_yds": 40.7,
+        "receiving_yds": 14.5,
+        "rushing_att": 10.7
+    },
+    "00-0026995": {
+        "receiving_yds": 56.7,
+        "receiving_rec": 4.6,
+        "receiving_tds": 0.4
+    },
+    "00-0030432": {
+        "receiving_tds": 0.2,
+        "rushing_tds": 0.6,
+        "receiving_rec": 2.7,
+        "rushing_yds": 80.9,
+        "receiving_yds": 14.5,
+        "rushing_att": 16.3
+    },
+    "00-0030098": {
+        "kicking_xpmade": 2.1,
+        "kicking_fgm": 1.7,
+        "kicking_fga": 1.9
+    },
+    "DET": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 343.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.7,
+        "defense_sk": 2.4,
+        "defense_int": 0.8,
+        "defense_ffum": 1.0,
+        "defense_TPA": 21.5
+    },
+    "00-0027874": {
+        "receiving_yds": 69.9,
+        "receiving_rec": 5.8,
+        "receiving_tds": 0.6
+    },
+    "00-0027873": {
+        "receiving_yds": 24.8,
+        "receiving_rec": 2.7,
+        "receiving_tds": 0.2
+    },
+    "DEN": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 280.0,
+        "defense_safe": 0.0,
+        "defense_frec": 1.5,
+        "defense_sk": 3.3,
+        "defense_int": 1.2,
+        "defense_ffum": 2.1,
+        "defense_TPA": 17.3
+    },
+    "00-0030564": {
+        "receiving_yds": 73.2,
+        "receiving_rec": 6.2,
+        "receiving_tds": 0.5
+    },
+    "00-0032935": {
+        "receiving_yds": 1.5,
+        "receiving_rec": 0.1,
+        "receiving_tds": 0.0
+    },
+    "00-0023436": {
+        "passing_att": 31.6,
+        "passing_int": 0.5,
+        "rushing_tds": 0.1,
+        "passing_yds": 219.0,
+        "passing_cmp": 21.5,
+        "rushing_yds": 16.4,
+        "passing_tds": 1.6,
+        "rushing_att": 3.7
+    },
+    "00-0033009": {
+        "receiving_yds": 25.8,
+        "receiving_rec": 2.1,
+        "receiving_tds": 0.1
+    },
+    "00-0026197": {
+        "passing_att": 0.2,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 1.5,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.1,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0031268": {
+        "receiving_yds": 13.2,
+        "receiving_rec": 1.2,
+        "receiving_tds": 0.1
+    },
+    "00-0031302": {
+        "receiving_yds": 29.9,
+        "receiving_rec": 3.0,
+        "receiving_tds": 0.2
+    },
+    "00-0030390": {
+        "kicking_xpmade": 2.1,
+        "kicking_fgm": 1.8,
+        "kicking_fga": 2.0
+    },
+    "00-0031301": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.5,
+        "receiving_rec": 1.0,
+        "rushing_yds": 57.4,
+        "receiving_yds": 8.2,
+        "rushing_att": 10.6
+    },
+    "00-0030850": {
+        "kicking_xpmade": 1.8,
+        "kicking_fgm": 1.3,
+        "kicking_fga": 1.7
+    },
+    "00-0020531": {
+        "passing_att": 40.8,
+        "passing_int": 0.9,
+        "rushing_tds": 0.0,
+        "passing_yds": 275.0,
+        "passing_cmp": 27.3,
+        "rushing_yds": 1.8,
+        "passing_tds": 1.5,
+        "rushing_att": 1.4
+    },
+    "00-0030854": {
+        "receiving_yds": 3.8,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0032371": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.3,
+        "receiving_rec": 1.1,
+        "rushing_yds": 73.5,
+        "receiving_yds": 8.2,
+        "rushing_att": 14.3
+    },
+    "00-0030990": {
+        "receiving_yds": 8.4,
+        "receiving_rec": 0.8,
+        "receiving_tds": 0.1
+    },
+    "00-0029632": {
+        "receiving_yds": 41.2,
+        "receiving_rec": 3.1,
+        "receiving_tds": 0.2
+    },
+    "00-0032112": {
+        "receiving_yds": 45.4,
+        "receiving_rec": 2.4,
+        "receiving_tds": 0.2
+    },
+    "00-0026176": {
+        "receiving_yds": 65.3,
+        "receiving_rec": 5.4,
+        "receiving_tds": 0.6
+    },
+    "00-0030780": {
+        "receiving_yds": 4.5,
+        "receiving_rec": 0.4,
+        "receiving_tds": 0.0
+    },
+    "00-0030789": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 3.4,
+        "receiving_yds": 1.0,
+        "rushing_att": 0.9
+    },
+    "00-0026289": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 0.9,
+        "rushing_yds": 4.3,
+        "receiving_yds": 5.2,
+        "rushing_att": 1.2
+    },
+    "00-0030147": {
+        "receiving_yds": 27.5,
+        "receiving_rec": 1.9,
+        "receiving_tds": 0.1
+    },
+    "00-0033077": {
+        "passing_att": 30.7,
+        "passing_int": 0.5,
+        "rushing_tds": 0.2,
+        "passing_yds": 240.0,
+        "passing_cmp": 20.6,
+        "rushing_yds": 11.2,
+        "passing_tds": 1.6,
+        "rushing_att": 2.9
+    },
+    "00-0028237": {
+        "receiving_yds": 38.8,
+        "receiving_rec": 2.6,
+        "receiving_tds": 0.1
+    },
+    "00-0032430": {
+        "receiving_yds": 2.1,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.0
+    },
+    "00-0026281": {
+        "receiving_yds": 46.3,
+        "receiving_rec": 3.5,
+        "receiving_tds": 0.2
+    },
+    "00-0033079": {
+        "receiving_yds": 17.5,
+        "receiving_rec": 1.4,
+        "receiving_tds": 0.1
+    },
+    "00-0026286": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 1.0,
+        "receiving_yds": 0.6,
+        "rushing_att": 0.2
+    },
+    "00-0033069": {
+        "receiving_yds": 12.3,
+        "receiving_rec": 1.1,
+        "receiving_tds": 0.1
+    },
+    "00-0032208": {
+        "receiving_yds": 63.0,
+        "receiving_rec": 3.4,
+        "receiving_tds": 0.2
+    },
+    "00-0031051": {
+        "receiving_yds": 57.5,
+        "receiving_rec": 4.2,
+        "receiving_tds": 0.3
+    },
+    "00-0032200": {
+        "receiving_yds": 52.5,
+        "receiving_rec": 6.8,
+        "receiving_tds": 0.1
+    },
+    "00-0032804": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.4,
+        "rushing_yds": 5.6,
+        "receiving_yds": 9.5,
+        "rushing_att": 1.7
+    },
+    "00-0032400": {
+        "receiving_yds": 14.2,
+        "receiving_rec": 1.0,
+        "receiving_tds": 0.1
+    },
+    "00-0031001": {
+        "receiving_yds": 38.5,
+        "receiving_rec": 3.6,
+        "receiving_tds": 0.2
+    },
+    "00-0019646": {
+        "kicking_xpmade": 3.0,
+        "kicking_fgm": 1.9,
+        "kicking_fga": 2.4
+    },
+    "NO": {
+        "defense_tds": 0.1,
         "defense_TYDA": 423.0,
-        "defense_ffum": 1.2,
+        "defense_safe": 0.0,
         "defense_frec": 0.9,
-        "defense_int": 0.8,
-        "defense_safe": 0.0,
         "defense_sk": 2.3,
-        "defense_tds": 0.1
-    },
-    "Seahawks D/ST": {
-        "defense_TPA": 19.8,
-        "defense_TYDA": 331.0,
-        "defense_ffum": 0.8,
-        "defense_frec": 0.6,
-        "defense_int": 0.9,
-        "defense_safe": 0.0,
-        "defense_sk": 2.5,
-        "defense_tds": 0.1
-    },
-    "Texans D/ST": {
-        "defense_TPA": 19.8,
-        "defense_TYDA": 327.0,
-        "defense_ffum": 0.8,
-        "defense_frec": 0.6,
         "defense_int": 0.8,
+        "defense_ffum": 1.2,
+        "defense_TPA": 26.8
+    },
+    "00-0027656": {
+        "receiving_yds": 58.8,
+        "receiving_rec": 3.9,
+        "receiving_tds": 0.4
+    },
+    "00-0027654": {
+        "receiving_yds": 14.5,
+        "receiving_rec": 1.1,
+        "receiving_tds": 0.1
+    },
+    "NE": {
+        "defense_tds": 0.2,
+        "defense_TYDA": 305.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.6,
+        "defense_sk": 2.6,
+        "defense_int": 0.5,
+        "defense_ffum": 0.8,
+        "defense_TPA": 18.3
+    },
+    "00-0027651": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.6,
+        "rushing_yds": 8.3,
+        "receiving_yds": 8.8,
+        "rushing_att": 3.0
+    },
+    "00-0027891": {
+        "receiving_yds": 56.2,
+        "receiving_rec": 5.0,
+        "receiving_tds": 0.2
+    },
+    "00-0026373": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.1,
+        "receiving_rec": 1.3,
+        "rushing_yds": 10.6,
+        "receiving_yds": 5.9,
+        "rushing_att": 3.0
+    },
+    "00-0032475": {
+        "receiving_yds": 33.9,
+        "receiving_rec": 2.5,
+        "receiving_tds": 0.3
+    },
+    "00-0032897": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 0.3,
+        "receiving_yds": 0.6,
+        "rushing_att": 0.1
+    },
+    "00-0031064": {
+        "passing_att": 0.1,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 0.5,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0030656": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.4,
+        "receiving_rec": 1.4,
+        "rushing_yds": 53.3,
+        "receiving_yds": 13.0,
+        "rushing_att": 13.8
+    },
+    "00-0031706": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.0,
+        "rushing_yds": 0.4,
+        "receiving_yds": 0.3,
+        "rushing_att": 0.1
+    },
+    "00-0016919": {
+        "kicking_xpmade": 2.3,
+        "kicking_fgm": 1.9,
+        "kicking_fga": 1.9
+    },
+    "00-0027150": {
+        "receiving_yds": 61.1,
+        "receiving_rec": 5.6,
+        "receiving_tds": 0.3
+    },
+    "00-0031912": {
+        "receiving_yds": 48.0,
+        "receiving_rec": 4.8,
+        "receiving_tds": 0.2
+    },
+    "00-0029604": {
+        "passing_att": 36.3,
+        "passing_int": 1.2,
+        "rushing_tds": 0.2,
+        "passing_yds": 269.0,
+        "passing_cmp": 24.8,
+        "rushing_yds": 6.3,
+        "passing_tds": 1.4,
+        "rushing_att": 1.7
+    },
+    "00-0029601": {
+        "receiving_yds": 1.3,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.0
+    },
+    "00-0032972": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.6,
+        "receiving_rec": 2.6,
+        "rushing_yds": 85.9,
+        "receiving_yds": 19.3,
+        "rushing_att": 18.9
+    },
+    "00-0032974": {
+        "receiving_yds": 3.6,
+        "receiving_rec": 0.3,
+        "receiving_tds": 0.0
+    },
+    "00-0032975": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.1,
+        "rushing_yds": 27.2,
+        "receiving_yds": 7.8,
+        "rushing_att": 5.9
+    },
+    "00-0029608": {
+        "receiving_yds": 86.3,
+        "receiving_rec": 6.2,
+        "receiving_tds": 0.4
+    },
+    "00-0032977": {
+        "receiving_yds": 17.5,
+        "receiving_rec": 1.3,
+        "receiving_tds": 0.1
+    },
+    "00-0023578": {
+        "passing_att": 0.1,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 0.6,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0031959": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 0.9,
+        "receiving_yds": 0.6,
+        "rushing_att": 0.3
+    },
+    "DAL": {
+        "defense_tds": 0.2,
+        "defense_TYDA": 332.0,
+        "defense_safe": 0.0,
+        "defense_frec": 0.9,
+        "defense_sk": 2.1,
+        "defense_int": 0.6,
+        "defense_ffum": 1.3,
+        "defense_TPA": 21.6
+    },
+    "00-0031951": {
+        "receiving_yds": 1.2,
+        "receiving_rec": 0.1,
+        "receiving_tds": 0.0
+    },
+    "00-0027973": {
+        "passing_att": 31.5,
+        "passing_int": 0.5,
+        "rushing_tds": 0.2,
+        "passing_yds": 252.0,
+        "passing_cmp": 21.2,
+        "rushing_yds": 13.7,
+        "passing_tds": 1.6,
+        "rushing_att": 3.7
+    },
+    "00-0029263": {
+        "passing_att": 33.7,
+        "passing_int": 0.7,
+        "rushing_tds": 0.1,
+        "passing_yds": 284.0,
+        "passing_cmp": 23.6,
+        "rushing_yds": 23.4,
+        "passing_tds": 1.9,
+        "rushing_att": 4.1
+    },
+    "00-0029269": {
+        "receiving_yds": 45.6,
+        "receiving_rec": 4.1,
+        "receiving_tds": 0.2
+    },
+    "TB": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 343.0,
         "defense_safe": 0.1,
+        "defense_frec": 0.9,
+        "defense_sk": 1.8,
+        "defense_int": 0.6,
+        "defense_ffum": 1.2,
+        "defense_TPA": 28.0
+    },
+    "00-0026138": {
+        "kicking_xpmade": 1.5,
+        "kicking_fgm": 1.2,
+        "kicking_fga": 1.6
+    },
+    "HOU": {
+        "defense_tds": 0.1,
+        "defense_TYDA": 327.0,
+        "defense_safe": 0.1,
+        "defense_frec": 0.6,
         "defense_sk": 3.0,
-        "defense_tds": 0.1
+        "defense_int": 0.8,
+        "defense_ffum": 0.8,
+        "defense_TPA": 19.8
     },
-    "Titans D/ST": {
-        "defense_TPA": 22.3,
-        "defense_TYDA": 319.0,
-        "defense_ffum": 0.7,
-        "defense_frec": 0.5,
-        "defense_int": 1.4,
-        "defense_safe": 0.0,
-        "defense_sk": 3.9,
-        "defense_tds": 0.1
+    "00-0030108": {
+        "receiving_yds": 20.5,
+        "receiving_rec": 2.4,
+        "receiving_tds": 0.1
     },
-    "Vikings D/ST": {
-        "defense_TPA": 14.7,
-        "defense_TYDA": 299.0,
-        "defense_ffum": 1.4,
-        "defense_frec": 1.0,
-        "defense_int": 1.5,
-        "defense_safe": 0.0,
-        "defense_sk": 2.8,
-        "defense_tds": 0.2
+    "00-0030107": {
+        "receiving_tds": 0.3,
+        "rushing_tds": 0.1,
+        "receiving_rec": 4.0,
+        "rushing_yds": 29.2,
+        "receiving_yds": 31.3,
+        "rushing_att": 7.4
+    },
+    "00-0031359": {
+        "receiving_yds": 59.4,
+        "receiving_rec": 4.5,
+        "receiving_tds": 0.6
+    },
+    "00-0027925": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.1,
+        "rushing_yds": 0.2,
+        "receiving_yds": 0.9,
+        "rushing_att": 0.1
+    },
+    "00-0031612": {
+        "receiving_tds": 0.0,
+        "rushing_tds": 0.0,
+        "receiving_rec": 0.6,
+        "rushing_yds": 5.5,
+        "receiving_yds": 3.5,
+        "rushing_att": 1.3
+    },
+    "00-0027531": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.3,
+        "receiving_rec": 1.6,
+        "rushing_yds": 33.4,
+        "receiving_yds": 9.6,
+        "rushing_att": 8.9
+    },
+    "00-0026003": {
+        "kicking_xpmade": 1.8,
+        "kicking_fgm": 1.3,
+        "kicking_fga": 1.5
+    },
+    "00-0030533": {
+        "passing_att": 0.1,
+        "passing_int": 0.0,
+        "rushing_tds": 0.0,
+        "passing_yds": 0.5,
+        "passing_cmp": 0.1,
+        "rushing_yds": 0.0,
+        "passing_tds": 0.0,
+        "rushing_att": 0.0
+    },
+    "00-0031922": {
+        "receiving_yds": 2.1,
+        "receiving_rec": 0.2,
+        "receiving_tds": 0.0
+    },
+    "00-0032778": {
+        "receiving_yds": 27.2,
+        "receiving_rec": 2.6,
+        "receiving_tds": 0.2
+    },
+    "00-0032940": {
+        "receiving_tds": 0.1,
+        "rushing_tds": 0.2,
+        "receiving_rec": 1.7,
+        "rushing_yds": 22.1,
+        "receiving_yds": 10.8,
+        "rushing_att": 5.2
     }
 }
