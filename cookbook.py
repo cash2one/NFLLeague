@@ -36,6 +36,4 @@ league=nflleague.league.League(1773242,2016)
 
 for p in league.waivers(5,pos='WR').sort(lambda x:x.stats().receiving_tar).limit(5):
     m='%s:\tWeek 5: %i\tAve: %.2f'
-    print(m % (p,p.stats().receiving_tar,np.mean([n.receiving_tar for n in p.seasonal_stats()])))
-
-                          
+    print(m % (p,p.stats().receiving_tar,np.mean([n.receiving_tar for n in p.seasonal()])))
