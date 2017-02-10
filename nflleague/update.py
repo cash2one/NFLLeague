@@ -11,7 +11,7 @@ import re
 import random
 from os import walk
 import urllib
-import cv
+#import cv
 import numpy as np
 import nflgame
 from datetime import datetime
@@ -247,12 +247,15 @@ class Scraper():
                     check_dir(ss_path)
                     urllib.urlretrieve(logo_address,ss_path)
                     try:
-                        logo=cv.LoadImage(ss_path,True)
+                        #replace
+			"""
+			logo=cv.LoadImage(ss_path,True)
                         out=cv.CreateImage((500,500),logo.depth,3)
                         cv.Resize(logo,out)
                         out_path=ss_path.split(".")[0]
                         print(out_path)
                         cv.SaveImage('{}.jpg'.format(out_path),out)
+			"""
                     except:
                         os.remove(ss_path)
                 except Exception as err:
