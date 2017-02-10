@@ -23,8 +23,9 @@ class Week(object):
         self.__opponent_obj=None
         self.home=bool(self.schedule.get('Home',False))
         
-        data=nflleague.player._json_lineup_by_team(self.league_id,self.season,self.week,self.team_id)
-        self.lineup=[]
+        self.data=nflleague.player._json_lineup_by_team(self.league_id,self.season,self.week,self.team_id)
+        self._lineup=[]
+        """
         for slot in self.settings.gsis_positions():
             a,b,c,pid,e=self.league_id,self.season,self.week,data[slot].get('player_id',''),self.games
             if data[slot].get('position')!='D/ST':
@@ -32,7 +33,7 @@ class Week(object):
             else:
                 pid=nflleague.standard_nfl_abv(pid)
                 self.lineup.append(nflleague.player.DefenseWeek(a,b,c,pid,e,meta=self._players[pid]['lineup'].get(self.week)))
-
+            
         self.bench=[]
         for plyr in data.get('Bench',[]):
             a,b,c,pid,e=self.league_id,self.season,self.week,plyr.get('player_id',''),self.games
@@ -46,7 +47,26 @@ class Week(object):
             self.IR=nflleague.player.PlayerWeek(a,b,c,d,e)
         else:
             self.IR=None
-    
+        """
+    @property
+    def lineup(self):
+        lnp=[]
+        for slot in self.settings.gsis_positions():
+            plyr=self.data[slot]
+            if plyr.get('position')=='D/ST':
+                plyr['player_id']=nflleague.standard_nfl_abv(plyr.get('player_id',''))
+            lnp.append(self.league_players[plyr.get('player_id','')].spawn(self.week))
+        return lnp
+
+    @property
+    def bench(self): 
+        for plyr in self.data.get('Bench',[]):
+            if plyr.get('position')=='D/ST':
+                plyr['player_id']=nflleague.standard_nfl_abv(plyr.get('player_id',''))
+            lnp.append(self.league_players[plyr.get('player_id','')].spawn(self.week))
+        
+        return lnp
+
     def get_all(self,IR=False):
         if IR:
             return self.lineup+self.bench+[self.IR]

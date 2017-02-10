@@ -13,67 +13,95 @@ from collections import Counter,defaultdict
 #DONE fix DST yardage allowed (HIGH)
 #DONE add game status function
 
-class Player(nflgame.player.Player):
-    def __init__(self,season,week,player_id):
-        data=nflleague.players.get(player_id,nflleague.players['00-0000000'])
-        super(Player,self).__init__(data)
+
+def _create_players(league_id,season,games):
+    path='nflleague/espn-league-json/{}/{}/lineup_by_player.json'
+    league_players=get_json(path.format(league_id,season),{})
+    
+    players={}
+    for pid,data in nflleague.players.iteritems():
+        new=PlayerMeta(league_id,season,games,data)
+        new._add_league_data(league_players.get(pid,{}))
+        players[pid]=new
+    return players
+
+class PlayerMeta(object):
+    def __init__(self,league_id,season,games,data):
+        self.league_id=league_id
+        self.season=season
+        self.games=games
+        for k,v in data.iteritems():
+            self.__dict__[k]=v
+    
+    def get_meta(self,season,week,key):
+        try:
+            return getattr(self,key,{})[str(season)][str(week)]
+        except TypeError:
+            return getattr(self,key)
+        except Exception:
+            return False
+    
+    def spawn_season(self):
+        return {str(week):self.spawn(week) for week in range(1,17)}
+
+    def spawn(self,week):
+        if self.position!='D/ST':
+            new=PlayerWeek(self.league_id,self.season,week,self.gsis_id)
+        else:
+            new=DefenseWeek(self.league_id,self.season,week,self.gsis_id)
+
+        for k,v in self.__dict__.iteritems():
+            try:
+                setattr(new,k,v[str(self.season)][str(week)])
+            except KeyError:
+                setattr(new,k,{})
+            except TypeError:
+                setattr(new,k,v)
+        
+        if type(new.schedule)!=dict and new.schedule!='bye':
+            new.game=list(self.games.filter(eid=new.schedule))[0]
+        else:
+            new.game=new.schedule
+        try:
+            default_map={'team_id':0,
+                         'slot':'NA',
+                         'gsis_slot':'NA',
+                         'score':0,
+                         'in_lineup':False,
+                         'condition':'NA'}
+            for k,v in self.league_data.get(str(week),default_map).iteritems():
+                new.__dict__[k]=v
+            new.team_abv=nflleague.league._json_load_owners(new.league_id,new.season).get(new.team_id,{}).get('team_abv','FA')
+        except AttributeError as err:
+            pass
+        #backwards compatibility
+        setattr(new,'_seasonal',self)
+        return new
+
+    def _add_league_data(self,data):
+        self.__dict__['league_data']={}
+        for k,v in data.iteritems():
+            self.__dict__['league_data'][k]=v
+    def formatted(self):
+        for k,v in self.__dict__.iteritems():
+            print(k,v)
+        print('\n')
+#class PlayerWeek(Player):
+class PlayerWeek(object):
+    def __init__(self,league_id,season,week,player_id):
+        self.league_id=league_id
         self.season=season
         self.week=week
-        
-        if type(self.team)==dict:
-            self.team=self.team.get(str(season),{}).get(str(week),'UNK')
-        if type(self.position)==dict:
-            self.position=self.position.get(str(season),{}).get(str(week),'UNK')
-        
-        self.game_eid=data['schedule'].get(str(season),{}).get(str(week),'bye')
-        self.bye=True if self.game_eid=='bye' else False
-        if not self.bye:
-            self.schedule=nflgame.sched.games.get(self.game_eid,{})
-        else:
-            self.schedule={}
-    
-    def __str__(self):
-        return '{}, {} {}'.format(self.full_name,self.team,self.position)
-
-class PlayerWeek(Player):
-    #team_id temporary until I have time to restructure teamweeklineups json data by player
-    def __init__(self,league_id,season,week,player_id,games=None,meta=None):
-        super(PlayerWeek,self).__init__(season,week,player_id)
-        self.league_id=league_id
-        self.games=games 
-        
+        self.player_id=player_id
         self._stats=None
         self._projs=None
         self._plays=None
-                
-        if meta==None:
-            self.meta=_json_lineup_by_player(self.league_id,self.season,self.week,self.player_id)
-        else:
-            self.meta=meta
-        
-        self.team_id=self.meta.get('team_id',0)
-        self.team_abv=nflleague.league._json_load_owners(self.league_id,self.season).get(self.team_id,{}).get('team_abv','FA')
-        self.position=self.meta.get('position',self.position)
-        self.slot=self.meta.get('slot','NA')
-        self.gsis_slot=self.meta.get('gsis_slot','NA')
-        self.score=round(float(self.meta.get('score',0)),1)
-        self.in_lineup=bool(self.meta.get('in_lineup',False))
-        self.condition=self.meta.get('condition','NA')
-        
-        if self.bye:
-            self.game='bye'
-        else:
-            if games==None:
-                self.game=nflgame.game.Game(self.game_eid)
-            else:
-                self.game=list(games.filter(eid=self.game_eid))[0]
-        
-        #print('PlayerWeek Initialized {} {} {} {}'.format(self.season,self.week,str(self),self.team_abv))
-         
-    def stats(self,system='Custom'):
+    
+    def stats(self,system='Custom'): 
         if self._stats==None:
             self._stats=nflleague.scoring.PlayerStats(self.league_id,self.season,self.week,self.position,game=self.game)
-            self._stats._add_stats(gen_player_stats(self.season,self.week,self.player_id,self.team,self.game))
+            #self._stats._add_stats(gen_player_stats(self.season,self.week,self.player_id,self.team,self.game))
+            self._stats._add_stats(mem_stats(self))
         return self._stats
 
     def projs(self,system='Custom'):
@@ -83,7 +111,6 @@ class PlayerWeek(Player):
                 p=nflleague.scoring.PlayerProjs(self.league_id,self.season,self.week,self.position,site,self.game,system)
                 p._add_stats(self.stats().stats)
                 p._add_projs(nflleague.scoring._json_projections(self.week,site,self.player_id))
-                
                 sites.append(p)
             return sites
 
@@ -91,17 +118,12 @@ class PlayerWeek(Player):
             self._projs=nflleague.scoring.GenPlayerProjs(projections())
         return self._projs
     
-    def seasonal(self,inclusive=False):
+    def seasonal(self):
         def __seasonal():
-            weeks=[]
-            for week in range(1,int(self.week)+1 if inclusive else int(self.week)):
-                a,b,c,d,e=self.league_id,self.season,week,self.position,self.games
-                weeks.append(nflleague.scoring.PlayerStats(a,b,c,d,e))
-                weeks[-1]._add_stats(gen_player_stats(b,c,self.player_id,self.team,self.game))
-            return weeks
-        
+            for week in range(1,17):
+                yield self._seasonal.spawn(week).stats()
         return nflleague.scoring.GenPlayerStats(__seasonal())
-    
+     
     def game_status(self):
         return get_game_status(self.game)
     
@@ -139,10 +161,20 @@ class PlayerWeek(Player):
         new_player.week=None
         return new_player
     
+    def __radd__(self,other):
+        #To allow for use of sum() function
+        try:
+            return self+other
+        except AttributeError:
+            return self
+    
+    def __str__(self):
+        return '{}, {} {}'.format(self.full_name,self.team,self.position)
 
 class DefenseWeek(PlayerWeek):
-    def __init__(self,league_id,season,week,player_id,games=None,meta=None):
-        super(DefenseWeek,self).__init__(league_id,season,week,nflleague.standard_nfl_abv(player_id),games=games,meta=meta)
+    def __init__(self,league_id,season,week,player_id):
+        super(DefenseWeek,self).__init__(league_id,season,week,nflleague.standard_nfl_abv(player_id))
+        self.position='D/ST'
         self.__players=None
 
     def stats(self,system='Custom'):
@@ -150,7 +182,7 @@ class DefenseWeek(PlayerWeek):
             self._stats=nflleague.scoring.PlayerStats(self.league_id,self.season,self.week,'D/ST',self.game,system)
             self._stats._add_stats(gen_defense_stats(self.season,self.week,self.team,self.game).get('defense',{}))
         return self._stats
-    
+    """
     def seasonal(self,inclusive=False):
         def __seasonal():
             weeks=[]
@@ -161,7 +193,6 @@ class DefenseWeek(PlayerWeek):
             return weeks
         
         return nflleague.scoring.GenPlayerStats(__seasonal())
-    
     def players(self):
         #Returns list of DefensePlayerWeek objects of players who contributed to defensive stats
         #NEED TO FIX OFFENSIVE PLAYERS BEING COUNTED AS DEFENSIVE PLAYERS
@@ -170,14 +201,21 @@ class DefenseWeek(PlayerWeek):
             defstats=gen_defense_stats(self.season,self.week,self.team,game=self.game)
             for pid,stats in defstats.iteritems():
                 if pid!='defense':
-                    players.append(DefPlayerWeek(self.league_id,self.season,self.week,pid,games=self.games))
+                    players.append(DefPlayerWeek(self.league_id,self.season,self.week,pid,game=self.game))
+                    players.append(self._seasonal)
             return players
+     
         if self.__players==None:
             self.__players=nflleague.seq.GenPlayer(def_players())
         return self.__players
-        
+    """    
 
 class DefPlayerWeek(PlayerWeek):
+    def __init__(self,lid,s,w,pid,game):
+        super(DefPlayerWeek,self).__init__(lid,s,w,pid)
+        self.game=game  
+        self.position=getattr(self,'position','DEF')
+    
     def projs(self,system='Custom'):
         assert False, 'Cannot be Called on Individul Defensive Players'
 
@@ -210,6 +248,46 @@ def _json_lineup_by_team(league_id,season,week,team_id):
     path='nflleague/espn-league-json/{}/{}/lineup_by_week.json'
     data=get_json(path.format(league_id,season),{})
     return data.get(str(team_id),{}).get(str(week),{})
+    
+def mem_stats(player):
+    fp='nflleague/espn-league-json/cache/C{}.json'.format(player.player_id)
+    cache=get_json(fp,{})
+    season,week=str(player.season),str(player.week)
+    game_status=get_game_status(player.game)
+    
+    if game_status in ['NOT PLAYED','PREGAME'] or player.schedule=='bye':
+        return {}
+    
+    if season not in cache.keys():
+        cache[season]={}
+    if week not in cache[season] or game_status in ['PLAYING','HALFTIME']:
+        print('Caching {}, (Y:{}  W:{})'.format(str(player),season,week))
+        player_stats=player.game.max_player_stats().playerid(player.player_id)
+        if player_stats!=None:
+            cache[season][week]=player_stats.stats
+        else:
+            cache[season][week]={}
+    
+        if player.position=='K':
+            #Need to break down kicker scoring by play here because most efficient way to find length of indvl field goal.
+            #Adds num of field goals made in 0-39,40-49,50+ ranges to kicker's stats dictionary.  
+            plays=filter(lambda x:x.has_player(player.player_id),list(player.game.drives.plays()))
+            #play_stats=nflgame.combine_plays([game])
+            #plays=list(filter(lambda p: p.has_player(player_id),play_stats))
+            cache[season][week]=defaultdict(int,cache[season][week])
+            for play in plays:
+                if 'kicking_fgm' in play._stats:
+                    if play._stats['kicking_fgm_yds'] <= 39:
+                        cache[season][week]['kicking_fgm_0_39'] += 1
+                    elif play._stats['kicking_fgm_yds'] <= 49:
+                        cache[season][week]['kicking_fgm_40_49'] += 1
+                    elif play._stats['kicking_fgm_yds'] >= 50:
+                        cache[season][week]['kicking_fgm_50_100'] += 1
+                elif 'kicking_fgmissed' in play._stats and int(play._stats['kicking_fgmissed_yds']) <= 39:
+                    cache[season][week]['kicking_fgmissed_0_39'] += 1
+        save_json(fp,cache)
+    return cache[season][week]
+        
 
 def gen_player_stats(season,week,player_id,team,game=None):
     fp='nflleague/espn-league-json/cache/C{}.json'
