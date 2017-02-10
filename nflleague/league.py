@@ -28,6 +28,7 @@ class League(object):
         self._schedule=_json_load_schedule(self.league_id,self.season)       
         self.owner_info=_json_load_owners(self.league_id,self.season)
         self._teams={}
+        self.league_players=nflleague.player._create_players(self.league_id,self.season,self.games)
 
     def teams(self):
         #returns list of all Team objects in league. Creates if not exisitent
@@ -54,26 +55,24 @@ class League(object):
             except KeyError:
                 divs[team.team_div]=[team]
         return divs
-           
-    def all_players(self,week):
-        def gen():
-            for pid,plyr in self._players.iteritems():
-                try:
-                    if plyr['position'][str(self.season)][str(week)] in self.settings.roster.actives:
-                        yield nflleague.player.PlayerWeek(self.league_id,self.season,week,pid,\
-                                                       games=self.games,meta=plyr['lineup'].get(str(week),None))
-                except KeyError:
-                    continue
-                except TypeError:
-                    continue
-        return nflleague.seq.GenPlayer(gen())
     
+    def all_players(self,week=None,all_pos=False):
+        def gen():
+            for pid,plyr in self.league_players.iteritems():
+                act_pos=plyr.get_meta(self.season,week,'position')
+                if act_pos:
+                    if all_pos or (act_pos in self.settings.roster.actives):
+                        yield plyr.spawn(week)
+                    else:
+                        continue
+                    
+        return nflleague.seq.GenPlayer(gen())
+
     def waivers(self,week,pos=None):
         waiver_wire=self.all_players(week).filter(team_abv='FA')
         if pos!=None:
             return waiver_wire.filter(position=pos)
         return waiver_wire
-    
 
 
 class Seasons(dict):
